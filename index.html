@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JujuyDev · El Hub Tech de Jujuy</title>
+  <meta name="description" content="Comunidad de desarrolladores, diseñadores y emprendedores de Jujuy. Eventos, colaboración y aprendizaje para impulsar el talento tech del norte argentino.">
+  <meta name="theme-color" content="#f7f1ef">
+
+  <!-- Social preview. Replace the domain with the final public URL once deployed. -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="JujuyDev · El Hub Tech de Jujuy">
+  <meta property="og:description" content="Conectamos desarrolladores, diseñadores y emprendedores de Jujuy.">
+  <meta property="og:url" content="https://francoduran23.github.io/jujuy_dev/">
+  <meta property="og:image" content="https://francoduran23.github.io/jujuy_dev/assets/hero.webp">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Reveal-on-scroll styles only apply when JS runs, so content is never hidden without it. -->
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#pilares">Saltar al contenido</a>
+
+  <!-- SVG sprite: brand icons (Simple Icons, CC0) and the chakana motif. -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="g-hornocal" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#ee8b3c"/>
+        <stop offset=".35" stop-color="#e2596a"/>
+        <stop offset=".6" stop-color="#7c3fae"/>
+        <stop offset="1" stop-color="#3f7dd8"/>
+      </linearGradient>
+    </defs>
+    <symbol id="i-chakana" viewBox="0 0 100 100">
+      <path fill-rule="evenodd" d="M40 8h20v14h14v14h14v28H74v14H60v14H40V78H26V64H12V36h14V22h14zM50 38l12 12-12 12-12-12z"/>
+    </symbol>
+    <symbol id="i-discord" viewBox="0 0 24 24">
+      <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/>
+    </symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+    </symbol>
+    <symbol id="i-github" viewBox="0 0 24 24">
+      <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+    </symbol>
+    <symbol id="i-x" viewBox="0 0 24 24">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+    </symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24">
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+    </symbol>
+  </svg>
+
+  <nav class="nav" aria-label="Principal">
+    <div class="container nav-inner">
+      <a class="logo" href="#inicio">
+        <span class="logo-mark">&lt;/&gt;</span>
+        <span>jujuy<span class="grad-text">.dev</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#pilares">Qué hacemos</a></li>
+        <li><a href="#comunidad">Comunidad</a></li>
+        <li><a href="#eventos">Eventos</a></li>
+        <li><a href="#colaboradores">Colaboradores</a></li>
+        <li><a href="#staff">Staff</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <a class="btn btn-primary btn-sm nav-cta" href="https://chat.whatsapp.com/Bj1KKgjcLue2FOVuX8osmq" target="_blank" rel="noopener">Sumate</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="inicio">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-fade" aria-hidden="true"></div>
+    <div class="container hero-content">
+      <svg class="hero-chakana" aria-hidden="true"><use href="#i-chakana" fill="url(#g-hornocal)"/></svg>
+      <p class="eyebrow">{ comunidad(); colaborar(); construir(); innovar(); }</p>
+      <h1>El Hub Tech de <span class="grad-text">Jujuy</span></h1>
+      <p class="lead">Conectamos desarrolladores, diseñadores y emprendedores de Jujuy. Impulsamos el talento local con colaboración, aprendizaje y eventos.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://chat.whatsapp.com/Bj1KKgjcLue2FOVuX8osmq" target="_blank" rel="noopener">Sumate a la comunidad</a>
+        <a class="btn btn-ghost" href="#eventos">Ver eventos</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- EDIT: swap these for real numbers (members, organizations) once you have them. -->
+  <section class="stats dots" id="numeros" aria-label="La comunidad en números">
+    <div class="container stats-inner">
+      <div class="stat">
+        <div class="stat-n grad-text">#1</div>
+        <div class="stat-l">primer meetup, con fecha y lugar</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n grad-text">2</div>
+        <div class="stat-l">comunidades hermanas: JujuyDev y SaltaDev</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n grad-text">100%</div>
+        <div class="stat-l">gratis y open source</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pilares">
+    <svg class="section-chakana" aria-hidden="true"><use href="#i-chakana" fill="currentColor"/></svg>
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">// qué hacemos</p>
+        <h2>Cuatro funciones, una comunidad</h2>
+        <p>Cuatro cosas que hacemos todos los días, sin vueltas.</p>
+      </div>
+      <div class="grid grid-4">
+        <article class="card pillar reveal" style="--accent: var(--orange)">
+          <span class="n">01</span>
+          <h3>comunidad();</h3>
+          <p>Un lugar para conocer gente que hace lo mismo que vos, preguntar sin vergüenza y crecer en grupo.</p>
+        </article>
+        <article class="card pillar reveal" style="--accent: var(--coral)">
+          <span class="n">02</span>
+          <h3>colaborar();</h3>
+          <p>Proyectos open source, mentorías y ayuda entre pares. Acá nadie aprende solo.</p>
+        </article>
+        <article class="card pillar reveal" style="--accent: var(--purple)">
+          <span class="n">03</span>
+          <h3>construir();</h3>
+          <p>Hackatones, talleres y charlas para pasar de la idea al producto que funciona.</p>
+        </article>
+        <article class="card pillar reveal" style="--accent: var(--blue)">
+          <span class="n">04</span>
+          <h3>innovar();</h3>
+          <p>Traemos lo nuevo a Jujuy: IA, web, cloud, datos y lo que venga después.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt dots" id="comunidad">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">// comunidad</p>
+        <h2>Elegí tu canal y sumate</h2>
+        <p>Estamos en varios lados. Entrá por donde te sientas más cómodo.</p>
+      </div>
+      <!-- EDIT: to open a channel, turn its <article class="... soon"> into an <a href="..." target="_blank" rel="noopener"> like the WhatsApp card and drop the "soon" class. -->
+      <div class="grid grid-3">
+        <a class="card platform reveal" href="https://chat.whatsapp.com/Bj1KKgjcLue2FOVuX8osmq" target="_blank" rel="noopener" style="--accent: var(--coral)">
+          <span class="icon"><svg><use href="#i-whatsapp"/></svg></span>
+          <h3>WhatsApp</h3>
+          <p>El grupo principal de la comunidad. Avisos de eventos, preguntas y oportunidades.</p>
+          <span class="link">Entrar al grupo →</span>
+        </a>
+        <a class="card platform reveal" href="https://github.com/FrancoDuran23/jujuy_dev" target="_blank" rel="noopener" style="--accent: var(--ink)">
+          <span class="icon"><svg><use href="#i-github"/></svg></span>
+          <h3>GitHub</h3>
+          <p>Este sitio es open source. Tu primer pull request puede ser sumar un evento o tu logo.</p>
+          <span class="link">Ver el repositorio →</span>
+        </a>
+        <article class="card platform soon reveal" style="--accent: var(--indigo)">
+          <span class="icon"><svg><use href="#i-discord"/></svg></span>
+          <h3>Discord</h3>
+          <p>Chat en vivo, canales de voz y ayuda técnica cuando la necesitás.</p>
+          <span class="link">próximamente</span>
+        </article>
+        <article class="card platform soon reveal" style="--accent: var(--blue)">
+          <span class="icon"><svg><use href="#i-linkedin"/></svg></span>
+          <h3>LinkedIn</h3>
+          <p>Networking profesional y oportunidades laborales en la región.</p>
+          <span class="link">próximamente</span>
+        </article>
+        <article class="card platform soon reveal" style="--accent: var(--purple)">
+          <span class="icon"><svg><use href="#i-x"/></svg></span>
+          <h3>X</h3>
+          <p>Novedades, hilos y lo que está pasando en la comunidad.</p>
+          <span class="link">próximamente</span>
+        </article>
+        <article class="card platform soon reveal" style="--accent: var(--magenta)">
+          <span class="icon"><svg><use href="#i-instagram"/></svg></span>
+          <h3>Instagram</h3>
+          <p>Fotos, eventos y los momentos de la comunidad.</p>
+          <span class="link">próximamente</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="eventos">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">// eventos</p>
+        <h2>Próximos eventos</h2>
+        <p>Meetups, talleres y hackatones. Presenciales en Jujuy y, a veces, online.</p>
+      </div>
+      <!-- EDIT: events live here. Copy the first card to add one, delete a card to remove it. Keep the ghost card last. -->
+      <div class="grid grid-2">
+        <article class="card event reveal">
+          <span class="when">Jueves 3 de septiembre · 18:00 a 19:30</span>
+          <h3>Meet Up #1 · Primer Meet Up dev Jujuy</h3>
+          <p>El primer encuentro de la comunidad. Sin charlas técnicas ni nivel mínimo: la idea es conocernos, ver quién hace qué en Jujuy y empezar a armar el ecosistema tech local. Gratis, con cupos limitados.</p>
+          <span class="meta">📍 Fundación CIDEJ · Av. 19 de Abril 437, 2do piso · San Salvador de Jujuy</span>
+          <a class="btn btn-primary btn-sm" href="https://luma.com/g134i1ef" target="_blank" rel="noopener">Anotarme en Luma</a>
+        </article>
+        <article class="card event ghost reveal">
+          <span class="when">Próximo evento</span>
+          <h3>¿Tenés una idea para el que sigue?</h3>
+          <p>Charlas, talleres, hackatones o una juntada para tomar algo. Si querés organizar o dar una charla, contanos.</p>
+          <a class="btn btn-ghost btn-sm" href="#contacto">Proponer un evento</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="colaboradores">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">// colaboradores</p>
+        <h2>Los que empujan con nosotros</h2>
+        <p>Empresas, universidades y comunidades que apoyan el ecosistema tech de Jujuy.</p>
+      </div>
+      <!-- EDIT: replace each slot with <img src="assets/logos/nombre.svg" alt="Nombre"> -->
+      <div class="logos reveal">
+        <div class="logo-slot">tu logo acá</div>
+        <div class="logo-slot">tu logo acá</div>
+        <div class="logo-slot">tu logo acá</div>
+        <div class="logo-slot">tu logo acá</div>
+        <div class="logo-slot">tu logo acá</div>
+        <div class="logo-slot">tu logo acá</div>
+      </div>
+      <div class="collab-cta reveal">
+        <div>
+          <h3>¿Querés ser colaborador?</h3>
+          <p>Si tu empresa, universidad o comunidad quiere sumarse, hablemos.</p>
+        </div>
+        <a class="btn btn-primary" href="#contacto">Quiero sumarme</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="staff">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">// staff</p>
+        <h2>Quiénes organizan</h2>
+        <p>Gente de la comunidad que pone tiempo y ganas para que esto funcione.</p>
+      </div>
+      <!-- EDIT: one "card person" per organizer. Social links are optional. Keep the ghost card last. -->
+      <div class="grid grid-2">
+        <article class="card person reveal">
+          <div class="avatar">FD</div>
+          <h3>Franco Duran</h3>
+          <p class="role">Fundador</p>
+          <p>Arrancó JujuyDev para juntar al talento tech de la provincia, en alianza con SaltaDev.</p>
+          <div class="socials">
+            <a href="https://github.com/FrancoDuran23" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-github"/></svg></a>
+          </div>
+        </article>
+        <article class="card ghost reveal">
+          <h3>Este lugar puede ser tuyo</h3>
+          <p>Si querés ayudar a organizar eventos, moderar el grupo o mantener este sitio, sumate al equipo.</p>
+          <a class="btn btn-ghost btn-sm" href="https://chat.whatsapp.com/Bj1KKgjcLue2FOVuX8osmq" target="_blank" rel="noopener">Quiero ayudar</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt dots" id="contacto">
+    <div class="container contact-grid">
+      <div class="reveal">
+        <p class="eyebrow">// contacto</p>
+        <h2>Hablemos</h2>
+        <p class="section-p">¿Tenés una idea, querés dar una charla o sumar a tu empresa? Escribinos y te respondemos.</p>
+        <a class="contact-mail mono" href="mailto:jujuydev@gmail.com">jujuydev@gmail.com</a>
+      </div>
+      <!-- No backend on purpose. If you ever want a form, formspree.io has a free tier: add a <form action="..."> here. -->
+      <div class="card contact-card reveal">
+        <h3>Elegí por dónde</h3>
+        <p>Respondemos por los dos lados. Para eventos y propuestas, mejor el mail. Para charlar, el grupo.</p>
+        <a class="btn btn-primary" href="mailto:jujuydev@gmail.com?subject=Hola%20JujuyDev">Mandar un mail</a>
+        <a class="btn btn-ghost" href="https://chat.whatsapp.com/Bj1KKgjcLue2FOVuX8osmq" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="grad-bar" aria-hidden="true"></div>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="#inicio">
+            <span class="logo-mark">&lt;/&gt;</span>
+            <span>jujuy<span class="grad-text">.dev</span></span>
+          </a>
+          <p class="footer-tag">Comunidad de tecnología y desarrollo en Jujuy. Impulsando el futuro digital del norte.</p>
+        </div>
+        <div>
+          <h4>comunidad</h4>
+          <!-- EDIT: add a line per channel as they open. -->
+          <ul>
+            <li><a href="https://chat.whatsapp.com/Bj1KKgjcLue2FOVuX8osmq" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="https://github.com/FrancoDuran23/jujuy_dev" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="mailto:jujuydev@gmail.com">jujuydev@gmail.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>recursos</h4>
+          <ul>
+            <li><a href="#eventos">Eventos</a></li>
+            <li><a href="#colaboradores">Colaboradores</a></li>
+            <li><a href="https://github.com/FrancoDuran23/jujuy_dev/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Cómo contribuir</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>legal</h4>
+          <ul>
+            <li><a href="https://github.com/FrancoDuran23/jujuy_dev/blob/main/CODE_OF_CONDUCT.md" target="_blank" rel="noopener">Código de conducta</a></li>
+            <li><a href="https://github.com/FrancoDuran23/jujuy_dev/blob/main/LICENSE" target="_blank" rel="noopener">Licencia MIT</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> JujuyDev. Hecho con cariño desde Jujuy.</span>
+        <span class="mono">innovar();</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var nav = document.querySelector('.nav');
+      var toggle = document.querySelector('.nav-toggle');
+
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+      });
+
+      nav.querySelectorAll('.nav-links a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      var revealed = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        revealed.forEach(function (el) { io.observe(el); });
+      } else {
+        revealed.forEach(function (el) { el.classList.add('in'); });
+      }
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
