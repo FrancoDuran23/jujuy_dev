@@ -30,3 +30,15 @@ Usá mensajes de commit cortos con prefijo: `feat:`, `fix:`, `docs:` o `chore:`.
 El equipo organizador revisa cada PR. El merge lo hace Franco ([@FrancoDuran23](https://github.com/FrancoDuran23)). La rama `main` está protegida, nada entra sin revisión.
 
 Si tenés dudas antes de empezar, abrí un issue o preguntá en el grupo de WhatsApp.
+
+## Sumarte como contribuidor a la página
+
+Todo PR mergeado suma a su autor a la sección **"Personas que hacen crecer este sitio"**. Para aparecer, en tu mismo PR o en uno aparte agregá dos cosas:
+
+1. **Tu foto** en `assets/people/nombre-apellido.webp`. Cuadrada, 400x400, menos de 80 KB. Si no sabés convertirla, subí un JPG o PNG y la convertimos nosotros.
+2. **Tu card**, copiando la última de la lista `#contribuyen` en `index.html`, con:
+   - nombre y apellido
+   - un título corto, por ejemplo "Frontend Developer" o "Estudiante de Sistemas"
+   - un solo link: tu GitHub o tu LinkedIn
+
+Si preferís no aparecer, decilo en el PR y listo. Nadie está obligado.

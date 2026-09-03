@@ -722,6 +722,84 @@ a.logo-slot:hover {
   font-size: 1.3rem;
 }
 
+img.avatar {
+  display: block;
+  object-fit: cover;
+  padding: 3px;
+}
+
+/* Contributors */
+.people-head {
+  max-width: 640px;
+  margin-top: 3.5rem;
+}
+
+.people-head h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+}
+
+.people-head p {
+  color: var(--ink-2);
+}
+
+.people-head a {
+  font-weight: 700;
+  color: var(--purple);
+}
+
+.people {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.person-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--cream-3);
+  border-radius: 14px;
+  background: var(--paper);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.person-chip:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.person-chip img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  padding: 2px;
+  background: var(--grad);
+}
+
+.person-chip .name {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.person-chip .title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-3);
+}
+
+.person-chip.ghost {
+  justify-content: center;
+  border-style: dashed;
+  background: rgba(255, 251, 250, 0.5);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--ink-3);
+}
+
 .person .role {
   margin-bottom: 0.8rem;
   font-family: var(--font-mono);

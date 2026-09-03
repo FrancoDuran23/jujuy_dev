@@ -22,6 +22,7 @@ Todo vive en `index.html`. Buscá los comentarios que dicen `EDIT` para encontra
 | Canales de la comunidad      | Sección `#comunidad`. Las cards con clase `soon` están sin link aún  |
 | Logos de colaboradores       | Sección `#colaboradores`, reemplazá cada `.logo-slot` por un `<img>` |
 | Staff                        | Sección `#staff`                                                     |
+| Personas que contribuyen     | Lista `#contribuyen` dentro de colaboradores, foto en `assets/people/` |
 | Números de la comunidad      | Sección `#numeros`                                                   |
 | Links del footer             | `<footer>`                                                           |
 

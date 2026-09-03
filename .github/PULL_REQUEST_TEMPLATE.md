@@ -6,6 +6,7 @@
 
 - [ ] Evento
 - [ ] Colaborador
+- [ ] Contribuidor (me sumo a la página con foto y título)
 - [ ] Staff
 - [ ] Corrección de texto o link
 - [ ] Otro
