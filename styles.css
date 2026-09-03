@@ -378,6 +378,9 @@ p {
 
 .section {
   position: relative;
+  /* Keep the decorative chakana off-canvas without widening mobile layouts. */
+  overflow-x: hidden;
+  overflow-x: clip;
   padding: 6rem 0;
 }
 
