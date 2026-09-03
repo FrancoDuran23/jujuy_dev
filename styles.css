@@ -636,6 +636,40 @@ p {
   object-fit: contain;
 }
 
+.logo-slot.filled {
+  border-style: solid;
+  background: var(--paper);
+}
+
+/* Isotype + wordmark for collaborators that only have an icon. */
+.logo-slot .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  color: #6b2a9e;
+}
+
+.logo-slot .brand img {
+  height: 44px;
+  width: 44px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .collab-cta {
   display: flex;
   flex-wrap: wrap;
@@ -960,8 +994,28 @@ p {
   }
 
   .hero {
-    padding-top: calc(var(--nav-h) + 3rem);
-    padding-bottom: 46vh;
+    padding-top: calc(var(--nav-h) + 2.5rem);
+    padding-bottom: 50vh;
+  }
+
+  /* Portrait version of the illustration for phones: same scene, framed vertically. */
+  .hero-bg {
+    background-image: url("assets/hero-mobile.webp");
+  }
+
+  .hero-fade {
+    background: linear-gradient(
+      to bottom,
+      var(--cream) 0%,
+      rgba(247, 241, 239, 0.96) 38%,
+      rgba(247, 241, 239, 0.7) 56%,
+      rgba(247, 241, 239, 0) 72%
+    );
+  }
+
+  /* The portrait illustration already carries its own chakana. */
+  .hero-chakana {
+    display: none;
   }
 
   .nav-toggle {
