@@ -94,7 +94,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <!-- Bump the version whenever styles.css changes, so browsers do not keep a stale copy. -->
+  <link rel="stylesheet" href="styles.css?v=2026-09-03b">
   <!-- Reveal-on-scroll styles only apply when JS runs, so content is never hidden without it. -->
   <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -335,8 +336,9 @@
       <!-- EDIT: contributors. Copy a card, add your photo to assets/people/ (square, 400x400, under 80 KB) and keep the ghost card last. -->
       <div class="people reveal" id="contribuyen">
         <a class="person-chip" href="https://github.com/raulfunes" target="_blank" rel="noopener">
-          <img src="https://avatars.githubusercontent.com/u/37681017?v=4&amp;s=160" alt="" width="48" height="48" loading="lazy">
-          <span><span class="name">Raul Funes</span><br><span class="title">primer PR de la comunidad</span></span>
+          <img src="https://avatars.githubusercontent.com/u/37681017?v=4&amp;s=160" alt="" width="56" height="56" loading="lazy">
+          <span class="who"><span class="name">Raul Funes</span><span class="title">primer PR de la comunidad</span></span>
+          <svg class="go" aria-hidden="true"><use href="#i-github"/></svg>
         </a>
         <a class="person-chip ghost" href="https://github.com/FrancoDuran23/jujuy_dev/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">tu primer PR te pone acá</a>
       </div>

@@ -42,3 +42,7 @@ Todo PR mergeado suma a su autor a la sección **"Personas que hacen crecer este
    - un solo link: tu GitHub o tu LinkedIn
 
 Si preferís no aparecer, decilo en el PR y listo. Nadie está obligado.
+
+## Si tocás `styles.css`
+
+Cambiá el número de versión del link del CSS en `index.html` (`styles.css?v=...`). GitHub Pages cachea los archivos diez minutos y, sin eso, la gente puede ver el HTML nuevo con los estilos viejos.
