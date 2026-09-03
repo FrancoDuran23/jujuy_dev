@@ -141,7 +141,11 @@
         <span>jujuy<span class="grad-text">.dev</span></span>
       </a>
       <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16"/>
+          <path d="M4 12h16"/>
+          <path d="M4 17h16"/>
+        </svg>
       </button>
       <ul class="nav-links" id="nav-links">
         <li><a href="#pilares">Qué hacemos</a></li>
@@ -440,6 +444,7 @@
         link.addEventListener('click', function () {
           nav.classList.remove('open');
           toggle.setAttribute('aria-expanded', 'false');
+          toggle.setAttribute('aria-label', 'Abrir menú');
         });
       });
 
