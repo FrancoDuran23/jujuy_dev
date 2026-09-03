@@ -653,7 +653,16 @@ p {
   line-height: 1.1;
   letter-spacing: -0.01em;
   text-align: center;
-  color: #6b2a9e;
+  color: var(--brand-color, #6b2a9e);
+}
+
+a.logo-slot {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.logo-slot:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
 }
 
 .logo-slot .brand img {
