@@ -1,18 +1,94 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>JujuyDev · El Hub Tech de Jujuy</title>
-  <meta name="description" content="Comunidad de desarrolladores, diseñadores y emprendedores de Jujuy. Eventos, colaboración y aprendizaje para impulsar el talento tech del norte argentino.">
+  <title>JujuyDev · Comunidad de programadores y tecnología en Jujuy</title>
+  <meta name="description" content="JujuyDev es la comunidad de programadores, desarrolladores y emprendedores tech de Jujuy. Meetups, talleres y eventos gratuitos en San Salvador de Jujuy. Sumate.">
   <meta name="theme-color" content="#f7f1ef">
+  <link rel="canonical" href="https://jujuy.dev.ar/">
 
-  <!-- Social preview. -->
+  <!-- Social preview (WhatsApp, LinkedIn, X). The image is a 1200x630 JPEG because not every network renders WebP previews. -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="JujuyDev · El Hub Tech de Jujuy">
-  <meta property="og:description" content="Conectamos desarrolladores, diseñadores y emprendedores de Jujuy.">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="JujuyDev">
+  <meta property="og:title" content="JujuyDev · Comunidad tech de Jujuy">
+  <meta property="og:description" content="Conectamos programadores, diseñadores y emprendedores de Jujuy. Meetups, talleres y eventos gratuitos.">
   <meta property="og:url" content="https://jujuy.dev.ar/">
-  <meta property="og:image" content="https://jujuy.dev.ar/assets/hero.webp">
+  <meta property="og:image" content="https://jujuy.dev.ar/assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ilustración de la Quebrada de Humahuaca con una llama, una notebook y el texto comunidad, colaborar, construir, innovar">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JujuyDev · Comunidad tech de Jujuy">
+  <meta name="twitter:description" content="Conectamos programadores, diseñadores y emprendedores de Jujuy. Meetups, talleres y eventos gratuitos.">
+  <meta name="twitter:image" content="https://jujuy.dev.ar/assets/og.jpg">
+
+  <!-- Hero images are CSS backgrounds, so preload them for a faster first paint. -->
+  <link rel="preload" as="image" href="assets/hero.webp" media="(min-width: 761px)">
+  <link rel="preload" as="image" href="assets/hero-mobile.webp" media="(max-width: 760px)">
+
+  <!-- Structured data for Google. EDIT: update the Event block whenever a new event is scheduled. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://jujuy.dev.ar/#org",
+        "name": "JujuyDev",
+        "alternateName": "jujuy.dev",
+        "url": "https://jujuy.dev.ar/",
+        "logo": "https://jujuy.dev.ar/assets/favicon.svg",
+        "email": "jujuydev@gmail.com",
+        "description": "Comunidad de programadores, desarrolladores y emprendedores tech de Jujuy, Argentina.",
+        "areaServed": { "@type": "AdministrativeArea", "name": "Jujuy, Argentina" },
+        "sameAs": [
+          "https://www.instagram.com/jujuy.dev/",
+          "https://github.com/FrancoDuran23/jujuy_dev"
+        ],
+        "founder": { "@type": "Person", "name": "Franco Duran", "url": "https://www.linkedin.com/in/francoduran23/" }
+      },
+      {
+        "@type": "WebSite",
+        "url": "https://jujuy.dev.ar/",
+        "name": "JujuyDev",
+        "inLanguage": "es-AR",
+        "publisher": { "@id": "https://jujuy.dev.ar/#org" }
+      },
+      {
+        "@type": "Event",
+        "name": "Meet Up #1 · Primer Meet Up dev Jujuy",
+        "description": "Primer encuentro de la comunidad tech de Jujuy. Sin charlas técnicas ni nivel mínimo: la idea es conocernos. Gratis, cupos limitados.",
+        "image": "https://jujuy.dev.ar/assets/og.jpg",
+        "startDate": "2026-09-03T18:00:00-03:00",
+        "endDate": "2026-09-03T19:30:00-03:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "isAccessibleForFree": true,
+        "location": {
+          "@type": "Place",
+          "name": "Fundación CIDEJ",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Av. 19 de Abril 437, 2do piso",
+            "addressLocality": "San Salvador de Jujuy",
+            "addressRegion": "Jujuy",
+            "addressCountry": "AR"
+          }
+        },
+        "organizer": { "@type": "Organization", "name": "JujuyDev", "url": "https://jujuy.dev.ar/" },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://luma.com/g134i1ef",
+          "price": "0",
+          "priceCurrency": "ARS",
+          "availability": "https://schema.org/LimitedAvailability"
+        }
+      }
+    ]
+  }
+  </script>
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -86,7 +162,7 @@
       <svg class="hero-chakana" aria-hidden="true"><use href="#i-chakana" fill="url(#g-hornocal)"/></svg>
       <p class="eyebrow">{ comunidad(); colaborar(); construir(); innovar(); }</p>
       <h1>El Hub Tech de <span class="grad-text">Jujuy</span></h1>
-      <p class="lead">Conectamos desarrolladores, diseñadores y emprendedores de Jujuy. Impulsamos el talento local con colaboración, aprendizaje y eventos.</p>
+      <p class="lead">Conectamos a programadores, desarrolladores, diseñadores y emprendedores de Jujuy. Impulsamos el talento local con colaboración, aprendizaje y eventos.</p>
       <div class="actions">
         <a class="btn btn-primary" href="https://chat.whatsapp.com/Bj1KKgjcLue2FOVuX8osmq" target="_blank" rel="noopener">Sumate a la comunidad</a>
         <a class="btn btn-ghost" href="#eventos">Ver eventos</a>
@@ -198,7 +274,7 @@
     <div class="container">
       <div class="section-head reveal">
         <p class="eyebrow">// eventos</p>
-        <h2>Próximos eventos</h2>
+        <h2>Próximos eventos tech en Jujuy</h2>
         <p>Meetups, talleres y hackatones. Presenciales en Jujuy y, a veces, online.</p>
       </div>
       <!-- EDIT: events live here. Copy the first card to add one, delete a card to remove it. Keep the ghost card last. -->
@@ -232,7 +308,9 @@
         <div class="logo-slot filled">
           <span class="brand"><img src="assets/logos/cidej.webp" alt="" width="40" height="40"><span>Fundación CIDEJ</span></span>
         </div>
-        <div class="logo-slot">tu logo acá</div>
+        <a class="logo-slot filled" href="https://salta.dev" target="_blank" rel="noopener" style="--brand-color: #b8362f">
+          <span class="brand"><img src="assets/logos/saltadev.webp" alt="" width="40" height="40"><span>SaltaDev</span></span>
+        </a>
         <div class="logo-slot">tu logo acá</div>
         <div class="logo-slot">tu logo acá</div>
         <div class="logo-slot">tu logo acá</div>

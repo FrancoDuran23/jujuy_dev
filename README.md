@@ -41,6 +41,11 @@ assets/hero-mobile.webp        ilustración del hero en celulares, optimizada
 assets/hero-source.png         original en alta resolución (desktop)
 assets/hero-mobile-source.png  original en alta resolución (celulares)
 assets/favicon.svg      ícono de la pestaña (chakana)
+assets/og.jpg           imagen de vista previa para WhatsApp, LinkedIn y X
+assets/logos/           logos de colaboradores
+robots.txt              permite indexar y apunta al sitemap
+sitemap.xml             lista de páginas para Google
+CNAME                   dominio del sitio
 CONTRIBUTING.md         cómo mandar un PR
 CODE_OF_CONDUCT.md      normas de la comunidad
 LICENSE                 MIT
