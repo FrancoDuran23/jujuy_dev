@@ -36,8 +36,10 @@ Si en algún momento se consigue el dominio `jujuy.dev.ar`, se agrega en **Setti
 ```
 index.html              la página completa
 styles.css              estilos y paleta
-assets/hero.webp        ilustración del hero, optimizada
-assets/hero-source.png  ilustración original en alta resolución
+assets/hero.webp               ilustración del hero en desktop, optimizada
+assets/hero-mobile.webp        ilustración del hero en celulares, optimizada
+assets/hero-source.png         original en alta resolución (desktop)
+assets/hero-mobile-source.png  original en alta resolución (celulares)
 assets/favicon.svg      ícono de la pestaña (chakana)
 CONTRIBUTING.md         cómo mandar un PR
 CODE_OF_CONDUCT.md      normas de la comunidad
