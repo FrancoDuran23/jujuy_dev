@@ -644,18 +644,21 @@ p {
 /* Isotype + wordmark for collaborators that only have an icon. */
 .logo-slot .brand {
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   font-family: var(--font-sans);
   font-weight: 700;
-  font-size: 1.35rem;
-  letter-spacing: -0.02em;
+  font-size: 0.95rem;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-align: center;
   color: #6b2a9e;
 }
 
 .logo-slot .brand img {
-  height: 44px;
-  width: 44px;
+  height: 40px;
+  width: 40px;
 }
 
 .sr-only {
