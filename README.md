@@ -2,7 +2,7 @@
 
 Landing de la comunidad tech de Jujuy. HTML y CSS puro: sin frameworks, sin build, sin base de datos, sin dependencias que instalar.
 
-Sitio publicado: https://francoduran23.github.io/jujuy_dev/
+Sitio publicado: https://jujuy.dev.ar/
 
 ## Ver el sitio en tu máquina
 
@@ -29,7 +29,7 @@ Todo vive en `index.html`. Buscá los comentarios que dicen `EDIT` para encontra
 
 El sitio se publica solo con GitHub Pages desde la rama `main`. Cada merge a `main` actualiza la página en un minuto.
 
-Si en algún momento se consigue el dominio `jujuy.dev.ar`, se agrega en **Settings → Pages → Custom domain** y listo.
+El dominio `jujuy.dev.ar` está definido en el archivo `CNAME`. El DNS se administra desde el panel de dev.ar y apunta a `francoduran23.github.io`. No lo toques salvo que sepas lo que hacés.
 
 ## Archivos
 
