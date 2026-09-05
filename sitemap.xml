@@ -2,6 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://jujuy.dev.ar/</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-05</lastmod>
+  </url>
+  <url>
+    <loc>https://jujuy.dev.ar/eventos/</loc>
+    <lastmod>2026-09-05</lastmod>
+  </url>
+  <url>
+    <loc>https://jujuy.dev.ar/eventos/meetup-01-primer-encuentro/</loc>
+    <lastmod>2026-09-05</lastmod>
+  </url>
+  <url>
+    <loc>https://jujuy.dev.ar/comunidad/</loc>
+    <lastmod>2026-09-05</lastmod>
+  </url>
+  <url>
+    <loc>https://jujuy.dev.ar/faq/</loc>
+    <lastmod>2026-09-05</lastmod>
   </url>
 </urlset>
