@@ -352,14 +352,6 @@ p {
   color: var(--ink-2);
 }
 
-/* Hard facts for search engines and AI crawlers, right under the marketing lead. */
-.hero .facts {
-  max-width: 600px;
-  margin: 1rem auto 0;
-  font-size: clamp(0.9rem, 1.3vw, 1rem);
-  color: var(--ink-3);
-}
-
 .hero .actions {
   display: flex;
   flex-wrap: wrap;
@@ -378,11 +370,21 @@ p {
   border-bottom: 1px solid var(--cream-3);
 }
 
+/* Hard facts for search engines and AI crawlers, ahead of the numbers below. */
+.stats .facts {
+  max-width: 640px;
+  margin: 0 auto;
+  padding-top: 2.2rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--ink-2);
+}
+
 .stats-inner {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  padding: 2.4rem 0;
+  padding: 1.6rem 0 2.4rem;
   text-align: center;
 }
 
