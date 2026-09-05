@@ -352,6 +352,14 @@ p {
   color: var(--ink-2);
 }
 
+/* Hard facts for search engines and AI crawlers, right under the marketing lead. */
+.hero .facts {
+  max-width: 600px;
+  margin: 1rem auto 0;
+  font-size: clamp(0.9rem, 1.3vw, 1rem);
+  color: var(--ink-3);
+}
+
 .hero .actions {
   display: flex;
   flex-wrap: wrap;
