@@ -28,6 +28,42 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css?v=2026-09-05">
+
+  <!-- Structured data for Google. organizer references the Organization defined on the home page. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "@id": "https://jujuy.dev.ar/eventos/meetup-01-primer-encuentro/#event",
+    "name": "Meet Up #1 · Primer Meet Up dev Jujuy",
+    "description": "Primer encuentro de la comunidad tech de Jujuy. Sin charlas técnicas ni nivel mínimo: la idea es conocernos. Gratis, cupos limitados.",
+    "image": "https://jujuy.dev.ar/assets/og.jpg",
+    "startDate": "2026-09-03T18:00:00-03:00",
+    "endDate": "2026-09-03T19:30:00-03:00",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "isAccessibleForFree": true,
+    "location": {
+      "@type": "Place",
+      "name": "Fundación CIDEJ",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. 19 de Abril 437, 2do piso",
+        "addressLocality": "San Salvador de Jujuy",
+        "addressRegion": "Jujuy",
+        "addressCountry": "AR"
+      }
+    },
+    "organizer": { "@id": "https://jujuy.dev.ar/#org" },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://luma.com/g134i1ef",
+      "price": "0",
+      "priceCurrency": "ARS",
+      "availability": "https://schema.org/LimitedAvailability"
+    }
+  }
+  </script>
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>

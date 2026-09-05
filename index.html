@@ -29,7 +29,9 @@
   <link rel="preload" as="image" href="assets/hero.webp" media="(min-width: 761px)">
   <link rel="preload" as="image" href="assets/hero-mobile.webp" media="(max-width: 760px)">
 
-  <!-- Structured data for Google. EDIT: update the Event block whenever a new event is scheduled. -->
+  <!-- Structured data for Google. The Organization here is the canonical #org referenced
+       by @id from the event pages and the FAQ page. Event schema itself lives on each
+       event's own page (see /eventos/*/), not here. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -38,16 +40,31 @@
         "@type": "Organization",
         "@id": "https://jujuy.dev.ar/#org",
         "name": "JujuyDev",
-        "alternateName": "jujuy.dev",
+        "alternateName": ["jujuy.dev", "Jujuy Dev", "Comunidad de desarrolladores de Jujuy"],
         "url": "https://jujuy.dev.ar/",
         "logo": "https://jujuy.dev.ar/assets/favicon.svg",
         "email": "jujuydev@gmail.com",
         "description": "Comunidad de programadores, desarrolladores y emprendedores tech de Jujuy, Argentina.",
+        "foundingDate": "2026-09-02",
         "areaServed": { "@type": "AdministrativeArea", "name": "Jujuy, Argentina" },
+        "location": {
+          "@type": "Place",
+          "name": "Fundación CIDEJ",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Av. 19 de Abril 437",
+            "addressLocality": "San Salvador de Jujuy",
+            "addressRegion": "Jujuy",
+            "postalCode": "4600",
+            "addressCountry": "AR"
+          }
+        },
         "sameAs": [
           "https://www.instagram.com/jujuy.dev/",
           "https://x.com/JujuyDevAr",
-          "https://github.com/FrancoDuran23/jujuy_dev"
+          "https://github.com/FrancoDuran23/jujuy_dev",
+          "https://luma.com/g134i1ef",
+          "https://chat.whatsapp.com/Bj1KKgjcLue2FOVuX8osmq"
         ],
         "founder": { "@type": "Person", "name": "Franco Duran", "url": "https://www.linkedin.com/in/francoduran23/" }
       },
@@ -57,36 +74,6 @@
         "name": "JujuyDev",
         "inLanguage": "es-AR",
         "publisher": { "@id": "https://jujuy.dev.ar/#org" }
-      },
-      {
-        "@type": "Event",
-        "name": "Meet Up #1 · Primer Meet Up dev Jujuy",
-        "description": "Primer encuentro de la comunidad tech de Jujuy. Sin charlas técnicas ni nivel mínimo: la idea es conocernos. Gratis, cupos limitados.",
-        "image": "https://jujuy.dev.ar/assets/og.jpg",
-        "startDate": "2026-09-03T18:00:00-03:00",
-        "endDate": "2026-09-03T19:30:00-03:00",
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "isAccessibleForFree": true,
-        "location": {
-          "@type": "Place",
-          "name": "Fundación CIDEJ",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Av. 19 de Abril 437, 2do piso",
-            "addressLocality": "San Salvador de Jujuy",
-            "addressRegion": "Jujuy",
-            "addressCountry": "AR"
-          }
-        },
-        "organizer": { "@type": "Organization", "name": "JujuyDev", "url": "https://jujuy.dev.ar/" },
-        "offers": {
-          "@type": "Offer",
-          "url": "https://luma.com/g134i1ef",
-          "price": "0",
-          "priceCurrency": "ARS",
-          "availability": "https://schema.org/LimitedAvailability"
-        }
       }
     ]
   }
