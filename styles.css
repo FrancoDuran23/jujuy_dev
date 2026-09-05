@@ -1067,6 +1067,62 @@ img.avatar {
 }
 
 /* --------------------------------------------------------------------------
+   Standalone pages (eventos, comunidad, faq): no hero, so give the first
+   block enough top padding to clear the fixed nav.
+   -------------------------------------------------------------------------- */
+
+.page-hero {
+  padding: calc(var(--nav-h) + 4rem) 0 1rem;
+}
+
+.page-hero .eyebrow {
+  color: var(--indigo);
+}
+
+.page-hero h1 {
+  font-size: clamp(2.2rem, 5.4vw, 3.4rem);
+  font-weight: 700;
+  margin: 0.4rem 0 1rem;
+}
+
+.page-hero .lead {
+  max-width: 700px;
+  font-size: 1.05rem;
+  color: var(--ink-2);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--purple);
+  margin-bottom: 1.5rem;
+}
+
+/* FAQ */
+.faq-item {
+  max-width: 720px;
+}
+
+.faq-item + .faq-item {
+  margin-top: 2.4rem;
+  padding-top: 2.4rem;
+  border-top: 1px solid var(--cream-3);
+}
+
+.faq-item h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.6rem;
+}
+
+.faq-item p {
+  color: var(--ink-2);
+  font-size: 1rem;
+}
+
+/* --------------------------------------------------------------------------
    Reveal on scroll
    -------------------------------------------------------------------------- */
 
