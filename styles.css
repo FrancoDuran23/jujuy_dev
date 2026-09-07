@@ -176,12 +176,9 @@ p {
 }
 
 .logo-mark {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  padding: 0.2rem 0.5rem;
-  border-radius: 8px;
-  background: var(--grad);
-  color: #fff;
+  width: 34px;
+  height: 24px;
+  flex-shrink: 0;
 }
 
 .nav-links {
@@ -313,7 +310,13 @@ p {
   position: absolute;
   inset: 0;
   z-index: -2;
+  /* WebP first as the universal fallback; browsers that understand image-set()
+     take the AVIF instead, which is about half the bytes on the LCP asset. */
   background: url("assets/hero.webp") center bottom / cover no-repeat;
+  background-image: image-set(
+    url("assets/hero.avif") type("image/avif"),
+    url("assets/hero.webp") type("image/webp")
+  );
 }
 
 /* Soft cream fade so the headline stays legible over the illustration. */
@@ -1322,6 +1325,10 @@ img.avatar {
   /* Portrait version of the illustration for phones: same scene, framed vertically. */
   .hero-bg {
     background-image: url("assets/hero-mobile.webp");
+    background-image: image-set(
+      url("assets/hero-mobile.avif") type("image/avif"),
+      url("assets/hero-mobile.webp") type("image/webp")
+    );
   }
 
   .hero-fade {

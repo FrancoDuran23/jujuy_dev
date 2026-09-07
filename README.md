@@ -41,7 +41,8 @@ assets/hero.webp               ilustración del hero en desktop, optimizada
 assets/hero-mobile.webp        ilustración del hero en celulares, optimizada
 assets/hero-source.png         original en alta resolución (desktop)
 assets/hero-mobile-source.png  original en alta resolución (celulares)
-assets/favicon.svg      ícono de la pestaña (chakana)
+assets/logo.svg                logo de la marca, en el nav y como ícono de pestaña
+assets/logo-white.svg          variante blanca del logo, para el footer oscuro
 assets/og.jpg           imagen de vista previa para WhatsApp, LinkedIn y X
 assets/logos/           logos de colaboradores
 robots.txt              permite indexar y apunta al sitemap

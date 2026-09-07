@@ -25,9 +25,10 @@
   <meta name="twitter:description" content="Conectamos programadores, diseñadores y emprendedores de Jujuy. Meetups, talleres y eventos gratuitos.">
   <meta name="twitter:image" content="https://jujuy.dev.ar/assets/og.jpg">
 
-  <!-- Hero images are CSS backgrounds, so preload them for a faster first paint. -->
-  <link rel="preload" as="image" href="assets/hero.webp" media="(min-width: 761px)">
-  <link rel="preload" as="image" href="assets/hero-mobile.webp" media="(max-width: 760px)">
+  <!-- Hero images are CSS backgrounds, so preload them for a faster first paint.
+       AVIF only: browsers without AVIF skip these and pick up the WebP from the stylesheet. -->
+  <link rel="preload" as="image" type="image/avif" href="assets/hero.avif" media="(min-width: 761px)">
+  <link rel="preload" as="image" type="image/avif" href="assets/hero-mobile.avif" media="(max-width: 760px)">
 
   <!-- Structured data for Google. The Organization here is the canonical #org referenced
        by @id from the event pages and the FAQ page. Event schema itself lives on each
@@ -42,7 +43,7 @@
         "name": "JujuyDev",
         "alternateName": ["jujuy.dev", "Comunidad de desarrolladores de Jujuy"],
         "url": "https://jujuy.dev.ar/",
-        "logo": "https://jujuy.dev.ar/assets/favicon.svg",
+        "logo": "https://jujuy.dev.ar/assets/logo.svg",
         "email": "jujuydev@gmail.com",
         "description": "Comunidad de programadores, desarrolladores y emprendedores tech de Jujuy, Argentina.",
         "foundingDate": "2026-09-02",
@@ -79,12 +80,12 @@
   }
   </script>
 
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <!-- Bump the version whenever styles.css changes, so browsers do not keep a stale copy. -->
-  <link rel="stylesheet" href="styles.css?v=2026-09-07c">
+  <link rel="stylesheet" href="styles.css?v=2026-09-07e">
   <!-- Reveal-on-scroll styles only apply when JS runs, so content is never hidden without it. -->
   <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -127,7 +128,7 @@
   <nav class="nav" aria-label="Principal">
     <div class="container nav-inner">
       <a class="logo" href="#inicio">
-        <span class="logo-mark">&lt;/&gt;</span>
+        <img class="logo-mark" src="/assets/logo.svg" alt="" width="34" height="24">
         <span>jujuy<span class="grad-text">.dev</span></span>
       </a>
       <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
@@ -419,7 +420,7 @@
       <div class="footer-grid">
         <div>
           <a class="logo" href="#inicio">
-            <span class="logo-mark">&lt;/&gt;</span>
+            <img class="logo-mark" src="/assets/logo-white.svg" alt="" width="34" height="24">
             <span>jujuy<span class="grad-text">.dev</span></span>
           </a>
           <p class="footer-tag">Comunidad de tecnología y desarrollo en Jujuy. Impulsando el futuro digital del norte.</p>
