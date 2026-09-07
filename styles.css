@@ -1108,6 +1108,14 @@ img.avatar {
   color: var(--ink-2);
 }
 
+.page-hero-center {
+  text-align: center;
+}
+
+.page-hero-center .lead {
+  margin-inline: auto;
+}
+
 .back-link {
   display: inline-flex;
   align-items: center;
