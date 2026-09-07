@@ -105,9 +105,16 @@ p {
 
 .grad-text {
   background: var(--grad);
+  background-size: 220% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  animation: grad-shimmer 9s ease-in-out infinite;
+}
+
+@keyframes grad-shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
 .grad-bar {
@@ -299,7 +306,7 @@ p {
   overflow: hidden;
   min-height: 100svh;
   padding-top: calc(var(--nav-h) + 5rem);
-  padding-bottom: 44vh;
+  padding-bottom: 3rem;
 }
 
 .hero-bg {
@@ -332,6 +339,12 @@ p {
   width: 44px;
   height: 44px;
   margin: 0 auto 1.4rem;
+  animation: chakana-float 4s ease-in-out infinite;
+}
+
+@keyframes chakana-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
 .hero .eyebrow {
@@ -1057,9 +1070,24 @@ img.avatar {
    -------------------------------------------------------------------------- */
 
 .footer {
+  position: relative;
   padding: 4rem 0 2rem;
   background: var(--ink);
   color: rgba(255, 255, 255, 0.72);
+}
+
+/* Same halftone motif as the light sections, echoed faintly in white. */
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1.4px);
+  background-size: 14px 14px;
+  pointer-events: none;
+}
+
+.footer .container {
+  position: relative;
 }
 
 .footer-grid {
@@ -1233,6 +1261,11 @@ img.avatar {
     transform: none;
   }
 
+  .grad-text,
+  .hero-chakana {
+    animation: none;
+  }
+
 }
 
 /* --------------------------------------------------------------------------
@@ -1283,7 +1316,7 @@ img.avatar {
 
   .hero {
     padding-top: calc(var(--nav-h) + 2.5rem);
-    padding-bottom: 50vh;
+    padding-bottom: 12vh;
   }
 
   /* Portrait version of the illustration for phones: same scene, framed vertically. */
