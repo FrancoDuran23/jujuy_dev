@@ -789,102 +789,130 @@ img.avatar {
   color: var(--purple);
 }
 
-.people {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
+/* Highlighter-marker swipe behind a keyword, e.g. inside an <h2>/<h3>. Painted
+   as the span's own background (not a z-index trick) so it can't end up
+   hidden behind an ancestor's stacking context. */
+.hl {
+  display: inline-block;
+  padding: 0.05em 0.2em;
+  margin: 0 -0.1em;
+  background: linear-gradient(100deg, #f7cba7 0%, #f2b4bc 60%, #dfabd2 100%);
+  border-radius: 3px;
+  transform: rotate(-1deg);
 }
 
-.person-chip {
+/* Member wall: a fanned hand of cards, like a deck being spread. Only real,
+   confirmed members get a filled card; the rest stay dashed and empty. */
+.member-wall {
   position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem 1.1rem 1rem 1.4rem;
-  border: 1px solid var(--cream-3);
+  height: 300px;
+  margin-top: 3rem;
+}
+
+.member-card {
+  position: absolute;
+  top: 30px;
+  width: 148px;
+  height: 190px;
   border-radius: 16px;
   background: var(--paper);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-
-.person-chip::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: var(--grad);
-}
-
-.person-chip:hover {
-  transform: translateY(-3px);
+  border: 1px solid var(--cream-3);
   box-shadow: var(--shadow);
-  border-color: transparent;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  transform-origin: bottom center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.person-chip img {
-  flex-shrink: 0;
-  width: 56px;
-  height: 56px;
+.member-card:hover {
+  transform: translateY(-6px) rotate(0deg) !important;
+  box-shadow: var(--shadow);
+  z-index: 9 !important;
+}
+
+.member-card img {
+  width: 84px;
+  height: 84px;
   border-radius: 50%;
   object-fit: cover;
   padding: 3px;
   background: var(--grad);
 }
 
-.person-chip .who {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  min-width: 0;
-}
-
-.person-chip .name {
+.member-card .name {
   font-weight: 700;
-  font-size: 1.02rem;
+  font-size: 0.88rem;
+  text-align: center;
   line-height: 1.2;
 }
 
-.person-chip .title {
+.member-card .role {
   font-family: var(--font-mono);
-  font-size: 0.74rem;
+  font-size: 0.68rem;
   color: var(--ink-3);
+  text-align: center;
 }
 
-.person-chip .go {
-  flex-shrink: 0;
-  width: 18px;
-  height: 18px;
-  margin-left: auto;
-  fill: currentColor;
-  color: var(--ink-3);
-  transition: color 0.2s ease;
-}
-
-.person-chip:hover .go {
-  color: var(--purple);
-}
-
-.person-chip.ghost {
+.member-card.empty {
+  align-items: center;
   justify-content: center;
-  padding: 1rem 1.1rem;
   border-style: dashed;
-  background: rgba(255, 251, 250, 0.5);
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
+  background: rgba(255, 251, 250, 0.55);
+  box-shadow: none;
+}
+
+.member-card.empty svg {
+  width: 32px;
+  height: 32px;
   color: var(--ink-3);
+  opacity: 0.55;
+  fill: currentColor;
 }
 
-.person-chip.ghost::before {
-  display: none;
+.member-card.empty span {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  color: var(--ink-3);
+  text-align: center;
+  margin-top: 6px;
 }
 
-.person-chip.ghost:hover {
-  color: var(--purple);
+.member-card.empty:hover {
   border-color: var(--purple);
+}
+
+.member-card.empty:hover svg,
+.member-card.empty:hover span {
+  color: var(--purple);
+  opacity: 0.85;
+}
+
+/* Fixed fan positions for 6 cards: rotation and lift grow away from the middle. */
+.member-card:nth-child(1) { left: 0%;   transform: rotate(-18deg) translateY(28px); z-index: 1; }
+.member-card:nth-child(2) { left: 17%;  transform: rotate(-9deg)  translateY(4px);  z-index: 2; }
+.member-card:nth-child(3) { left: 34%;  transform: rotate(-2deg)  translateY(-8px); z-index: 4; }
+.member-card:nth-child(4) { left: 51%;  transform: rotate(4deg)   translateY(-8px); z-index: 4; }
+.member-card:nth-child(5) { left: 68%;  transform: rotate(11deg)  translateY(4px);  z-index: 2; }
+.member-card:nth-child(6) { left: 85%;  transform: rotate(19deg)  translateY(28px); z-index: 1; }
+
+@media (max-width: 760px) {
+  .member-wall {
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .member-card {
+    position: static;
+    transform: none !important;
+    margin: 0;
+  }
 }
 
 .person .role {
