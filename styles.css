@@ -644,10 +644,17 @@ p {
 }
 
 /* Collaborators */
+/* Only real, confirmed logos live here — sized to content and centered,
+   so the row looks right whether there are 3 logos or 12. */
 .logos {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
+}
+
+.logos .logo-slot {
+  flex: 0 1 190px;
 }
 
 .logo-slot {
@@ -1180,9 +1187,6 @@ img.avatar {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .logos {
-    grid-template-columns: repeat(3, 1fr);
-  }
 
   .footer-grid {
     grid-template-columns: 1fr 1fr;
@@ -1313,9 +1317,6 @@ img.avatar {
     grid-template-columns: 1fr;
   }
 
-  .logos {
-    grid-template-columns: repeat(2, 1fr);
-  }
 
   .footer-grid {
     grid-template-columns: 1fr;
