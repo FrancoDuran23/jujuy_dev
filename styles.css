@@ -176,12 +176,9 @@ p {
 }
 
 .logo-mark {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  padding: 0.2rem 0.5rem;
-  border-radius: 8px;
-  background: var(--grad);
-  color: #fff;
+  width: 34px;
+  height: 24px;
+  flex-shrink: 0;
 }
 
 .nav-links {
