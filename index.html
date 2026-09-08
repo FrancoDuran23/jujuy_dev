@@ -302,19 +302,23 @@
         <p>Empresas, universidades y comunidades que apoyan el ecosistema tech de Jujuy.</p>
       </div>
       <!-- EDIT: to add a collaborator, copy the CIDEJ slot. Logos go in assets/logos/, ideally SVG or WebP under 50 KB. No empty placeholders here on purpose: the CTA below already invites people to join. -->
-      <div class="logos reveal">
-        <div class="logo-slot filled">
-          <span class="brand"><img src="assets/logos/cidej.webp" alt="" width="40" height="40"><span>Fundación CIDEJ</span></span>
+      <div class="logos-marquee reveal">
+        <div class="logos-track">
+          <div class="logos-set">
+            <div class="logo-slot filled">
+              <span class="brand"><img src="assets/logos/cidej.webp" alt="" width="40" height="40"><span>Fundación CIDEJ</span></span>
+            </div>
+            <a class="logo-slot filled" href="https://salta.dev" target="_blank" rel="noopener" style="--brand-color: #b8362f">
+              <span class="brand"><img src="assets/logos/saltadev.webp" alt="" width="40" height="40"><span>SaltaDev</span></span>
+            </a>
+            <a class="logo-slot filled" href="https://cuyoconnect.com/" target="_blank" rel="noopener" style="--brand-color: #2f7d4f">
+              <span class="brand"><img src="assets/logos/cuyoconnect.webp" alt="" width="40" height="40"><span>CuyoConnect</span></span>
+            </a>
+            <a class="logo-slot filled" href="https://crecimiento.build/" target="_blank" rel="noopener" style="--brand-color: #c98a1a">
+              <span class="brand"><img src="assets/logos/crecimientoar.webp" alt="" width="40" height="40"><span>CrecimientoAR</span></span>
+            </a>
+          </div>
         </div>
-        <a class="logo-slot filled" href="https://salta.dev" target="_blank" rel="noopener" style="--brand-color: #b8362f">
-          <span class="brand"><img src="assets/logos/saltadev.webp" alt="" width="40" height="40"><span>SaltaDev</span></span>
-        </a>
-        <a class="logo-slot filled" href="https://cuyoconnect.com/" target="_blank" rel="noopener" style="--brand-color: #2f7d4f">
-          <span class="brand"><img src="assets/logos/cuyoconnect.webp" alt="" width="40" height="40"><span>CuyoConnect</span></span>
-        </a>
-        <a class="logo-slot filled" href="https://crecimiento.build/" target="_blank" rel="noopener" style="--brand-color: #c98a1a">
-          <span class="brand"><img src="assets/logos/crecimientoar.webp" alt="" width="40" height="40"><span>CrecimientoAR</span></span>
-        </a>
       </div>
       <div class="collab-cta reveal">
         <div>
@@ -340,9 +344,10 @@
           <span class="name">Maximiliano Farfán</span>
           <span class="role">Estudiante de Ing. Informática</span>
         </a>
-        <a class="member-card empty" href="https://github.com/FrancoDuran23/jujuy_dev/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">
-          <svg aria-hidden="true"><use href="#i-chakana"/></svg>
-          <span>tu lugar acá</span>
+        <a class="member-card filled" href="https://github.com/ignaMartin22" target="_blank" rel="noopener">
+          <img src="https://github.com/ignaMartin22.png" alt="" width="84" height="84" loading="lazy">
+          <span class="name">Ignacio Martín</span>
+          <span class="role">Full-Stack Developer</span>
         </a>
         <a class="member-card empty" href="https://github.com/FrancoDuran23/jujuy_dev/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">
           <svg aria-hidden="true"><use href="#i-chakana"/></svg>
@@ -497,6 +502,20 @@
       }
 
       document.getElementById('year').textContent = new Date().getFullYear();
+
+      var track = document.querySelector('.logos-track');
+      var seed = track && track.querySelector('.logos-set');
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (track && seed && !reduceMotion) {
+        for (var i = 0; i < 5; i++) {
+          var clone = seed.cloneNode(true);
+          clone.setAttribute('aria-hidden', 'true');
+          clone.querySelectorAll('a').forEach(function (link) {
+            link.setAttribute('tabindex', '-1');
+          });
+          track.appendChild(clone);
+        }
+      }
     })();
   </script>
 </body>

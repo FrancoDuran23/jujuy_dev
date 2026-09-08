@@ -660,17 +660,67 @@ p {
 }
 
 /* Collaborators */
-/* Only real, confirmed logos live here — sized to content and centered,
-   so the row looks right whether there are 3 logos or 12. */
-.logos {
+/* Infinite marquee: six identical sets so half the track is always wider
+   than the viewport and the loop can restart without a visible jump. */
+.logos-marquee {
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  margin-inline: 0;
+  border-radius: var(--radius);
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 4%,
+    #000 96%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 4%,
+    #000 96%,
+    transparent 100%
+  );
+}
+
+.logos-track {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
 }
 
-.logos .logo-slot {
-  flex: 0 1 190px;
+.logos-track:has(.logos-set:nth-child(2)) {
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  width: max-content;
+  animation: logos-marquee 42s linear infinite;
+}
+
+.logos-marquee:hover .logos-track,
+.logos-marquee:focus-within .logos-track {
+  animation-play-state: paused;
+}
+
+.logos-set {
+  display: flex;
+  flex-shrink: 0;
+  gap: 1rem;
+}
+
+.logos-set .logo-slot {
+  flex: 0 0 190px;
+  width: 190px;
+}
+
+@keyframes logos-marquee {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 .logo-slot {
@@ -1267,6 +1317,27 @@ img.avatar {
   .grad-text,
   .hero-chakana {
     animation: none;
+  }
+
+  .logos-marquee {
+    width: auto;
+    max-width: none;
+    margin-inline: 0;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .logos-track,
+  .logos-track:has(.logos-set:nth-child(2)) {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+    transform: none;
+  }
+
+  .logos-set[aria-hidden="true"] {
+    display: none;
   }
 
 }
