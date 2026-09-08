@@ -186,7 +186,7 @@ p {
 
 .nav-links {
   display: flex;
-  gap: clamp(0.85rem, 1.3vw, 1.6rem);
+  gap: 1.6rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1708,7 +1708,6 @@ img.avatar {
   .nav.open .nav-links li:nth-child(4) { transition-delay: 0.09s; }
   .nav.open .nav-links li:nth-child(5) { transition-delay: 0.12s; }
   .nav.open .nav-links li:nth-child(6) { transition-delay: 0.15s; }
-  .nav.open .nav-links li:nth-child(7) { transition-delay: 0.18s; }
 
   .nav-links a {
     display: block;
