@@ -1490,6 +1490,43 @@ img.avatar {
   font-size: 1rem;
 }
 
+/* Código de conducta */
+.conduct-section {
+  padding-top: 1.5rem;
+}
+
+.conduct-grid {
+  gap: 0.95rem;
+}
+
+.conduct-list {
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.conduct-list li {
+  position: relative;
+  padding-left: 1.35rem;
+  color: var(--ink-2);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.conduct-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent, var(--purple));
+}
+
 /* --------------------------------------------------------------------------
    Reveal on scroll
    -------------------------------------------------------------------------- */
