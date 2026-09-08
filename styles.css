@@ -16,6 +16,9 @@
 
   --orange: #ee8b3c;
   --coral: #e2596a;
+  /* Flat accent for labels and badges — the one colour that isn't part of the
+     Hornocal gradient, so it still pops next to it. */
+  --rose: #ef3962;
   --magenta: #b7459a;
   --purple: #7c3fae;
   --indigo: #4c40bc;
@@ -301,47 +304,33 @@ p {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  min-height: 100svh;
-  padding-top: calc(var(--nav-h) + 5rem);
-  padding-bottom: 3rem;
+  padding-top: calc(var(--nav-h) + 4.5rem);
+  padding-bottom: 5rem;
 }
 
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  /* WebP first as the universal fallback; browsers that understand image-set()
-     take the AVIF instead, which is about half the bytes on the LCP asset. */
-  background: url("assets/hero.webp") center bottom / cover no-repeat;
-  background-image: image-set(
-    url("assets/hero.avif") type("image/avif"),
-    url("assets/hero.webp") type("image/webp")
-  );
-}
-
-/* Soft cream fade so the headline stays legible over the illustration. */
-.hero-fade {
+/* Ambient colour instead of a full-bleed photo: the headline never sits on top
+   of the illustration any more, so it stays readable at every width. */
+.hero-wash {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(
-    to bottom,
-    var(--cream) 0%,
-    rgba(247, 241, 239, 0.96) 32%,
-    rgba(247, 241, 239, 0.72) 52%,
-    rgba(247, 241, 239, 0) 70%
-  );
+  background:
+    radial-gradient(58% 62% at 82% 18%, rgba(226, 89, 106, 0.16), transparent 70%),
+    radial-gradient(52% 58% at 12% 78%, rgba(63, 125, 216, 0.14), transparent 70%),
+    var(--cream);
 }
 
-.hero-content {
-  max-width: 860px;
-  text-align: center;
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4.5rem);
 }
 
 .hero-chakana {
   width: 44px;
   height: 44px;
-  margin: 0 auto 1.4rem;
+  margin-bottom: 1.2rem;
   animation: chakana-float 4s ease-in-out infinite;
 }
 
@@ -356,24 +345,51 @@ p {
 }
 
 .hero h1 {
-  font-size: clamp(2.6rem, 6.8vw, 5.2rem);
+  font-size: clamp(2.5rem, 5.4vw, 4.4rem);
   font-weight: 700;
   margin: 0.4rem 0 1.3rem;
 }
 
 .hero .lead {
-  max-width: 640px;
-  margin-inline: auto;
-  font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+  max-width: 52ch;
+  font-size: clamp(1.02rem, 1.4vw, 1.2rem);
   color: var(--ink-2);
 }
 
 .hero .actions {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 0.9rem;
   margin-top: 2.2rem;
+}
+
+/* Illustration panel */
+.hero-art {
+  position: relative;
+}
+
+.hero-art::after {
+  content: "";
+  position: absolute;
+  inset: auto -6% -8% -6%;
+  height: 40%;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(38px);
+  opacity: 0.45;
+  background: var(--grad);
+}
+
+.hero-art img {
+  display: block;
+  width: 100%;
+  /* Without this the height="" attribute wins and aspect-ratio never applies. */
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 78%;
+  border-radius: calc(var(--radius) * 1.4);
+  box-shadow: 0 26px 60px -28px rgba(43, 30, 63, 0.5);
 }
 
 /* --------------------------------------------------------------------------
@@ -556,12 +572,27 @@ p {
 }
 
 /* Pillars */
-.pillar .n {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--ink-3);
-  margin-bottom: 1.4rem;
+.pillar .tile {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1.2rem;
+  border-radius: 14px;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+
+.pillar .tile svg {
+  width: 24px;
+  height: 24px;
+}
+
+.card.pillar:hover .tile {
+  transform: rotate(-6deg) scale(1.06);
+  background: var(--accent);
+  color: #fff;
 }
 
 .pillar h3 {
@@ -625,6 +656,184 @@ p {
   font-weight: 400;
   color: var(--ink-2);
   background: rgba(43, 30, 63, 0.07);
+}
+
+/* --------------------------------------------------------------------------
+   Dark section: the events block, night side of the same palette
+   -------------------------------------------------------------------------- */
+
+.section-dark {
+  background: var(--ink);
+  color: rgba(255, 255, 255, 0.74);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1.4px);
+  background-size: 14px 14px;
+}
+
+.section-dark h2 {
+  color: #fff;
+}
+
+.eyebrow.accent {
+  color: var(--rose);
+}
+
+.section-dark .btn-ghost {
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
+  background: transparent;
+}
+
+.section-dark .btn-ghost:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.events-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr auto;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.events-intro h2 {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+}
+
+.events-intro p {
+  margin-bottom: 1.6rem;
+  font-size: 0.98rem;
+}
+
+.events-cards {
+  display: grid;
+  gap: 1rem;
+}
+
+.event-card {
+  display: flex;
+  gap: 1rem;
+  padding: 0.9rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.event-card .shot {
+  position: relative;
+  flex: 0 0 132px;
+  align-self: stretch;
+  border-radius: 11px;
+  overflow: hidden;
+}
+
+.event-card .shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Date chip, the way a calendar tear-off reads: day over month. */
+.event-card .date {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  display: grid;
+  justify-items: center;
+  padding: 4px 8px 5px;
+  border-radius: 9px;
+  background: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.event-card .date b {
+  font-size: 0.92rem;
+  color: #fff;
+}
+
+.event-card .body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+  padding: 0.2rem 0;
+}
+
+.event-card .title {
+  font-weight: 700;
+  font-size: 0.98rem;
+  line-height: 1.25;
+  color: #fff;
+}
+
+.event-card .desc {
+  font-size: 0.87rem;
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.event-card .place {
+  margin-top: auto;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--rose);
+}
+
+.event-card.ghost {
+  border-style: dashed;
+  background: transparent;
+}
+
+.events-sign {
+  align-self: center;
+  text-align: left;
+}
+
+.sign-text {
+  font-weight: 700;
+  font-size: clamp(1.2rem, 2vw, 1.7rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.sign-range {
+  width: 190px;
+  height: 48px;
+  margin-top: 1rem;
+}
+
+@media (max-width: 1080px) {
+  .events-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .events-sign {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .event-card {
+    flex-direction: column;
+  }
+
+  .event-card .shot {
+    flex: none;
+    height: 150px;
+  }
 }
 
 /* Events */
@@ -1309,6 +1518,10 @@ img.avatar {
     transition: none;
   }
 
+  .card.pillar:hover .tile {
+    transform: none;
+  }
+
   .btn:hover,
   .card:hover {
     transform: none;
@@ -1345,6 +1558,20 @@ img.avatar {
 /* --------------------------------------------------------------------------
    Responsive
    -------------------------------------------------------------------------- */
+
+/* Matches the <picture> breakpoint in index.html: below this the hero stacks and
+   the illustration switches to its landscape crop. */
+@media (max-width: 899px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+  }
+
+  .hero-art img {
+    aspect-ratio: 3 / 2;
+    object-position: center 88%;
+  }
+}
 
 @media (max-width: 960px) {
   .grid-4 {
@@ -1390,31 +1617,7 @@ img.avatar {
 
   .hero {
     padding-top: calc(var(--nav-h) + 2.5rem);
-    padding-bottom: 12vh;
-  }
-
-  /* Portrait version of the illustration for phones: same scene, framed vertically. */
-  .hero-bg {
-    background-image: url("assets/hero-mobile.webp");
-    background-image: image-set(
-      url("assets/hero-mobile.avif") type("image/avif"),
-      url("assets/hero-mobile.webp") type("image/webp")
-    );
-  }
-
-  .hero-fade {
-    background: linear-gradient(
-      to bottom,
-      var(--cream) 0%,
-      rgba(247, 241, 239, 0.96) 38%,
-      rgba(247, 241, 239, 0.7) 56%,
-      rgba(247, 241, 239, 0) 72%
-    );
-  }
-
-  /* The portrait illustration already carries its own chakana. */
-  .hero-chakana {
-    display: none;
+    padding-bottom: 3.5rem;
   }
 
   .nav-toggle {

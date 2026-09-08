@@ -25,10 +25,9 @@
   <meta name="twitter:description" content="Conectamos programadores, diseñadores y emprendedores de Jujuy. Meetups, talleres y eventos gratuitos.">
   <meta name="twitter:image" content="https://jujuy.dev.ar/assets/og.jpg">
 
-  <!-- Hero images are CSS backgrounds, so preload them for a faster first paint.
-       AVIF only: browsers without AVIF skip these and pick up the WebP from the stylesheet. -->
-  <link rel="preload" as="image" type="image/avif" href="assets/hero.avif" media="(min-width: 761px)">
-  <link rel="preload" as="image" type="image/avif" href="assets/hero-mobile.avif" media="(max-width: 760px)">
+  <!-- The hero illustration is the LCP element, so preload it. AVIF only: browsers
+       without AVIF skip this and pick up the WebP from the <picture> below. -->
+  <link rel="preload" as="image" type="image/avif" href="assets/hero.avif">
 
   <!-- Structured data for Google. The Organization here is the canonical #org referenced
        by @id from the event pages and the FAQ page. Event schema itself lives on each
@@ -85,7 +84,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <!-- Bump the version whenever styles.css changes, so browsers do not keep a stale copy. -->
-  <link rel="stylesheet" href="styles.css?v=2026-09-07e">
+  <link rel="stylesheet" href="styles.css?v=2026-09-08d">
   <!-- Reveal-on-scroll styles only apply when JS runs, so content is never hidden without it. -->
   <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -104,6 +103,35 @@
     </defs>
     <symbol id="i-chakana" viewBox="0 0 100 100">
       <path fill-rule="evenodd" d="M40 8h20v14h14v14h14v28H74v14H60v14H40V78H26V64H12V36h14V22h14zM50 38l12 12-12 12-12-12z"/>
+    </symbol>
+    <symbol id="i-users" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="9" cy="8" r="3.2"/>
+        <path d="M3.5 20a5.5 5.5 0 0 1 11 0"/>
+        <path d="M16.5 5.4a3.2 3.2 0 0 1 0 5.2M17 14.9a5.5 5.5 0 0 1 3.5 5.1"/>
+      </g>
+    </symbol>
+    <symbol id="i-merge" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="6.5" cy="5" r="2.5"/>
+        <circle cx="6.5" cy="19" r="2.5"/>
+        <circle cx="17.5" cy="12" r="2.5"/>
+        <path d="M6.5 7.5v9"/>
+        <path d="M15 12h-2.2a4 4 0 0 1-4-4M15 12h-2.2a4 4 0 0 0-4 4"/>
+      </g>
+    </symbol>
+    <symbol id="i-blocks" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="13" width="8" height="8" rx="1.6"/>
+        <rect x="13" y="13" width="8" height="8" rx="1.6"/>
+        <rect x="8" y="3" width="8" height="8" rx="1.6"/>
+      </g>
+    </symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M11 2.5 13.1 8.2 18.8 10.3 13.1 12.4 11 18.1 8.9 12.4 3.2 10.3 8.9 8.2Z"/>
+        <path d="M18 15.5 18.8 17.7 21 18.5 18.8 19.3 18 21.5 17.2 19.3 15 18.5 17.2 17.7Z"/>
+      </g>
     </symbol>
     <symbol id="i-discord" viewBox="0 0 24 24">
       <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/>
@@ -151,16 +179,23 @@
   </nav>
 
   <header class="hero" id="inicio">
-    <div class="hero-bg" aria-hidden="true"></div>
-    <div class="hero-fade" aria-hidden="true"></div>
-    <div class="container hero-content">
-      <svg class="hero-chakana" aria-hidden="true"><use href="#i-chakana" fill="url(#g-hornocal)"/></svg>
-      <p class="eyebrow">{ comunidad(); colaborar(); construir(); innovar(); }</p>
-      <h1>El Hub Tech de <span class="grad-text">Jujuy</span></h1>
-      <p class="lead">Conectamos a programadores, desarrolladores, diseñadores y emprendedores de Jujuy. Impulsamos el talento local con colaboración, aprendizaje y eventos.</p>
-      <div class="actions">
-        <a class="btn btn-primary" href="https://chat.whatsapp.com/Bj1KKgjcLue2FOVuX8osmq" target="_blank" rel="noopener">Sumate a la comunidad</a>
-        <a class="btn btn-ghost" href="#eventos">Ver eventos</a>
+    <div class="hero-wash" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <svg class="hero-chakana" aria-hidden="true"><use href="#i-chakana" fill="url(#g-hornocal)"/></svg>
+        <p class="eyebrow">{ comunidad(); colaborar(); construir(); innovar(); }</p>
+        <h1>El Hub Tech de <span class="grad-text">Jujuy</span></h1>
+        <p class="lead">Conectamos a programadores, desarrolladores, diseñadores y emprendedores de Jujuy. Impulsamos el talento local con colaboración, aprendizaje y eventos.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://chat.whatsapp.com/Bj1KKgjcLue2FOVuX8osmq" target="_blank" rel="noopener">Sumate a la comunidad</a>
+          <a class="btn btn-ghost" href="#eventos">Ver eventos</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <picture>
+          <source type="image/avif" srcset="assets/hero.avif">
+          <img src="assets/hero.webp" alt="Ilustración de los cerros de Jujuy con los colores del Hornocal, una llama y una notebook" width="864" height="1821" fetchpriority="high">
+        </picture>
       </div>
     </div>
   </header>
@@ -194,22 +229,22 @@
       </div>
       <div class="grid grid-4">
         <article class="card pillar reveal" style="--accent: var(--orange)">
-          <span class="n">01</span>
+          <span class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-users"/></svg></span>
           <h3>comunidad();</h3>
           <p>Un lugar para conocer gente que hace lo mismo que vos, preguntar sin vergüenza y crecer en grupo.</p>
         </article>
-        <article class="card pillar reveal" style="--accent: var(--coral)">
-          <span class="n">02</span>
+        <article class="card pillar reveal" style="--accent: var(--rose)">
+          <span class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-merge"/></svg></span>
           <h3>colaborar();</h3>
           <p>Proyectos open source, mentorías y ayuda entre pares. Acá nadie aprende solo.</p>
         </article>
         <article class="card pillar reveal" style="--accent: var(--purple)">
-          <span class="n">03</span>
+          <span class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-blocks"/></svg></span>
           <h3>construir();</h3>
           <p>Hackatones, talleres y charlas para pasar de la idea al producto que funciona.</p>
         </article>
         <article class="card pillar reveal" style="--accent: var(--blue)">
-          <span class="n">04</span>
+          <span class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark"/></svg></span>
           <h3>innovar();</h3>
           <p>Traemos lo nuevo a Jujuy: IA, web, cloud, datos y lo que venga después.</p>
         </article>
@@ -267,30 +302,43 @@
     </div>
   </section>
 
-  <section class="section" id="eventos">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="eyebrow">// eventos</p>
-        <h2>Eventos tech en Jujuy</h2>
-        <p>Meetups, talleres y hackatones. Presenciales en Jujuy y, a veces, online.</p>
+  <section class="section section-dark" id="eventos">
+    <div class="container events-layout">
+      <div class="events-intro reveal">
+        <p class="eyebrow accent">// eventos</p>
+        <h2>Charlas, talleres y <span class="grad-text">más comunidad</span></h2>
+        <p>No te pierdas lo que se viene. Sumate, aprendé y conocé a otras personas de la comunidad tech de Jujuy.</p>
+        <a class="btn btn-ghost btn-sm" href="/eventos/">Ver todos los eventos →</a>
       </div>
-      <!-- EDIT: events live here. Copy the first card to add one, delete a card to remove it. Keep the ghost card last. -->
-      <div class="grid grid-2">
-        <article class="card event reveal">
-          <span class="when">Ya pasó · 3 de septiembre de 2026</span>
-          <h3>Meet Up #1 · Primer Meet Up dev Jujuy</h3>
-          <p>Arrancamos con todo: 51 personas se sumaron al primer encuentro para conocerse, contar en qué andan y empezar a mover el ecosistema tech de Jujuy. Sin charlas técnicas ni nivel mínimo, solo buena onda y ganas de construir algo juntos.</p>
-          <span class="meta">📍 Fundación CIDEJ · Av. 19 de Abril 437, 2do piso · San Salvador de Jujuy</span>
-          <a class="btn btn-primary btn-sm" href="/eventos/meetup-01-primer-encuentro/">Ver cómo fue →</a>
-        </article>
-        <article class="card event ghost reveal">
-          <span class="when">Próximo evento</span>
-          <h3>¿Tenés una idea para el que sigue?</h3>
-          <p>Charlas, talleres, hackatones o una juntada para tomar algo. Si querés organizar o dar una charla, contanos.</p>
-          <a class="btn btn-ghost btn-sm" href="mailto:jujuydev@gmail.com?subject=Propuesta%20de%20evento%20para%20JujuyDev">Proponer un evento</a>
-        </article>
+
+      <!-- EDIT: events live here. Copy the first card to add one; keep the ghost card last. -->
+      <div class="events-cards">
+        <a class="event-card reveal" href="/eventos/meetup-01-primer-encuentro/">
+          <span class="shot">
+            <img src="assets/eventos/meetup-01-grupo.webp" alt="" width="1600" height="1200" loading="lazy">
+            <span class="date"><b>03</b>SEP</span>
+          </span>
+          <span class="body">
+            <span class="title">Meet Up #1 · Primer Meet Up dev Jujuy</span>
+            <span class="desc">51 personas en el primer encuentro de la comunidad. Mirá cómo fue.</span>
+            <span class="place">📍 Fundación CIDEJ · San Salvador de Jujuy</span>
+          </span>
+        </a>
+        <a class="event-card ghost reveal" href="mailto:jujuydev@gmail.com?subject=Propuesta%20de%20evento%20para%20JujuyDev">
+          <span class="body">
+            <span class="title">¿Tenés una idea para el que sigue?</span>
+            <span class="desc">Charlas, talleres, hackatones o una juntada para tomar algo. Si querés organizar o dar una charla, contanos.</span>
+            <span class="place">Proponer un evento →</span>
+          </span>
+        </a>
       </div>
-      <p class="section-foot reveal"><a href="/eventos/">Ver todos los eventos →</a></p>
+
+      <div class="events-sign reveal" aria-hidden="true">
+        <p class="sign-text">JUNTOS<br>HACEMOS<br>MÁS_</p>
+        <svg class="sign-range" viewBox="0 0 240 60" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 52 46 24 72 40 104 12 138 44 166 28 196 46 236 20" stroke="url(#g-hornocal)" stroke-width="3"/>
+        </svg>
+      </div>
     </div>
   </section>
 
