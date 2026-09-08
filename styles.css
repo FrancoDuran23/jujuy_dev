@@ -304,8 +304,8 @@ p {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding-top: calc(var(--nav-h) + 4.5rem);
-  padding-bottom: 5rem;
+  padding-top: calc(var(--nav-h) + 2.5rem);
+  padding-bottom: 3.5rem;
 }
 
 /* Ambient colour instead of a full-bleed photo: the headline never sits on top
@@ -322,9 +322,9 @@ p {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: 1.15fr 0.85fr;
   align-items: center;
-  gap: clamp(2rem, 5vw, 4.5rem);
+  gap: clamp(2rem, 4vw, 3.5rem);
 }
 
 .hero-chakana {
@@ -345,14 +345,14 @@ p {
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 5.4vw, 4.4rem);
+  font-size: clamp(2.3rem, 4vw, 3.4rem);
   font-weight: 700;
-  margin: 0.4rem 0 1.3rem;
+  margin: 0.4rem 0 1.1rem;
 }
 
 .hero .lead {
-  max-width: 52ch;
-  font-size: clamp(1.02rem, 1.4vw, 1.2rem);
+  max-width: 48ch;
+  font-size: clamp(1rem, 1.15vw, 1.1rem);
   color: var(--ink-2);
 }
 
@@ -360,12 +360,15 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 0.9rem;
-  margin-top: 2.2rem;
+  margin-top: 1.8rem;
 }
 
-/* Illustration panel */
+/* Illustration panel. Capped so the whole hero — headline, copy and both
+   buttons — still fits on a laptop screen without scrolling. */
 .hero-art {
   position: relative;
+  max-width: 420px;
+  margin-inline: auto;
 }
 
 .hero-art::after {
@@ -386,6 +389,7 @@ p {
   /* Without this the height="" attribute wins and aspect-ratio never applies. */
   height: auto;
   aspect-ratio: 4 / 5;
+  max-height: 56svh;
   object-fit: cover;
   object-position: center 78%;
   border-radius: calc(var(--radius) * 1.4);
