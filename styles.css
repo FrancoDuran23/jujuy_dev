@@ -495,7 +495,9 @@ p {
 
 .stats-inner {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* auto-fit, not a fixed count: the strip grows as the community does without
+     anyone having to remember to change the column number too. */
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 1rem;
   padding: 1.6rem 0 2.4rem;
   text-align: center;
@@ -1788,8 +1790,8 @@ img.avatar {
   }
 
   .stats-inner {
-    grid-template-columns: 1fr;
-    gap: 1.4rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem 1rem;
     padding: 2rem 0;
   }
 
