@@ -794,6 +794,37 @@ p {
   color: var(--rose);
 }
 
+/* Upcoming event: no photo exists yet, so the tear-off date sits on the brand
+   gradient instead of a still from an event that has not happened. */
+.event-card.next .shot {
+  display: grid;
+  place-items: center;
+  background: var(--grad);
+}
+
+.event-card.next .date {
+  position: static;
+  background: rgba(43, 30, 63, 0.82);
+  padding: 8px 12px 9px;
+  font-size: 0.66rem;
+}
+
+.event-card.next .date b {
+  font-size: 1.5rem;
+}
+
+.event-card .badge {
+  align-self: flex-start;
+  padding: 2px 8px 3px;
+  border-radius: 999px;
+  background: var(--rose);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
 .event-card.ghost {
   border-style: dashed;
   background: transparent;
