@@ -397,6 +397,83 @@ p {
 }
 
 /* --------------------------------------------------------------------------
+   Next event strip
+   A single-purpose band under the hero. Dated things belong where people look
+   first, not two screens down in the events section.
+   -------------------------------------------------------------------------- */
+
+.next-up {
+  background: var(--ink);
+  color: #fff;
+}
+
+.next-up-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  padding: 0.85rem 0;
+}
+
+.nu-date {
+  flex: 0 0 auto;
+  display: grid;
+  justify-items: center;
+  padding: 6px 11px 7px;
+  border-radius: 11px;
+  background: var(--grad);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.nu-date b {
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.nu-text {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.7rem;
+  min-width: 0;
+}
+
+.nu-label {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rose);
+}
+
+.nu-name {
+  font-weight: 700;
+  font-size: 1.02rem;
+}
+
+.nu-meta {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.nu-go {
+  flex: 0 0 auto;
+  margin-left: auto;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #fff;
+  transition: transform 0.2s ease;
+}
+
+.next-up-inner:hover .nu-go {
+  transform: translateX(3px);
+}
+
+/* --------------------------------------------------------------------------
    Stats strip
    -------------------------------------------------------------------------- */
 
@@ -1665,6 +1742,17 @@ img.avatar {
 @media (max-width: 760px) {
   .section {
     padding: 4.5rem 0;
+  }
+
+  .next-up-inner {
+    flex-wrap: wrap;
+    gap: 0.6rem 0.9rem;
+  }
+
+  .nu-go {
+    margin-left: 0;
+    flex-basis: 100%;
+    color: var(--rose);
   }
 
   .grid-3,
