@@ -871,23 +871,28 @@ p {
   color: var(--rose);
 }
 
-/* Upcoming event: no photo exists yet, so the tear-off date sits on the brand
-   gradient instead of a still from an event that has not happened. */
-.event-card.next .shot {
+/* Upcoming event with no artwork yet: the tear-off date sits on the brand
+   gradient rather than a still from an event that has not happened. As soon as
+   the card has a real flyer, these fall away and the image takes over. */
+.event-card.next .shot:not(:has(img)) {
   display: grid;
   place-items: center;
   background: var(--grad);
 }
 
-.event-card.next .date {
+.event-card.next .shot:not(:has(img)) .date {
   position: static;
   background: rgba(43, 30, 63, 0.82);
   padding: 8px 12px 9px;
   font-size: 0.66rem;
 }
 
-.event-card.next .date b {
+.event-card.next .shot:not(:has(img)) .date b {
   font-size: 1.5rem;
+}
+
+.event-card .shot picture {
+  display: contents;
 }
 
 .event-card .badge {
@@ -1633,6 +1638,19 @@ img.avatar {
   height: 6px;
   border-radius: 50%;
   background: var(--accent, var(--purple));
+}
+
+/* Event flyer: capped so a square poster does not take over the page. */
+.flyer {
+  margin: 2.5rem auto 0;
+  max-width: 420px;
+}
+
+.flyer img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 /* --------------------------------------------------------------------------
