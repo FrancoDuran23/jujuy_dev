@@ -360,6 +360,7 @@ p {
 .hero-terrain-back {
   --terrain-width: max(108%, 1040px, calc(var(--hero-height) * 1.55));
   --depth: 0.48;
+  --drift-x: -8px;
   top: 37%;
   z-index: 1;
 }
@@ -371,6 +372,7 @@ p {
 .hero-terrain-middle {
   --terrain-width: max(116%, 1180px, calc(var(--hero-height) * 1.5));
   --depth: 0.14;
+  --drift-x: 18px;
   top: 14%;
   z-index: 4;
 }
@@ -378,6 +380,7 @@ p {
 .hero-terrain-front {
   --terrain-width: max(112%, 1120px, calc(var(--hero-height) * 1.42));
   --depth: -0.06;
+  --drift-x: -24px;
   top: 32%;
   z-index: 5;
 }
@@ -504,6 +507,22 @@ p {
   background: var(--paper);
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .hero-scroll svg {
+    animation: hero-scroll-cue 2.8s ease-in-out infinite;
+  }
+
+  .hero-scroll:hover svg,
+  .hero-scroll:focus-visible svg {
+    animation: none;
+  }
+}
+
+@keyframes hero-scroll-cue {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
 /* A linear response keeps terrain attached to the user's actual scroll speed. */
 .hero.is-native .hero-terrain {
   animation: hero-depth linear both;
@@ -513,8 +532,8 @@ p {
 }
 
 @keyframes hero-depth {
-  from { transform: translateY(0); }
-  to { transform: translateY(calc(var(--hero-height) * var(--depth))); }
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(var(--drift-x), calc(var(--hero-height) * var(--depth)), 0); }
 }
 
 .hero.is-parallax.is-visible .hero-terrain {
@@ -1722,6 +1741,7 @@ img.avatar {
 
   .hero-scroll svg,
   .hero-scroll:hover svg {
+    animation: none;
     transform: none;
     transition: none;
   }
@@ -1776,17 +1796,20 @@ img.avatar {
   .hero-terrain-back {
     --terrain-width: max(980px, calc(var(--hero-height) * 1.25));
     --depth: 0.34;
+    --drift-x: -4px;
     left: 49%;
     top: 39%;
   }
 
   .hero-terrain-middle {
     --depth: 0.1;
+    --drift-x: 10px;
     top: 22%;
   }
 
   .hero-terrain-front {
     --depth: -0.035;
+    --drift-x: -14px;
     top: 30.5%;
   }
 

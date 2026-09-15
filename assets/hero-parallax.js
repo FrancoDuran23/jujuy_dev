@@ -26,7 +26,11 @@
       top: bounds.top + window.scrollY,
       height: bounds.height,
       distances: layers.map(function (layer) {
-        return (parseFloat(getComputedStyle(layer).getPropertyValue('--depth')) || 0) * bounds.height;
+        var style = getComputedStyle(layer);
+        return {
+          x: parseFloat(style.getPropertyValue('--drift-x')) || 0,
+          y: (parseFloat(style.getPropertyValue('--depth')) || 0) * bounds.height
+        };
       })
     };
     dirty = false;
@@ -41,7 +45,9 @@
     if (progress === lastProgress) return;
     if (!nativeScroll) {
       layers.forEach(function (layer, index) {
-        layer.style.transform = 'translateY(' + (geometry.distances[index] * progress).toFixed(2) + 'px)';
+        var distance = geometry.distances[index];
+        layer.style.transform = 'translate3d(' + (distance.x * progress).toFixed(2) + 'px, ' +
+          (distance.y * progress).toFixed(2) + 'px, 0)';
       });
     }
     if (nav) {
