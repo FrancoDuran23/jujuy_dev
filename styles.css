@@ -312,7 +312,7 @@ p {
    Hero
    -------------------------------------------------------------------------- */
 
-/* Natural page scroll; only the independent terrain images move. */
+/* A short scroll track pins the scene while its three terrain planes move. */
 .hero {
   --hero-height: max(760px, 100svh);
   position: relative;
@@ -321,6 +321,7 @@ p {
 }
 
 .hero.is-parallax {
+  height: calc(var(--hero-height) * 1.7);
   view-timeline: --hero-scroll block;
   view-timeline-inset: 0;
 }
@@ -330,6 +331,11 @@ p {
   height: var(--hero-height);
   isolation: isolate;
   overflow: hidden;
+}
+
+.hero.is-parallax .hero-stage {
+  position: sticky;
+  top: 0;
 }
 
 .hero-sky {
@@ -369,6 +375,10 @@ p {
   z-index: 1;
 }
 
+.hero.is-parallax .hero-terrain-back {
+  --depth: 0.08;
+}
+
 .hero-terrain-back img {
   opacity: 0.74;
 }
@@ -386,6 +396,10 @@ p {
   z-index: 4;
 }
 
+.hero.is-parallax .hero-terrain-middle {
+  --depth: -0.1;
+}
+
 .hero-terrain-front {
   --terrain-width: max(112%, 1120px, calc(var(--hero-height) * 1.42));
   --depth: 0.04;
@@ -393,6 +407,10 @@ p {
   --entry-y: 0.42;
   top: 32%;
   z-index: 5;
+}
+
+.hero.is-parallax .hero-terrain-front {
+  --depth: -0.035;
 }
 
 .hero-content {
@@ -541,8 +559,8 @@ p {
 .hero.is-native .hero-terrain {
   animation: hero-depth linear both;
   animation-timeline: --hero-scroll;
-  /* Start at the top edge even when the hero is taller than the viewport. */
-  animation-range: exit-crossing 0% exit-crossing 100%;
+  /* 0.7 / 1.7: finish the motion when the sticky stage is released. */
+  animation-range: exit-crossing 0% exit-crossing 41.176%;
 }
 
 @keyframes hero-depth {
@@ -1827,6 +1845,10 @@ img.avatar {
    -------------------------------------------------------------------------- */
 
 @media (max-width: 899px) {
+  .hero {
+    --hero-height: max(700px, 100svh);
+  }
+
   .hero-terrain-back {
     --terrain-width: max(980px, calc(var(--hero-height) * 1.25));
     --depth: 0.34;
@@ -1837,16 +1859,28 @@ img.avatar {
     top: 39%;
   }
 
+  .hero.is-parallax .hero-terrain-back {
+    --depth: 0.06;
+  }
+
   .hero-terrain-middle {
     --depth: 0.1;
     --drift-x: 10px;
     top: 22%;
   }
 
+  .hero.is-parallax .hero-terrain-middle {
+    --depth: -0.08;
+  }
+
   .hero-terrain-front {
     --depth: 0.035;
     --drift-x: 0px;
     top: 30.5%;
+  }
+
+  .hero.is-parallax .hero-terrain-front {
+    --depth: -0.02;
   }
 
   /* Leave room for lateral drift on wide mobile screens as well as tall ones. */

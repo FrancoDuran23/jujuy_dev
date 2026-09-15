@@ -9,6 +9,7 @@
   // The Hornocal recedes while the two lateral frames rise at different speeds.
   // Each plane is a flattened WebP and only its compositor transform changes.
   var layers = Array.from(hero.querySelectorAll('.hero-terrain'));
+  var stage = hero.querySelector('.hero-stage');
   var nav = document.querySelector('.nav');
   var frame = 0;
   var observer;
@@ -22,16 +23,17 @@
   // Cache the scene's geometry at setup/resize, outside the scroll path.
   function measure() {
     var bounds = hero.getBoundingClientRect();
+    var stageHeight = stage.getBoundingClientRect().height;
     geometry = {
       top: bounds.top + window.scrollY,
-      height: bounds.height,
+      travel: Math.max(1, bounds.height - stageHeight),
       distances: layers.map(function (layer) {
         var style = getComputedStyle(layer);
         return {
           x: parseFloat(style.getPropertyValue('--drift-x')) || 0,
-          y: (parseFloat(style.getPropertyValue('--depth')) || 0) * bounds.height,
+          y: (parseFloat(style.getPropertyValue('--depth')) || 0) * stageHeight,
           startY: (parseFloat(style.getPropertyValue('--start-y')) ||
-            parseFloat(style.getPropertyValue('--entry-y')) || 0) * bounds.height,
+            parseFloat(style.getPropertyValue('--entry-y')) || 0) * stageHeight,
           startScale: parseFloat(style.getPropertyValue('--start-scale')) || 1,
           endScale: parseFloat(style.getPropertyValue('--end-scale')) || 1
         };
@@ -45,7 +47,7 @@
     frame = 0;
     if (motion.matches || document.hidden) return;
     if (dirty) measure();
-    var progress = Math.max(0, Math.min(1, (window.scrollY - geometry.top) / geometry.height));
+    var progress = Math.max(0, Math.min(1, (window.scrollY - geometry.top) / geometry.travel));
     if (progress === lastProgress) return;
     if (!nativeScroll) {
       layers.forEach(function (layer, index) {
