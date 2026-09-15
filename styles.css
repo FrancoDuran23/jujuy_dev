@@ -361,6 +361,10 @@ p {
   --terrain-width: max(108%, 1040px, calc(var(--hero-height) * 1.55));
   --depth: 0.48;
   --drift-x: -8px;
+  --start-y: 0.025;
+  --start-scale: 1.07;
+  --end-scale: 0.92;
+  transform-origin: 50% 15%;
   top: 37%;
   z-index: 1;
 }
@@ -369,10 +373,15 @@ p {
   opacity: 0.74;
 }
 
+.hero.is-parallax .hero-terrain-back img {
+  opacity: 0.9;
+}
+
 .hero-terrain-middle {
   --terrain-width: max(116%, 1180px, calc(var(--hero-height) * 1.5));
   --depth: 0.14;
   --drift-x: 18px;
+  --entry-y: 0.32;
   top: 14%;
   z-index: 4;
 }
@@ -381,6 +390,7 @@ p {
   --terrain-width: max(112%, 1120px, calc(var(--hero-height) * 1.42));
   --depth: 0.04;
   --drift-x: 0px;
+  --entry-y: 0.42;
   top: 32%;
   z-index: 5;
 }
@@ -470,6 +480,10 @@ p {
   pointer-events: none;
 }
 
+.hero.is-parallax .hero-haze {
+  height: 15%;
+}
+
 .hero-scroll {
   position: absolute;
   z-index: 7;
@@ -533,6 +547,26 @@ p {
 
 @keyframes hero-depth {
   from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(var(--drift-x), calc(var(--hero-height) * var(--depth)), 0); }
+}
+
+/* Start close to the Hornocal, then let the two lateral frames rise into view. */
+.hero.is-native .hero-terrain-back {
+  animation-name: hero-recede;
+}
+
+.hero.is-native .hero-terrain-middle,
+.hero.is-native .hero-terrain-front {
+  animation-name: hero-frame-enter;
+}
+
+@keyframes hero-recede {
+  from { transform: translate3d(0, calc(var(--hero-height) * var(--start-y)), 0) scale(var(--start-scale)); }
+  to { transform: translate3d(var(--drift-x), calc(var(--hero-height) * var(--depth)), 0) scale(var(--end-scale)); }
+}
+
+@keyframes hero-frame-enter {
+  from { transform: translate3d(0, calc(var(--hero-height) * var(--entry-y)), 0); }
   to { transform: translate3d(var(--drift-x), calc(var(--hero-height) * var(--depth)), 0); }
 }
 
@@ -1797,6 +1831,8 @@ img.avatar {
     --terrain-width: max(980px, calc(var(--hero-height) * 1.25));
     --depth: 0.34;
     --drift-x: -4px;
+    --start-scale: 1.01;
+    --end-scale: 0.88;
     left: 49%;
     top: 39%;
   }

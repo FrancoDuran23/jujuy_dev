@@ -6,8 +6,8 @@
   var nativeScroll = window.CSS &&
     CSS.supports('animation-timeline: view()') &&
     CSS.supports('animation-range: exit-crossing 0% exit-crossing 100%');
-  // The three planes move at distinct speeds to preserve the depth of the scene.
-  // Each one is a flattened WebP and only its compositor transform changes.
+  // The Hornocal recedes while the two lateral frames rise at different speeds.
+  // Each plane is a flattened WebP and only its compositor transform changes.
   var layers = Array.from(hero.querySelectorAll('.hero-terrain'));
   var nav = document.querySelector('.nav');
   var frame = 0;
@@ -29,7 +29,11 @@
         var style = getComputedStyle(layer);
         return {
           x: parseFloat(style.getPropertyValue('--drift-x')) || 0,
-          y: (parseFloat(style.getPropertyValue('--depth')) || 0) * bounds.height
+          y: (parseFloat(style.getPropertyValue('--depth')) || 0) * bounds.height,
+          startY: (parseFloat(style.getPropertyValue('--start-y')) ||
+            parseFloat(style.getPropertyValue('--entry-y')) || 0) * bounds.height,
+          startScale: parseFloat(style.getPropertyValue('--start-scale')) || 1,
+          endScale: parseFloat(style.getPropertyValue('--end-scale')) || 1
         };
       })
     };
@@ -46,8 +50,10 @@
     if (!nativeScroll) {
       layers.forEach(function (layer, index) {
         var distance = geometry.distances[index];
+        var y = distance.startY + (distance.y - distance.startY) * progress;
+        var scale = distance.startScale + (distance.endScale - distance.startScale) * progress;
         layer.style.transform = 'translate3d(' + (distance.x * progress).toFixed(2) + 'px, ' +
-          (distance.y * progress).toFixed(2) + 'px, 0)';
+          y.toFixed(2) + 'px, 0) scale(' + scale.toFixed(4) + ')';
       });
     }
     if (nav) {
