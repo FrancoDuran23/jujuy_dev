@@ -350,18 +350,6 @@ p {
   pointer-events: none;
 }
 
-/* Fade the inner edges of the shared raster so the separated halves reveal
-   the Hornocal without exposing a hard cut through the valley floor. */
-.hero-terrain-left {
-  -webkit-mask-image: linear-gradient(to right, #000 0 44%, transparent 50%);
-  mask-image: linear-gradient(to right, #000 0 44%, transparent 50%);
-}
-
-.hero-terrain-right {
-  -webkit-mask-image: linear-gradient(to right, transparent 50%, #000 56% 100%);
-  mask-image: linear-gradient(to right, transparent 50%, #000 56% 100%);
-}
-
 .hero-terrain picture,
 .hero-terrain img {
   display: block;
@@ -384,22 +372,18 @@ p {
 .hero-terrain-middle {
   --terrain-width: max(116%, 1180px, calc(var(--hero-height) * 1.5));
   --depth: 0.14;
+  --drift-x: 18px;
   top: 14%;
   z-index: 4;
 }
 
-.hero-terrain-middle.hero-terrain-left { --drift-x: -22px; }
-.hero-terrain-middle.hero-terrain-right { --drift-x: 26px; }
-
 .hero-terrain-front {
   --terrain-width: max(112%, 1120px, calc(var(--hero-height) * 1.42));
   --depth: -0.06;
+  --drift-x: -72px;
   top: 32%;
   z-index: 5;
 }
-
-.hero-terrain-front.hero-terrain-left { --drift-x: -72px; }
-.hero-terrain-front.hero-terrain-right { --drift-x: 32px; }
 
 .hero-content {
   position: relative;
@@ -1819,19 +1803,15 @@ img.avatar {
 
   .hero-terrain-middle {
     --depth: 0.1;
+    --drift-x: 10px;
     top: 22%;
   }
 
-  .hero-terrain-middle.hero-terrain-left { --drift-x: -14px; }
-  .hero-terrain-middle.hero-terrain-right { --drift-x: 18px; }
-
   .hero-terrain-front {
     --depth: -0.035;
+    --drift-x: -56px;
     top: 30.5%;
   }
-
-  .hero-terrain-front.hero-terrain-left { --drift-x: -56px; }
-  .hero-terrain-front.hero-terrain-right { --drift-x: 24px; }
 
   /* Leave room for lateral drift on wide mobile screens as well as tall ones. */
   .hero-terrain-middle,
