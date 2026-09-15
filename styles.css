@@ -380,7 +380,7 @@ p {
 .hero-terrain-front {
   --terrain-width: max(112%, 1120px, calc(var(--hero-height) * 1.42));
   --depth: -0.06;
-  --drift-x: -24px;
+  --drift-x: -72px;
   top: 32%;
   z-index: 5;
 }
@@ -1809,18 +1809,18 @@ img.avatar {
 
   .hero-terrain-front {
     --depth: -0.035;
-    --drift-x: -14px;
+    --drift-x: -56px;
     top: 30.5%;
   }
 
-  /* A taller frame keeps both sidewalls present in the portrait composition. */
+  /* Leave room for lateral drift on wide mobile screens as well as tall ones. */
   .hero-terrain-middle,
   .hero-terrain-front {
-    --terrain-width: max(100%, 680px, calc(var(--hero-height) * 0.82));
+    --terrain-width: max(calc(100% + 24px), 680px, calc(var(--hero-height) * 0.82));
   }
 
   .hero-terrain-front {
-    --terrain-width: max(100%, 704px, calc(var(--hero-height) * 0.84));
+    --terrain-width: max(calc(100% + 120px), 704px, calc(var(--hero-height) * 0.84));
   }
 
   .hero-copy {

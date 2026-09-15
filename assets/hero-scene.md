@@ -28,7 +28,7 @@ En pantallas de al menos 1400 px de ancho y hasta 980 px de alto, los marcos se 
 
 Al recorrer una altura del hero, la compensación vertical de fondo, plano intermedio y frente es +48 %, +14 % y −6 % en escritorio; +34 %, +10 % y −3,5 % en móvil. Las tres velocidades separan con claridad cada distancia, y el primer plano usa sombras más profundas para distinguirse de los cerros intermedios.
 
-El mismo recorrido añade una deriva horizontal suave: −8, +18 y −24 px en escritorio; −4, +10 y −14 px en móvil. Los planos se desplazan en sentidos alternados sin cambiar el tamaño de las imágenes ni descubrir sus bordes. La flecha de “Seguí explorando” oscila 4 px para indicar el recorrido, se detiene al interactuar y respeta la preferencia de movimiento reducido.
+El mismo recorrido añade una deriva horizontal suave: −8, +18 y −72 px en escritorio; −4, +10 y −56 px en móvil. El desplazamiento mayor del primer plano hacia la izquierda revela mejor el cerro intermedio de ese lado mientras se hace scroll. Los planos se desplazan en sentidos alternados sin cambiar el tamaño de las imágenes ni descubrir sus bordes. La flecha de “Seguí explorando” oscila 4 px para indicar el recorrido, se detiene al interactuar y respeta la preferencia de movimiento reducido.
 
 Los navegadores compatibles usan `animation-timeline` y el rango `exit-crossing 0% exit-crossing 100%`. La animación comienza cuando el borde superior del hero llega al borde superior de la ventana, también si el hero es más alto que ella. Referencia: [rangos de scroll, W3C](https://www.w3.org/TR/scroll-animations-1/#view-timelines-ranges).
 
