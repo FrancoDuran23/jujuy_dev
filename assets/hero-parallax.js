@@ -6,8 +6,8 @@
   var nativeScroll = window.CSS &&
     CSS.supports('animation-timeline: view()') &&
     CSS.supports('animation-range: exit-crossing 0% exit-crossing 100%');
-  // The three planes move at distinct speeds to preserve the depth of the scene.
-  // Each one is a flattened WebP and only its compositor transform changes.
+  // Five independently moving planes reuse three flattened WebP resources.
+  // Only their compositor transforms change during scroll.
   var layers = Array.from(hero.querySelectorAll('.hero-terrain'));
   var nav = document.querySelector('.nav');
   var frame = 0;
