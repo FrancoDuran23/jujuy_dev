@@ -593,6 +593,83 @@ p {
 }
 
 /* --------------------------------------------------------------------------
+   Next event strip
+   A single-purpose band under the hero. Dated things belong where people look
+   first, not two screens down in the events section.
+   -------------------------------------------------------------------------- */
+
+.next-up {
+  background: var(--ink);
+  color: #fff;
+}
+
+.next-up-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  padding: 0.85rem 0;
+}
+
+.nu-date {
+  flex: 0 0 auto;
+  display: grid;
+  justify-items: center;
+  padding: 6px 11px 7px;
+  border-radius: 11px;
+  background: var(--grad);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.nu-date b {
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.nu-text {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.7rem;
+  min-width: 0;
+}
+
+.nu-label {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rose);
+}
+
+.nu-name {
+  font-weight: 700;
+  font-size: 1.02rem;
+}
+
+.nu-meta {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.nu-go {
+  flex: 0 0 auto;
+  margin-left: auto;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #fff;
+  transition: transform 0.2s ease;
+}
+
+.next-up-inner:hover .nu-go {
+  transform: translateX(3px);
+}
+
+/* --------------------------------------------------------------------------
    Stats strip
    -------------------------------------------------------------------------- */
 
@@ -646,7 +723,9 @@ p {
 
 .stats-inner {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* auto-fit, not a fixed count: the strip grows as the community does without
+     anyone having to remember to change the column number too. */
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 1rem;
   max-width: 960px;
   padding: 3rem 0;
@@ -1022,6 +1101,42 @@ p {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--rose);
+}
+
+/* Upcoming event with no artwork yet: the tear-off date sits on the brand
+   gradient rather than a still from an event that has not happened. As soon as
+   the card has a real flyer, these fall away and the image takes over. */
+.event-card.next .shot:not(:has(img)) {
+  display: grid;
+  place-items: center;
+  background: var(--grad);
+}
+
+.event-card.next .shot:not(:has(img)) .date {
+  position: static;
+  background: rgba(43, 30, 63, 0.82);
+  padding: 8px 12px 9px;
+  font-size: 0.66rem;
+}
+
+.event-card.next .shot:not(:has(img)) .date b {
+  font-size: 1.5rem;
+}
+
+.event-card .shot picture {
+  display: contents;
+}
+
+.event-card .badge {
+  align-self: flex-start;
+  padding: 2px 8px 3px;
+  border-radius: 999px;
+  background: var(--rose);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
 }
 
 .event-card.ghost {
@@ -1757,6 +1872,19 @@ img.avatar {
   background: var(--accent, var(--purple));
 }
 
+/* Event flyer: capped so a square poster does not take over the page. */
+.flyer {
+  margin: 2.5rem auto 0;
+  max-width: 420px;
+}
+
+.flyer img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
 /* --------------------------------------------------------------------------
    Reveal on scroll
    -------------------------------------------------------------------------- */
@@ -1977,6 +2105,17 @@ img.avatar {
     padding: 4.5rem 0;
   }
 
+  .next-up-inner {
+    flex-wrap: wrap;
+    gap: 0.6rem 0.9rem;
+  }
+
+  .nu-go {
+    margin-left: 0;
+    flex-basis: 100%;
+    color: var(--rose);
+  }
+
   .grid-3,
   .grid-2,
   .contact-grid {
@@ -1992,8 +2131,8 @@ img.avatar {
   }
 
   .stats-inner {
-    grid-template-columns: 1fr;
-    gap: 1.4rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem 1rem;
     padding: 2rem 0;
   }
 

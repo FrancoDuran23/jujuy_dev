@@ -35,7 +35,11 @@ Si tenés dudas antes de empezar, abrí un issue o preguntá en el grupo de What
 
 Todo PR mergeado suma a su autor a la sección **"Personas que hacen crecer este sitio"**. Para aparecer, en tu mismo PR o en uno aparte agregá dos cosas:
 
-1. **Tu foto** en `assets/people/nombre-apellido.webp`. Cuadrada, 400x400, menos de 80 KB. Si no sabés convertirla, subí un JPG o PNG y la convertimos nosotros.
+1. **Tu foto** en `assets/people/nombre-apellido.webp`. Cuadrada, 168x168, menos de 10 KB. Si no sabés convertirla, subí un JPG o PNG y la convertimos nosotros.
+
+   **No pongas la URL de tu avatar de GitHub.** Es tentador, porque `https://github.com/tu-usuario.png` funciona de una. Pero GitHub te devuelve la imagen sin optimizar: medimos las que teníamos y pesaban entre 100 y 165 KB cada una, para mostrarse a 84 píxeles. Agregarle `?s=160` tampoco alcanza: redimensiona, pero sigue mandando PNG pesado.
+
+   Las cinco fotos que había sumaban 504 KB. Convertidas a WebP local quedaron en 30 KB. Además, un archivo propio no se rompe si algún día borrás tu cuenta ni hace que cada visitante le pegue a los servidores de GitHub.
 2. **Tu card**, copiando la última de la lista `#contribuyen` en `index.html`, con:
    - nombre y apellido
    - un título corto, por ejemplo "Frontend Developer" o "Estudiante de Sistemas"
