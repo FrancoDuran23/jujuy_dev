@@ -142,6 +142,96 @@ p {
 }
 
 /* --------------------------------------------------------------------------
+   Loading screen
+   -------------------------------------------------------------------------- */
+
+html.is-loading,
+html.is-loading body,
+html.is-revealing,
+html.is-revealing body {
+  overflow: hidden;
+}
+
+.site-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  place-items: center;
+  min-height: 100svh;
+  padding: 2rem;
+  background: var(--cream);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1.1s ease 0.3s, visibility 0s linear 1.4s;
+}
+
+.js .site-loader {
+  display: grid;
+}
+
+.site-loader.is-leaving {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-brand {
+  display: grid;
+  justify-items: center;
+  gap: 0.9rem;
+  opacity: 1;
+  transition: opacity 0.65s ease;
+}
+
+.site-loader.is-leaving .loader-brand {
+  opacity: 0;
+}
+
+.loader-mark {
+  width: clamp(108px, 18vw, 142px);
+}
+
+.loader-wordmark {
+  font-family: var(--font-sans);
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.045em;
+  color: var(--ink);
+}
+
+.loader-wordmark span {
+  color: var(--purple);
+}
+
+.loader-mountain {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: loader-mountain 1.8s ease-in-out infinite;
+}
+
+@keyframes loader-mountain {
+  0% {
+    stroke-dashoffset: 100;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  48%,
+  66% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  92%,
+  100% {
+    stroke-dashoffset: -100;
+    opacity: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
    Navigation
    -------------------------------------------------------------------------- */
 
@@ -354,6 +444,28 @@ p {
   margin-left: calc(var(--terrain-width) * -0.5);
   contain: layout paint;
   pointer-events: none;
+}
+
+/* Reveal the Hornocal planes one after another as the loading screen clears. */
+.js.is-loading .hero-terrain picture {
+  opacity: 0;
+}
+
+.js.is-revealing .hero-terrain picture {
+  animation: hero-plane-in 1.3s ease both;
+}
+
+.js.is-revealing .hero-terrain-middle picture {
+  animation-delay: 0.2s;
+}
+
+.js.is-revealing .hero-terrain-front picture {
+  animation-delay: 0.45s;
+}
+
+@keyframes hero-plane-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .hero-terrain picture,
@@ -1907,6 +2019,22 @@ img.avatar {
 .grid > .reveal:nth-child(6) { transition-delay: 0.4s; }
 
 @media (prefers-reduced-motion: reduce) {
+  .site-loader,
+  .loader-brand,
+  .loader-mountain {
+    animation: none;
+    transition: none;
+  }
+
+  .js.is-revealing .hero-terrain picture {
+    animation: none;
+  }
+
+  .loader-mountain {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
   .nav.is-hero-reveal {
     opacity: 1;
     transform: none;
