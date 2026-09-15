@@ -25,8 +25,10 @@
   <meta name="twitter:description" content="Conectamos programadores, diseñadores y emprendedores de Jujuy. Meetups, talleres y eventos gratuitos.">
   <meta name="twitter:image" content="https://jujuy.dev.ar/assets/og.jpg">
 
-  <!-- Match the picture breakpoint so only the selected background is preloaded. -->
-  <link rel="preload" as="image" type="image/webp" href="assets/hero-layers/hornocal-fusion-small.webp" media="(max-width: 899px)">
+  <!-- Select the same Hornocal resource as the mobile picture, including screen density. -->
+  <link rel="preload" as="image" type="image/webp" media="(max-width: 899px)"
+        imagesrcset="assets/hero-layers/hornocal-fusion-small.webp 960w, assets/hero-layers/hornocal-fusion.webp 1536w"
+        imagesizes="(min-height: 850px) 125svh, 960px">
   <link rel="preload" as="image" type="image/webp" href="assets/hero-layers/hornocal-fusion.webp" media="(min-width: 900px)">
 
   <!-- Structured data for Google. The Organization here is the canonical #org referenced
@@ -183,7 +185,9 @@
       <div class="hero-sky" aria-hidden="true"></div>
       <div class="hero-terrain hero-terrain-back" aria-hidden="true">
         <picture>
-          <source media="(max-width: 899px)" srcset="assets/hero-layers/hornocal-fusion-small.webp">
+          <source media="(max-width: 899px)"
+                  srcset="assets/hero-layers/hornocal-fusion-small.webp 960w, assets/hero-layers/hornocal-fusion.webp 1536w"
+                  sizes="(min-height: 850px) 125svh, 960px">
           <img src="assets/hero-layers/hornocal-fusion.webp" alt="" width="1536" height="661" fetchpriority="high" decoding="async">
         </picture>
       </div>
@@ -200,13 +204,17 @@
       </div>
       <div class="hero-terrain hero-terrain-middle" aria-hidden="true">
         <picture>
-          <source media="(max-width: 899px)" srcset="assets/hero-layers/hornocal-frame-middle-small.webp">
+          <source media="(max-width: 899px)"
+                  srcset="assets/hero-layers/hornocal-frame-middle-small.webp 960w, assets/hero-layers/hornocal-frame-middle.webp 1536w"
+                  sizes="max(680px, 82svh)">
           <img src="assets/hero-layers/hornocal-frame-middle.webp" alt="" width="1536" height="895" decoding="async">
         </picture>
       </div>
       <div class="hero-terrain hero-terrain-front" aria-hidden="true">
         <picture>
-          <source media="(max-width: 899px)" srcset="assets/hero-layers/hornocal-frame-front-small.webp">
+          <source media="(max-width: 899px)"
+                  srcset="assets/hero-layers/hornocal-frame-front-small.webp 960w, assets/hero-layers/hornocal-frame-front.webp 1536w"
+                  sizes="max(704px, 84svh)">
           <img src="assets/hero-layers/hornocal-frame-front.webp" alt="" width="1536" height="773" decoding="async">
         </picture>
       </div>

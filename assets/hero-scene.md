@@ -12,7 +12,9 @@ Cada plano publicado es un WebP transparente ya recortado. El repositorio conser
 | Cerros laterales | `hornocal-frame-middle.webp` | 1536 × 895 | `hornocal-frame-middle-small.webp` |
 | Primer plano | `hornocal-frame-front.webp` | 1536 × 773 | `hornocal-frame-front-small.webp` |
 
-Hasta 899 px se seleccionan las variantes de 960 px de ancho. Las tres descargas suman aproximadamente 357 KiB en móvil y 968 KiB en escritorio. Se precarga la serranía.
+Hasta 899 px el navegador elige por `srcset`/`sizes`: las variantes de 960 px en pantallas de baja densidad cuando alcanzan para el ancho dibujado, y las de 1536 px en pantallas de 2×/3× o cuando el hero es muy alto. Las tres descargas suman aproximadamente 357 KiB con las variantes pequeñas y 968 KiB con las grandes. El preload de la serranía utiliza la misma selección para evitar una segunda descarga.
+
+En una comparación local de 120 pasos a 390 × 844 y densidad 2×, el promedio de frame fue 16,62 ms con las capas de 960 px y 16,55 ms con las de 1536 px; ninguna ejecución superó los 20 ms. Es una prueba sintética en Chromium headless, no una medida de usuarios reales. Las pantallas de 3× todavía pueden exceder la resolución de los assets grandes; resolverlo por completo exigiría ilustraciones originales con más detalle y un costo adicional de descarga y memoria.
 
 ## Composición y movimiento
 
