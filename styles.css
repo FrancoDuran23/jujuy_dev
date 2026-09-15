@@ -379,8 +379,8 @@ p {
 
 .hero-terrain-front {
   --terrain-width: max(112%, 1120px, calc(var(--hero-height) * 1.42));
-  --depth: -0.06;
-  --drift-x: -72px;
+  --depth: 0.04;
+  --drift-x: 0px;
   top: 32%;
   z-index: 5;
 }
@@ -1808,8 +1808,8 @@ img.avatar {
   }
 
   .hero-terrain-front {
-    --depth: -0.035;
-    --drift-x: -56px;
+    --depth: 0.035;
+    --drift-x: 0px;
     top: 30.5%;
   }
 
