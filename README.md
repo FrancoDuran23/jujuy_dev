@@ -37,10 +37,12 @@ El dominio `jujuy.dev.ar` está definido en el archivo `CNAME`. El DNS se admini
 ```
 index.html              la página completa
 styles.css              estilos y paleta
-assets/hero.webp               ilustración del hero en desktop, optimizada
-assets/hero-mobile.webp        ilustración del hero en celulares, optimizada
-assets/hero-source.png         original en alta resolución (desktop)
-assets/hero-mobile-source.png  original en alta resolución (celulares)
+assets/hero-layers/hornocal-*.webp capas transparentes publicadas del parallax
+assets/hero-parallax.js        parallax por scroll, sin dependencias
+assets/hero-scene.md           composición, exportación y ajustes de las capas
+assets/hornocal-prompts.md     prompts finales de las tres ilustraciones
+assets/hero.webp               ilustración original, referencia de estilo
+assets/hero-source.png         original en alta resolución
 assets/logo.svg                logo de la marca, en el nav y como ícono de pestaña
 assets/logo-white.svg          variante blanca del logo, para el footer oscuro
 assets/og.jpg           imagen de vista previa para WhatsApp, LinkedIn y X
