@@ -10,7 +10,6 @@
   // Each plane is a flattened WebP and only its compositor transform changes.
   var layers = Array.from(hero.querySelectorAll('.hero-terrain'));
   var stage = hero.querySelector('.hero-stage');
-  var nav = document.querySelector('.nav');
   var frame = 0;
   var observer;
   var resizeObserver;
@@ -18,7 +17,6 @@
   var dirty = true;
   var geometry;
   var lastProgress = -1;
-  var lastNavProgress = -1;
 
   // Cache the scene's geometry at setup/resize, outside the scroll path.
   function measure() {
@@ -58,16 +56,6 @@
           y.toFixed(2) + 'px, 0) scale(' + scale.toFixed(4) + ')';
       });
     }
-    if (nav) {
-      // A short eased reveal avoids leaving the navigation visibly clipped.
-      var linearNavProgress = Math.max(0, Math.min(1, (progress - 0.06) / 0.14));
-      var navProgress = linearNavProgress * linearNavProgress * (3 - 2 * linearNavProgress);
-      if (navProgress !== lastNavProgress) {
-        nav.style.setProperty('--nav-progress', navProgress.toFixed(4));
-        nav.classList.toggle('is-interactive', navProgress >= 0.85);
-        lastNavProgress = navProgress;
-      }
-    }
     lastProgress = progress;
     // No interpolation loop: terrain stays in sync with native page scrolling.
   }
@@ -94,17 +82,11 @@
     window.removeEventListener('pageshow', invalidate);
     document.removeEventListener('visibilitychange', invalidate);
     layers.forEach(function (layer) { layer.style.removeProperty('transform'); });
-    if (nav) {
-      nav.classList.toggle('is-hero-reveal', !motion.matches);
-      nav.classList.remove('is-interactive');
-      nav.style.removeProperty('--nav-progress');
-      lastNavProgress = -1;
-    }
     hero.classList.toggle('is-parallax', !motion.matches);
     hero.classList.toggle('is-native', !motion.matches && !!nativeScroll);
     hero.classList.toggle('is-fallback', !motion.matches && !nativeScroll);
     hero.classList.remove('is-visible');
-    if (motion.matches || (nativeScroll && !nav)) return;
+    if (motion.matches || nativeScroll) return;
 
     visible = true;
     dirty = true;
