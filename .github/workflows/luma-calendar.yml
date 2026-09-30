@@ -1,0 +1,42 @@
+name: Actualizar calendario de Luma
+
+on:
+  schedule:
+    - cron: "23 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Descargar el calendario público
+        run: python3 scripts/update-luma-calendar.py /tmp/proximos.json
+
+      - name: Publicar en la rama luma-calendar
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --heads origin luma-calendar | grep -q luma-calendar; then
+            git fetch origin luma-calendar
+            git switch -C luma-calendar origin/luma-calendar
+          else
+            git switch --orphan luma-calendar
+            git reset
+          fi
+          cp /tmp/proximos.json proximos.json
+          git add proximos.json
+          if git diff --cached --quiet; then
+            echo "Sin cambios en el calendario"
+            exit 0
+          fi
+          git commit -m "chore: actualizar eventos de Luma"
+          git push origin luma-calendar

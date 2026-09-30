@@ -87,7 +87,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <!-- Bump the version whenever styles.css changes, so browsers do not keep a stale copy. -->
-  <link rel="stylesheet" href="styles.css?v=2026-09-30a">
+  <link rel="stylesheet" href="styles.css?v=2026-09-30b">
   <!-- Reveal-on-scroll styles only apply when JS runs, so content is never hidden without it. -->
   <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -353,15 +353,10 @@
         <p class="eyebrow accent">// eventos</p>
         <h2>Charlas, talleres y <span class="grad-text">más comunidad</span></h2>
         <p class="events-calendar-lead">No te pierdas lo que se viene. Sumate, aprendé y conocé a otras personas de la comunidad tech de Jujuy.</p>
-        <div class="events-calendar-meta">
-          <div>
-            <h3>Calendario de la comunidad</h3>
-            <p>Los próximos encuentros aparecen acá cuando se publican en Luma. Si el recuadro no carga, abrilo directo.</p>
-          </div>
+        <div class="upcoming-block">
+          <div class="upcoming-list" data-upcoming-list></div>
+          <p class="upcoming-empty" hidden>Cuando publiquemos un encuentro, aparece acá.</p>
           <a class="btn btn-ghost btn-sm" href="https://luma.com/jujuydev" target="_blank" rel="noopener">Abrir el calendario en Luma →</a>
-        </div>
-        <div class="luma-frame-wrap">
-          <iframe class="luma-frame" title="Calendario de eventos de JujuyDev" src="https://luma.com/embed/calendar/cal-6uikyEp5iGq89tc/events" loading="lazy"></iframe>
         </div>
       </div>
 
@@ -372,9 +367,9 @@
         <a class="btn btn-ghost btn-sm" href="/eventos/">Ver todos los eventos →</a>
       </div>
 
-      <!-- EDIT: past events live in the cards below. Upcoming ones come from the
-           Luma calendar above, so a new event shows up here without another PR.
-           Copy a card only to archive one that already happened; keep the ghost card last. -->
+      <!-- EDIT: past events live in the cards below. Upcoming ones are rendered
+           from the public Luma calendar (assets/calendario.js). Copy a card only
+           to archive one that already happened; keep the ghost card last. -->
       <div class="events-cards">
         <a class="event-card reveal" href="/eventos/meet-up-tech/">
           <span class="shot">
@@ -634,6 +629,7 @@
   </footer>
 
   <script src="assets/hero-parallax.js?v=2026-09-15e" defer></script>
+  <script src="/assets/calendario.js?v=2026-09-30c" defer></script>
   <script>
     (function () {
       var nav = document.querySelector('.nav');
