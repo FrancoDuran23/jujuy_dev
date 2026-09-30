@@ -18,7 +18,7 @@ Todo vive en `index.html`. Buscá los comentarios que dicen `EDIT` para encontra
 
 | Qué                          | Dónde                                                                |
 | ---------------------------- | -------------------------------------------------------------------- |
-| Eventos                      | Sección `#eventos`, cada `<article>` es un evento                    |
+| Eventos                      | Sección `#eventos`. Lo que viene se arma desde el [calendario de Luma](https://luma.com/jujuydev) (`assets/calendario.js`). Las fichas son el archivo de encuentros que ya pasaron. |
 | Canales de la comunidad      | Sección `#comunidad`. Las cards con clase `soon` están sin link aún  |
 | Logos de colaboradores       | Sección `#colaboradores`, reemplazá cada `.logo-slot` por un `<img>` |
 | Staff                        | Sección `#staff`                                                     |

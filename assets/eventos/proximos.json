@@ -1,0 +1,26 @@
+{
+  "events": [
+    {
+      "cover": "https://images.lumacdn.com/uploads/38/50cdfb89-0303-4651-80a4-407e77bf9b80.jpg",
+      "end": "2026-10-03T21:00:00.000Z",
+      "name": "Monad Metropolis | Jujuy",
+      "place": "Centro de Innovación Educativa Jujuy · San Salvador de Jujuy",
+      "start": "2026-10-03T12:00:00.000Z",
+      "timezone": "America/Argentina/Jujuy",
+      "url": "https://luma.com/metropolis-jujuy",
+      "waitlist": true,
+      "where": "offline"
+    },
+    {
+      "cover": "https://images.lumacdn.com/uploads/k4/dc980cc1-205e-4ae1-b26f-40fb7bae4294.jpg",
+      "end": "2026-10-03T20:00:00.000Z",
+      "name": "Superteam Argentina Hackathon | Road to Colosseum X Jujuy",
+      "place": "CLUB DE EMPRENDEDORES DE JUJUY · San Salvador de Jujuy",
+      "start": "2026-10-03T13:00:00.000Z",
+      "timezone": "America/Argentina/Jujuy",
+      "url": "https://luma.com/01xxhfj3",
+      "waitlist": true,
+      "where": "offline"
+    }
+  ]
+}

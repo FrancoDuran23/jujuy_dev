@@ -27,7 +27,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css?v=2026-09-15f">
+  <link rel="stylesheet" href="/styles.css?v=2026-09-30b">
+  <script src="/assets/calendario.js?v=2026-09-30c" defer></script>
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -71,6 +72,11 @@
         <div class="section-head reveal">
           <p class="eyebrow" id="proximos-h">// próximos</p>
           <h2>Lo que viene</h2>
+        </div>
+        <div class="upcoming-block reveal">
+          <div class="upcoming-list" data-upcoming-list></div>
+          <p class="upcoming-empty" hidden>Cuando publiquemos un encuentro, aparece acá.</p>
+          <a class="btn btn-ghost btn-sm" href="https://luma.com/jujuydev" target="_blank" rel="noopener">Abrir el calendario en Luma →</a>
         </div>
         <div class="grid grid-2">
           <article class="card ghost reveal">
