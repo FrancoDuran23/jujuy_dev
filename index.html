@@ -87,7 +87,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <!-- Bump the version whenever styles.css changes, so browsers do not keep a stale copy. -->
-  <link rel="stylesheet" href="styles.css?v=2026-09-30c">
+  <link rel="stylesheet" href="styles.css?v=2026-10-01a">
   <!-- Reveal-on-scroll styles only apply when JS runs, so content is never hidden without it. -->
   <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -173,7 +173,6 @@
         <li><a href="#pilares">Qué hacemos</a></li>
         <li><a href="#comunidad">Comunidad</a></li>
         <li><a href="#eventos">Eventos</a></li>
-        <li><a href="#sponsors">Sponsors</a></li>
         <li><a href="#colaboradores">Colaboradores</a></li>
         <li><a href="#staff">Staff</a></li>
         <li><a href="#contacto">Contacto</a></li>
@@ -426,36 +425,6 @@
     </div>
   </section>
 
-  <section class="section sponsors" id="sponsors">
-    <div class="container">
-      <svg class="section-chakana" aria-hidden="true"><use href="#i-chakana" fill="currentColor"/></svg>
-      <div class="section-head reveal">
-        <p class="eyebrow"><svg aria-hidden="true"><use href="#i-chakana" fill="currentColor"/></svg> // sponsors</p>
-        <h2>Sponsors</h2>
-        <p>Instituciones y organizaciones que bancan a la comunidad para que los encuentros sigan siendo gratis y abiertos.</p>
-      </div>
-      <!-- Logos oficiales, sin recortes inventados: media kit de Superteam Argentina,
-           isologo de sansalvadordejujuy.gob.ar y logo azul de jujuy.gob.ar. -->
-      <ul class="sponsor-row reveal">
-        <li>
-          <a class="sponsor-card" href="https://superteam.ar/" target="_blank" rel="noopener">
-            <img src="assets/logos/superteam-argentina.svg" alt="Superteam Argentina" width="1000" height="170">
-          </a>
-        </li>
-        <li>
-          <a class="sponsor-card" href="https://www.sansalvadordejujuy.gob.ar/" target="_blank" rel="noopener">
-            <img src="assets/logos/municipalidad-ssj.webp" alt="Municipalidad de San Salvador de Jujuy" width="300" height="76">
-          </a>
-        </li>
-        <li>
-          <a class="sponsor-card" href="https://jujuy.gob.ar/" target="_blank" rel="noopener">
-            <img src="assets/logos/gobierno-jujuy.webp" alt="Gobierno de Jujuy" width="720" height="391">
-          </a>
-        </li>
-      </ul>
-    </div>
-  </section>
-
   <section class="section alt" id="colaboradores">
     <div class="container">
       <div class="section-head reveal">
@@ -479,34 +448,23 @@
             <a class="logo-slot filled" href="https://crecimiento.build/" target="_blank" rel="noopener" style="--brand-color: #c98a1a">
               <span class="brand"><img src="assets/logos/crecimientoar.webp" alt="" width="40" height="40"><span>CrecimientoAR</span></span>
             </a>
+            <a class="logo-slot filled lockup" href="https://superteam.ar/" target="_blank" rel="noopener">
+              <span class="brand"><img src="assets/logos/superteam-argentina.svg" alt="Superteam Argentina" width="1000" height="170"></span>
+            </a>
+            <a class="logo-slot filled lockup" href="https://www.sansalvadordejujuy.gob.ar/" target="_blank" rel="noopener">
+              <span class="brand"><img src="assets/logos/municipalidad-ssj.webp" alt="Municipalidad de San Salvador de Jujuy" width="300" height="76"></span>
+            </a>
+            <a class="logo-slot filled lockup" href="https://jujuy.gob.ar/" target="_blank" rel="noopener">
+              <span class="brand"><img src="assets/logos/gobierno-jujuy.webp" alt="Gobierno de Jujuy" width="720" height="391"></span>
+            </a>
+            <a class="logo-slot filled lockup" href="https://formosa.dev.ar/" target="_blank" rel="noopener">
+              <span class="brand"><img src="assets/logos/formosa-dev.webp" alt="Formosa.dev" width="480" height="480"></span>
+            </a>
+            <a class="logo-slot filled lockup" href="https://mardelplata.dev.ar/" target="_blank" rel="noopener">
+              <span class="brand"><img src="assets/logos/mardelplata-dev.webp" alt="Mar del Plata Dev" width="480" height="480"></span>
+            </a>
           </div>
         </div>
-      </div>
-
-      <div class="allies reveal" id="comunidades">
-        <div class="allies-head">
-          <p class="eyebrow"><svg aria-hidden="true"><use href="#i-chakana" fill="currentColor"/></svg> // comunidades aliadas</p>
-          <h3>Comunidades con las que nos cruzamos</h3>
-          <p>Otras comunidades tech del país. Nos visitamos, armamos encuentros y dejamos la puerta abierta.</p>
-        </div>
-        <!-- SaltaDev y Crecimiento ya están en la fila de arriba. Esta franja suma
-             comunidades que publica formosa.dev.ar y a Formosa.dev, que nos tiene en la suya.
-             Debatech no tiene link en ese sitio. -->
-        <ul class="ally-strip">
-          <li>
-            <a href="https://formosa.dev.ar/" target="_blank" rel="noopener">
-              <img src="assets/logos/formosa-dev.webp" alt="Formosa.dev" width="480" height="480">
-            </a>
-          </li>
-          <li>
-            <a href="https://mardelplata.dev.ar/" target="_blank" rel="noopener">
-              <img src="assets/logos/mardelplata-dev.webp" alt="Mar del Plata Dev" width="480" height="480">
-            </a>
-          </li>
-          <li>
-            <img src="assets/logos/debatech.webp" alt="Debatech" width="640" height="268">
-          </li>
-        </ul>
       </div>
 
       <div class="collab-cta reveal">
@@ -666,7 +624,6 @@
           <ul>
             <li><a href="/eventos/">Eventos</a></li>
             <li><a href="/comunidad/">Comunidad</a></li>
-            <li><a href="#sponsors">Sponsors</a></li>
             <li><a href="#colaboradores">Colaboradores</a></li>
             <li><a href="/faq/">FAQ</a></li>
             <li><a href="https://github.com/FrancoDuran23/jujuy_dev/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Cómo contribuir</a></li>

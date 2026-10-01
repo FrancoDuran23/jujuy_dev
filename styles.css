@@ -184,7 +184,7 @@ p {
 
 .nav-links {
   display: flex;
-  gap: 1.25rem;
+  gap: 1.6rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1605,6 +1605,27 @@ a.logo-slot:hover {
   width: 40px;
 }
 
+/* Full lockups (wordmark or isologo) sit in the same row as the icon slots. */
+.logos-set .logo-slot.lockup {
+  flex-basis: 220px;
+  width: 220px;
+}
+
+.logo-slot.lockup .brand {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  padding: 0.75rem 0.85rem;
+}
+
+.logo-slot.lockup .brand img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 64px;
+  object-fit: contain;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1637,141 +1658,6 @@ a.logo-slot:hover {
 
 .collab-cta p {
   color: var(--ink-2);
-}
-
-/* Sponsors: institutional lockups on paper, with the Hornocal hairline. */
-.sponsors .section-head {
-  position: relative;
-  z-index: 1;
-}
-
-.sponsors .eyebrow,
-.allies .eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.sponsors .eyebrow svg,
-.allies .eyebrow svg {
-  width: 14px;
-  height: 14px;
-  flex-shrink: 0;
-}
-
-.sponsor-row {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  position: relative;
-  z-index: 1;
-}
-
-.sponsor-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 168px;
-  padding: 1.7rem 1.35rem 1.35rem;
-  background: var(--paper);
-  border: 1px solid var(--cream-3);
-  border-radius: var(--radius);
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.sponsor-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--grad);
-}
-
-.sponsor-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow);
-}
-
-.sponsor-card img {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 108px;
-  object-fit: contain;
-}
-
-/* Allied communities: a logo band, not a second marquee. */
-.allies {
-  margin-top: 2.75rem;
-}
-
-.allies-head {
-  max-width: 640px;
-  margin-bottom: 1.15rem;
-}
-
-.allies-head h3 {
-  font-size: 1.45rem;
-  margin-bottom: 0.35rem;
-}
-
-.allies-head p {
-  color: var(--ink-2);
-}
-
-.ally-strip {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 1.25rem 2.5rem;
-  margin: 0;
-  padding: 1.35rem 1.6rem 1.15rem;
-  list-style: none;
-  background: var(--paper);
-  border: 1px solid var(--cream-3);
-  border-radius: var(--radius);
-  position: relative;
-}
-
-.ally-strip::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 1.4rem;
-  right: 1.4rem;
-  height: 3px;
-  background: var(--grad);
-}
-
-.ally-strip li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.ally-strip a {
-  display: flex;
-  border-radius: 12px;
-  transition: transform 0.2s ease;
-}
-
-.ally-strip a:hover {
-  transform: translateY(-3px);
-}
-
-.ally-strip img {
-  height: 76px;
-  width: auto;
-  max-width: min(220px, 70vw);
-  object-fit: contain;
 }
 
 /* Staff */
@@ -2356,6 +2242,7 @@ img.avatar {
     width: auto;
     max-width: none;
     margin-inline: 0;
+    overflow: visible;
     -webkit-mask-image: none;
     mask-image: none;
   }
@@ -2367,6 +2254,12 @@ img.avatar {
     justify-content: center;
     width: auto;
     transform: none;
+  }
+
+  .logos-set {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
   }
 
   .logos-set[aria-hidden="true"] {
@@ -2514,20 +2407,15 @@ img.avatar {
   }
 }
 
-/* Seven links stop fitting around 1180px. Tighten before the hamburger at 760px. */
-@media (max-width: 1180px) and (min-width: 761px) {
+/* The full nav stops fitting around 900px and "Que hacemos" wraps. Tighten the
+   gap before the hamburger takes over at 760px. */
+@media (max-width: 900px) and (min-width: 761px) {
   .nav-links {
-    gap: 0.8rem;
+    gap: 1rem;
   }
 
   .nav-links a {
-    font-size: 0.86rem;
-  }
-}
-
-@media (max-width: 800px) {
-  .sponsor-row {
-    grid-template-columns: 1fr;
+    font-size: 0.88rem;
   }
 }
 
@@ -2676,7 +2564,6 @@ img.avatar {
   .nav.open .nav-links li:nth-child(4) { transition-delay: 0.09s; }
   .nav.open .nav-links li:nth-child(5) { transition-delay: 0.12s; }
   .nav.open .nav-links li:nth-child(6) { transition-delay: 0.15s; }
-  .nav.open .nav-links li:nth-child(7) { transition-delay: 0.18s; }
 
   .nav-links a {
     display: block;
@@ -2701,23 +2588,6 @@ img.avatar {
 
   .collab-cta {
     padding: 1.5rem;
-  }
-
-  .sponsor-row {
-    grid-template-columns: 1fr;
-  }
-
-  .sponsor-card {
-    min-height: 132px;
-  }
-
-  .ally-strip {
-    gap: 1rem 1.5rem;
-    padding: 1.2rem 1rem 1rem;
-  }
-
-  .ally-strip img {
-    height: 64px;
   }
 }
 
