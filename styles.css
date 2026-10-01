@@ -1490,13 +1490,16 @@ p {
 }
 
 /* Collaborators */
-/* Infinite marquee: six identical sets so half the track is always wider
-   than the viewport and the loop can restart without a visible jump. */
+/* Two identical sets. The track has no gap of its own: each set carries the
+   same trailing space as the gap between slots, so translating -50% lands
+   exactly on the next copy and the loop has no visible seam. */
 .logos-marquee {
   overflow: hidden;
   width: 100%;
   max-width: 100%;
+  min-width: 0;
   margin-inline: 0;
+  padding-block: 8px;
   border-radius: var(--radius);
   -webkit-mask-image: linear-gradient(
     90deg,
@@ -1516,16 +1519,15 @@ p {
 
 .logos-track {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
+  width: 100%;
+  min-width: 0;
 }
 
 .logos-track:has(.logos-set:nth-child(2)) {
   flex-wrap: nowrap;
-  justify-content: flex-start;
   width: max-content;
-  animation: logos-marquee 42s linear infinite;
+  gap: 0;
+  animation: logos-marquee 36s linear infinite;
 }
 
 .logos-marquee:hover .logos-track,
@@ -1536,7 +1538,17 @@ p {
 .logos-set {
   display: flex;
   flex-shrink: 0;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
+  width: 100%;
+}
+
+.logos-track:has(.logos-set:nth-child(2)) .logos-set {
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  width: max-content;
+  padding-right: 1rem;
 }
 
 .logos-set .logo-slot {
@@ -2239,10 +2251,10 @@ img.avatar {
   }
 
   .logos-marquee {
-    width: auto;
-    max-width: none;
+    width: 100%;
+    max-width: 100%;
     margin-inline: 0;
-    overflow: visible;
+    overflow: hidden;
     -webkit-mask-image: none;
     mask-image: none;
   }
@@ -2252,14 +2264,16 @@ img.avatar {
     animation: none;
     flex-wrap: wrap;
     justify-content: center;
-    width: auto;
+    width: 100%;
     transform: none;
   }
 
+  .logos-track:has(.logos-set:nth-child(2)) .logos-set,
   .logos-set {
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
+    padding-right: 0;
   }
 
   .logos-set[aria-hidden="true"] {
