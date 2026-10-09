@@ -1,0 +1,87 @@
+name: Sumar mi perfil (abierto a propuestas)
+description: Mostrá que estás abierto/a a propuestas laborales en la sección Oportunidades.
+title: "Perfil: "
+labels: ["perfil"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Todo lo que completes acá es público y lo indexan los buscadores.** Poné solo los datos de contacto que quieras mostrar; recomendamos GitHub o LinkedIn en lugar de teléfono o domicilio.
+
+        Podés pedir que saquemos tu perfil cuando quieras. Solo publicamos el perfil de quien lo pide.
+  - type: input
+    id: nombre
+    attributes:
+      label: Nombre y apellido
+    validations:
+      required: true
+  - type: input
+    id: rol
+    attributes:
+      label: Rol
+      description: Por ejemplo, Full-Stack, Frontend, Datos, Ciberseguridad.
+    validations:
+      required: true
+  - type: dropdown
+    id: nivel
+    attributes:
+      label: Nivel
+      options:
+        - Pasantía
+        - Junior
+        - Semi Senior
+        - Senior
+    validations:
+      required: true
+  - type: checkboxes
+    id: busca
+    attributes:
+      label: Qué buscás
+      options:
+        - label: Empleo
+        - label: Freelance
+        - label: Pasantía
+  - type: checkboxes
+    id: modalidad
+    attributes:
+      label: Modalidad
+      options:
+        - label: Remoto
+        - label: Híbrido
+        - label: Presencial
+  - type: input
+    id: tech
+    attributes:
+      label: Tecnologías
+      description: Separadas por coma. Las que querés que te asocien.
+    validations:
+      required: true
+  - type: dropdown
+    id: ubicacion
+    attributes:
+      label: Ubicación
+      options:
+        - San Salvador de Jujuy
+        - Otra localidad de Jujuy
+        - Fuera de Jujuy
+    validations:
+      required: true
+  - type: textarea
+    id: links
+    attributes:
+      label: Links de contacto públicos
+      description: GitHub, LinkedIn, portfolio, mail. Solo los que quieras mostrar.
+    validations:
+      required: true
+  - type: textarea
+    id: foto
+    attributes:
+      label: Foto (opcional)
+      description: Arrastrá acá una foto cuadrada. Si no ponés una, usamos un avatar con tus iniciales.
+  - type: checkboxes
+    id: consentimiento
+    attributes:
+      label: Publicación
+      options:
+        - label: Quiero que mi perfil sea público en jujuy.dev.ar. Entiendo que lo indexan los buscadores y que puedo pedir que lo saquen cuando quiera.
+          required: true

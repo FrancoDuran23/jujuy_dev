@@ -1,0 +1,79 @@
+name: Sumar un recurso
+description: Recomendá un curso, una guía, una herramienta o un libro en la sección Recursos.
+title: "Recurso: "
+labels: ["recurso"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Tiene que ser algo que le haya servido a alguien de la comunidad. Mejor si es gratis o tiene una parte gratis. Esta lista es en español: sumá recursos que estén en español. Revisamos que el link funcione y que sea lo que dice ser; no aceptamos links de afiliados.
+  - type: input
+    id: nombre
+    attributes:
+      label: Nombre
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link
+    validations:
+      required: true
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: Qué es y por qué sirve
+      description: Una o dos oraciones.
+    validations:
+      required: true
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: Tipo
+      options:
+        - Curso
+        - Documentación
+        - Tutorial
+        - Guía
+        - Libro
+        - Herramienta
+        - Roadmap
+        - Comunidad
+        - Otro
+    validations:
+      required: true
+  - type: input
+    id: tema
+    attributes:
+      label: Temas
+      description: Separados por coma. Por ejemplo, Web, JavaScript, Git y GitHub.
+    validations:
+      required: true
+  - type: dropdown
+    id: nivel
+    attributes:
+      label: Nivel
+      options:
+        - Principiante
+        - Intermedio
+        - Avanzado
+        - Todos los niveles
+    validations:
+      required: true
+  - type: input
+    id: idioma
+    attributes:
+      label: Idioma
+      description: Español, Inglés, o los dos.
+    validations:
+      required: true
+  - type: dropdown
+    id: costo
+    attributes:
+      label: Costo
+      options:
+        - Gratis
+        - Freemium
+        - Pago
+    validations:
+      required: true

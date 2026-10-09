@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oportunidades · JujuyDev</title>
+  <meta name="description" content="Ofertas laborales de la región y personas de la comunidad tech de Jujuy abiertas a propuestas, con buscador y filtros por rol, nivel, modalidad y tecnología.">
+  <meta name="theme-color" content="#f7f1ef">
+  <link rel="canonical" href="https://jujuy.dev.ar/oportunidades/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="JujuyDev">
+  <meta property="og:title" content="Oportunidades · JujuyDev">
+  <meta property="og:description" content="Ofertas laborales de la región y personas de la comunidad tech de Jujuy abiertas a propuestas, con buscador y filtros por rol, nivel, modalidad y tecnología.">
+  <meta property="og:url" content="https://jujuy.dev.ar/oportunidades/">
+  <meta property="og:image" content="https://jujuy.dev.ar/assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@JujuyDevAr">
+  <meta name="twitter:title" content="Oportunidades · JujuyDev">
+  <meta name="twitter:description" content="Ofertas laborales de la región y personas de la comunidad tech de Jujuy abiertas a propuestas, con buscador y filtros por rol, nivel, modalidad y tecnología.">
+  <meta name="twitter:image" content="https://jujuy.dev.ar/assets/og.jpg">
+
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css?v=2026-10-08b">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="/assets/filtros.js?v=2026-10-08b" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <nav class="nav" aria-label="Principal">
+    <div class="container nav-inner">
+      <a class="logo" href="/">
+        <img class="logo-mark" src="/assets/logo.svg" alt="" width="34" height="24">
+        <span>jujuy<span class="grad-text">.dev</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16"/>
+          <path d="M4 12h16"/>
+          <path d="M4 17h16"/>
+        </svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/#pilares">Qué hacemos</a></li>
+        <li><a href="/comunidad/">Comunidad</a></li>
+        <li><a href="/eventos/">Eventos</a></li>
+        <li><a href="/proyectos/">Proyectos</a></li>
+        <li><a href="/oportunidades/" aria-current="page">Oportunidades</a></li>
+        <li><a href="/recursos/">Recursos</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+      </ul>
+      <a class="btn btn-primary btn-sm nav-cta" href="https://chat.whatsapp.com/Bj1KKgjcLue2FOVuX8osmq" target="_blank" rel="noopener">Sumate</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header class="page-hero page-hero-compact container">
+      <a class="back-link" href="/">← jujuy.dev.ar</a>
+      <p class="eyebrow">// oportunidades</p>
+      <h1>Oportunidades</h1>
+      <p class="lead">Ofertas de empresas y equipos de la región, y personas de la comunidad abiertas a propuestas.</p>
+    </header>
+
+    <section class="section listing-section">
+      <div class="container">
+        <p class="panel-intro">JujuyDev no intermedia ni guarda currículums: cada oferta te lleva a la empresa y cada perfil muestra solo los canales que la persona eligió.</p>
+
+        <nav class="tabs" data-tabs aria-label="Secciones de oportunidades">
+          <a href="#ofertas">Ofertas</a>
+          <a href="#talento">Abiertos a propuestas</a>
+        </nav>
+
+        <section id="ofertas" class="tab-panel">
+          <p class="panel-intro">Trabajos, pasantías y proyectos freelance de empresas y equipos que buscan gente de la región. Las ofertas con fecha de cierre se ocultan solas cuando vencen.</p>
+          <div data-listing
+               data-prefix="o"
+               data-facets="rol:Rol,nivel:Nivel,modalidad:Modalidad,contrato:Contrato,tech:Tecnología"
+               data-order="nivel=Pasantía|Junior|Semi Senior|Senior;modalidad=Remoto|Híbrido|Presencial"
+               data-noun="oferta|ofertas"
+               data-placeholder="Buscar ofertas…">
+            <div class="grid grid-3" data-items>
+        <!-- EDIT: sumá una oferta copiando una tarjeta y poniéndola arriba de todo.
+             data-cierre es la fecha límite (AAAA-MM-DD): pasada esa fecha la oferta se
+             oculta sola. Si no tiene fecha de cierre, borrá el atributo.
+
+             <article class="card item" data-item data-cierre="2026-12-31">
+               <p class="item-kicker"><span>Nombre de la empresa</span><span>San Salvador de Jujuy</span></p>
+               <h3>Título del puesto</h3>
+               <ul class="item-meta">
+                 <li><strong>Rol</strong> <span data-facet="rol">Backend</span></li>
+                 <li><strong>Nivel</strong> <span data-facet="nivel">Semi Senior</span></li>
+                 <li><strong>Modalidad</strong> <span data-facet="modalidad">Remoto</span></li>
+                 <li><strong>Contrato</strong> <span data-facet="contrato">Relación de dependencia</span></li>
+               </ul>
+               <p>De qué se trata el trabajo, en pocas líneas.</p>
+               <ul class="tags" data-facet="tech"><li>Node.js</li></ul>
+               <div class="item-foot">
+                 <span>Publicada el 8 oct 2026 · cierra el 31 dic 2026</span>
+                 <a class="btn btn-primary btn-sm" href="LINK-O-MAILTO-PARA-POSTULARSE" target="_blank" rel="noopener">Postularme</a>
+               </div>
+             </article>
+
+             Rol: Frontend, Backend, Full-Stack, Mobile, Datos e IA, DevOps, Diseño, QA, Ciberseguridad.
+             Nivel: Pasantía, Junior, Semi Senior, Senior.
+             Modalidad: Remoto, Híbrido, Presencial.
+             Contrato: Relación de dependencia, Freelance, Pasantía, Part-time. -->
+
+        <!-- EJEMPLO: las dos tarjetas que siguen son de muestra. Borrarlas cuando haya ofertas reales. -->
+        <article class="card item" data-item data-cierre="2099-12-31" style="--accent: var(--indigo)">
+          <p class="item-kicker"><span>Empresa de ejemplo</span><span>San Salvador de Jujuy</span><span class="pill pill-example">Ejemplo</span></p>
+          <h3>Desarrollador/a Frontend</h3>
+          <ul class="item-meta">
+            <li><strong>Rol</strong> <span data-facet="rol">Frontend</span></li>
+            <li><strong>Nivel</strong> <span data-facet="nivel">Semi Senior</span></li>
+            <li><strong>Modalidad</strong> <span data-facet="modalidad">Remoto</span></li>
+            <li><strong>Contrato</strong> <span data-facet="contrato">Relación de dependencia</span></li>
+          </ul>
+          <p>Una oferta tiene que decir de qué se trata el trabajo, con qué tecnologías y cómo se postula. Esta es de muestra.</p>
+          <ul class="tags" data-facet="tech"><li>React</li><li>TypeScript</li></ul>
+          <div class="item-foot">
+            <span>Publicada el 8 oct 2026</span>
+            <a class="btn btn-primary btn-sm" href="#como-sumar">Postularme</a>
+          </div>
+        </article>
+
+        <article class="card item" data-item data-cierre="2026-09-01" style="--accent: var(--blue)">
+          <p class="item-kicker"><span>Otra empresa de ejemplo</span><span>Híbrido en Jujuy</span><span class="pill pill-example">Ejemplo</span></p>
+          <h3>Pasantía en desarrollo backend</h3>
+          <ul class="item-meta">
+            <li><strong>Rol</strong> <span data-facet="rol">Backend</span></li>
+            <li><strong>Nivel</strong> <span data-facet="nivel">Pasantía</span></li>
+            <li><strong>Modalidad</strong> <span data-facet="modalidad">Híbrido</span></li>
+            <li><strong>Contrato</strong> <span data-facet="contrato">Pasantía</span></li>
+          </ul>
+          <p>Esta ya pasó su fecha de cierre, así que se oculta sola. Se puede ver con "Mostrar cerradas".</p>
+          <ul class="tags" data-facet="tech"><li>Python</li><li>Django</li></ul>
+          <div class="item-foot">
+            <span>Cerró el 1 sep 2026</span>
+            <span class="pill pill-closed">Cerrada</span>
+          </div>
+        </article>
+
+        <article class="card ghost">
+          <h3>¿Tu equipo busca gente?</h3>
+          <p>Contanos qué buscan y cómo se postula. Las ofertas son gratis y llegan a toda la comunidad.</p>
+          <a class="btn btn-ghost btn-sm" href="https://github.com/FrancoDuran23/jujuy_dev/issues/new?template=oferta.yml" target="_blank" rel="noopener">Sumar el mío</a>
+        </article>
+
+            </div>
+          </div>
+        </section>
+
+        <section id="talento" class="tab-panel">
+          <p class="panel-intro">Personas de la comunidad que están abiertas a propuestas laborales. Si estás buscando, sumá tu perfil; si tu equipo busca, escribile directo.</p>
+          <div data-listing
+               data-prefix="t"
+               data-facets="rol:Rol,nivel:Nivel,busca:Busca,modalidad:Modalidad,tech:Tecnología,ubicacion:Ubicación"
+               data-order="nivel=Pasantía|Junior|Semi Senior|Senior;modalidad=Remoto|Híbrido|Presencial"
+               data-noun="persona|personas"
+               data-placeholder="Buscar personas…">
+            <div class="grid grid-3" data-items>
+        <!-- EDIT: sumá tu perfil copiando una tarjeta y poniéndola arriba de todo.
+             Poné solo los datos de contacto que quieras hacer públicos: esta página
+             es pública y la indexan los buscadores.
+
+             <article class="card item" data-item>
+               <div class="person-head">
+                 <img class="talent-avatar" src="/assets/people/nombre-apellido.webp" alt="" width="56" height="56" loading="lazy">
+                 <div>
+                   <h3>Nombre Apellido</h3>
+                   <p class="role" data-facet="rol">Full-Stack</p>
+                 </div>
+               </div>
+               <p><span class="pill pill-open">● Abierto/a a propuestas</span></p>
+               <ul class="item-meta">
+                 <li><strong>Nivel</strong> <span data-facet="nivel">Junior</span></li>
+                 <li><strong>Ubicación</strong> <span data-facet="ubicacion">San Salvador de Jujuy</span></li>
+               </ul>
+               <p><strong>Busca</strong></p>
+               <ul class="tags tags-soft" data-facet="busca"><li>Empleo</li><li>Freelance</li></ul>
+               <p><strong>Modalidad</strong></p>
+               <ul class="tags tags-soft" data-facet="modalidad"><li>Remoto</li><li>Híbrido</li></ul>
+               <ul class="tags" data-facet="tech"><li>JavaScript</li><li>React</li></ul>
+               <div class="item-foot">
+                 <span>Actualizado en oct 2026</span>
+                 <span class="item-links"><a href="https://github.com/tu-usuario">GitHub</a><a href="https://www.linkedin.com/in/tu-usuario">LinkedIn</a></span>
+               </div>
+             </article>
+
+             Si no tenés foto, usá el avatar con iniciales:
+             <span class="talent-avatar is-initials" aria-hidden="true">NA</span>
+             Busca: Empleo, Freelance, Pasantía. -->
+
+        <!-- EJEMPLO: las dos tarjetas que siguen son de muestra. Borrarlas cuando haya perfiles reales. -->
+        <article class="card item" data-item style="--accent: var(--magenta)">
+          <div class="person-head">
+            <span class="talent-avatar is-initials" aria-hidden="true">TN</span>
+            <div>
+              <h3>Tu Nombre <span class="pill pill-example">Ejemplo</span></h3>
+              <p class="role" data-facet="rol">Full-Stack</p>
+            </div>
+          </div>
+          <p><span class="pill pill-open">● Abierto/a a propuestas</span></p>
+          <ul class="item-meta">
+            <li><strong>Nivel</strong> <span data-facet="nivel">Junior</span></li>
+            <li><strong>Ubicación</strong> <span data-facet="ubicacion">San Salvador de Jujuy</span></li>
+          </ul>
+          <p><strong>Busca</strong></p>
+          <ul class="tags tags-soft" data-facet="busca"><li>Empleo</li><li>Freelance</li></ul>
+          <p><strong>Modalidad</strong></p>
+          <ul class="tags tags-soft" data-facet="modalidad"><li>Remoto</li><li>Híbrido</li></ul>
+          <ul class="tags" data-facet="tech"><li>JavaScript</li><li>React</li><li>Node.js</li></ul>
+          <div class="item-foot">
+            <span>Actualizado en oct 2026</span>
+            <span class="item-links"><a href="#como-sumar">GitHub</a><a href="#como-sumar">LinkedIn</a></span>
+          </div>
+        </article>
+
+        <article class="card item" data-item style="--accent: var(--purple)">
+          <div class="person-head">
+            <span class="talent-avatar is-initials" aria-hidden="true">OP</span>
+            <div>
+              <h3>Otra Persona <span class="pill pill-example">Ejemplo</span></h3>
+              <p class="role" data-facet="rol">Ciberseguridad</p>
+            </div>
+          </div>
+          <p><span class="pill pill-open">● Abierto/a a propuestas</span></p>
+          <ul class="item-meta">
+            <li><strong>Nivel</strong> <span data-facet="nivel">Semi Senior</span></li>
+            <li><strong>Ubicación</strong> <span data-facet="ubicacion">Fuera de Jujuy</span></li>
+          </ul>
+          <p><strong>Busca</strong></p>
+          <ul class="tags tags-soft" data-facet="busca"><li>Empleo</li></ul>
+          <p><strong>Modalidad</strong></p>
+          <ul class="tags tags-soft" data-facet="modalidad"><li>Remoto</li></ul>
+          <ul class="tags" data-facet="tech"><li>Python</li><li>Linux</li></ul>
+          <div class="item-foot">
+            <span>Actualizado en oct 2026</span>
+            <span class="item-links"><a href="#como-sumar">LinkedIn</a></span>
+          </div>
+        </article>
+
+        <article class="card ghost">
+          <h3>¿Estás buscando trabajo?</h3>
+          <p>Sumá tu perfil y que te encuentren. Elegís qué mostrar y lo podés sacar cuando quieras.</p>
+          <a class="btn btn-ghost btn-sm" href="https://github.com/FrancoDuran23/jujuy_dev/issues/new?template=perfil.yml" target="_blank" rel="noopener">Sumar el mío</a>
+        </article>
+
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="section alt dots" id="como-sumar">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">// sumate</p>
+          <h2>Cómo sumar una oferta o tu perfil</h2>
+          <p>Hay un formulario para cada caso, o podés mandar un pull request copiando una tarjeta de esta página. Antes de publicar, repasá las reglas.</p>
+        </div>
+        <div class="how-to">
+          <ol class="steps">
+            <li><strong>Elegí qué querés sumar.</strong> Una oferta laboral o tu perfil abierto a propuestas.</li>
+            <li><strong>Completá los datos.</strong> Para una oferta: puesto, modalidad, contrato y cómo postularse. Para un perfil: rol, nivel, qué buscás y tus links.</li>
+            <li><strong>Lo revisa el equipo.</strong> Cuando se aprueba aparece acá. Las ofertas se cierran solas en su fecha y los perfiles se pueden actualizar o sacar cuando quieras.</li>
+          </ol>
+          <div>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://github.com/FrancoDuran23/jujuy_dev/issues/new?template=oferta.yml" target="_blank" rel="noopener">Completar el formulario</a>
+              <a class="btn btn-ghost" href="https://github.com/FrancoDuran23/jujuy_dev/blob/main/CONTRIBUTING.md#sumar-una-oferta-laboral" target="_blank" rel="noopener">Hacerlo con un PR</a>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-2 rules">
+              <div class="card">
+                <h3>Para empresas y equipos</h3>
+                <ul class="conduct-list">
+                  <li>La oferta tiene que decir modalidad, tipo de contrato y cómo postularse.</li>
+                  <li>Nadie paga por postularse ni por aparecer. Si piden dinero, no se publica.</li>
+                  <li>No se piden datos sensibles (DNI, domicilio) en el primer contacto.</li>
+                  <li>Sin requisitos que excluyan por edad, género u otras condiciones personales.</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h3>Para personas</h3>
+                <ul class="conduct-list">
+                  <li>Todo lo que publiques es público y lo indexan los buscadores.</li>
+                  <li>Compartí solo el contacto que quieras mostrar. Mejor GitHub o LinkedIn que teléfono o domicilio.</li>
+                  <li>Cada perfil muestra cuándo se actualizó. Los que llevan mucho sin cambios se retiran.</li>
+                  <li>Podés pedir que saquen tu perfil cuando quieras.</li>
+                </ul>
+              </div>
+            </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="grad-bar" aria-hidden="true"></div>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="/">
+            <img class="logo-mark" src="/assets/logo-white.svg" alt="" width="34" height="24">
+            <span>jujuy<span class="grad-text">.dev</span></span>
+          </a>
+          <p class="footer-tag">Comunidad de tecnología y desarrollo en Jujuy. Impulsando el futuro digital del norte.</p>
+        </div>
+        <div>
+          <h4>comunidad</h4>
+          <ul>
+            <li><a href="https://chat.whatsapp.com/Bj1KKgjcLue2FOVuX8osmq" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="https://github.com/FrancoDuran23/jujuy_dev" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://x.com/JujuyDevAr" target="_blank" rel="noopener">X</a></li>
+            <li><a href="https://www.instagram.com/jujuy.dev/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="mailto:jujuydev@gmail.com">jujuydev@gmail.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>recursos</h4>
+          <ul>
+            <li><a href="/eventos/">Eventos</a></li>
+            <li><a href="/proyectos/">Proyectos</a></li>
+            <li><a href="/oportunidades/">Oportunidades</a></li>
+            <li><a href="/recursos/">Recursos</a></li>
+            <li><a href="/comunidad/">Comunidad</a></li>
+            <li><a href="/#colaboradores">Colaboradores</a></li>
+            <li><a href="/#staff">Staff</a></li>
+            <li><a href="/faq/">FAQ</a></li>
+            <li><a href="https://github.com/FrancoDuran23/jujuy_dev/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Cómo contribuir</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>legal</h4>
+          <ul>
+            <li><a href="/codigo-de-conducta/">Código de conducta</a></li>
+            <li><a href="https://github.com/FrancoDuran23/jujuy_dev/blob/main/LICENSE" target="_blank" rel="noopener">Licencia MIT</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> JujuyDev. Hecho con cariño desde Jujuy.</span>
+        <span class="mono">innovar();</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var nav = document.querySelector('.nav');
+      var toggle = document.querySelector('.nav-toggle');
+
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+      });
+
+      nav.querySelectorAll('.nav-links a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.setAttribute('aria-label', 'Abrir menú');
+        });
+      });
+
+      var revealed = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        revealed.forEach(function (el) { io.observe(el); });
+      } else {
+        revealed.forEach(function (el) { el.classList.add('in'); });
+      }
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>

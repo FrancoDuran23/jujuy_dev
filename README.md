@@ -8,13 +8,15 @@ Sitio publicado: https://jujuy.dev.ar/
 
 Abrí `index.html` con doble click. Listo. No hay nada que instalar.
 
+> El doble click sirve solo para ver la home. Para navegar entre páginas (proyectos, oportunidades, recursos…) levantá un servidor local con `python3 -m http.server 8000` desde esta carpeta y abrí http://localhost:8000. Los links internos son absolutos a propósito (`/proyectos/`, `/recursos/`): el sitio se publica en la raíz del dominio, y con `file://` esos links no encuentran nada.
+
 ## Contribuir
 
 Los PRs son bienvenidos. Leé [CONTRIBUTING.md](CONTRIBUTING.md) antes de empezar: ahí está qué aceptamos, qué no, y cómo probar tus cambios. También tenemos un [código de conducta](CODE_OF_CONDUCT.md).
 
 ## Editar el contenido
 
-Todo vive en `index.html`. Buscá los comentarios que dicen `EDIT` para encontrar cada punto rápido:
+La home vive en `index.html` y cada listado en su propia página. Buscá los comentarios que dicen `EDIT` para encontrar cada punto rápido:
 
 | Qué                          | Dónde                                                                |
 | ---------------------------- | -------------------------------------------------------------------- |
@@ -25,6 +27,22 @@ Todo vive en `index.html`. Buscá los comentarios que dicen `EDIT` para encontra
 | Personas que contribuyen     | Lista `#contribuyen` dentro de colaboradores, foto en `assets/people/` |
 | Números de la comunidad      | Sección `#numeros`                                                   |
 | Links del footer             | `<footer>`                                                           |
+| Proyectos de la comunidad    | `proyectos/index.html`: copiá una tarjeta (hay una plantilla en el comentario `EDIT`) |
+| Ofertas laborales            | `oportunidades/index.html`, pestaña `#ofertas`                       |
+| Perfiles abiertos a propuestas | `oportunidades/index.html`, pestaña `#talento`                     |
+| Recursos para aprender       | `recursos/index.html`                                                |
+
+## Cómo funcionan los buscadores y filtros
+
+Los tres listados (proyectos, oportunidades y recursos) son HTML normal: cada tarjeta es un `<article>`. `assets/filtros.js` lee lo que está escrito en cada tarjeta y arma solo el buscador y los filtros. Quien suma una tarjeta no toca JavaScript.
+
+- Cada valor filtrable lleva `data-facet="nombre"` (por ejemplo `data-facet="tech"`). En una lista `<ul>`, cada `<li>` es una opción.
+- El contenedor del listado declara qué filtros hay con `data-facets="tech:Tecnología,tema:Temática"`.
+- Si JavaScript no carga, la página se ve igual: es una lista de tarjetas.
+- Los filtros se guardan en la URL, así que se puede compartir una búsqueda por WhatsApp.
+- Una oferta con `data-cierre="AAAA-MM-DD"` se oculta sola pasada esa fecha.
+
+El detalle completo está en el comentario del principio de `assets/filtros.js`.
 
 ## Publicación
 
@@ -35,8 +53,12 @@ El dominio `jujuy.dev.ar` está definido en el archivo `CNAME`. El DNS se admini
 ## Archivos
 
 ```
-index.html              la página completa
+index.html              la home
+proyectos/              proyectos hechos en Jujuy, con buscador y filtros
+oportunidades/          ofertas laborales y personas abiertas a propuestas
+recursos/               recursos en español y skills de IA, con buscador y filtros
 styles.css              estilos y paleta
+assets/filtros.js              buscador, filtros y pestañas de los listados, sin dependencias
 assets/hero-layers/hornocal-*.webp capas transparentes publicadas del parallax
 assets/hero-parallax.js        parallax por scroll, sin dependencias
 assets/hero-scene.md           composición, exportación y ajustes de las capas

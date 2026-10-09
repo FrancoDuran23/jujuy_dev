@@ -1,0 +1,111 @@
+name: Sumar una oferta laboral
+description: Publicá una búsqueda de tu empresa o equipo en la sección Oportunidades.
+title: "Oferta: "
+labels: ["oferta"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        JujuyDev no intermedia ni guarda currículums: el botón *Postularme* lleva a la empresa. Publicar es gratis.
+
+        **Todo lo que completes acá se va a publicar en jujuy.dev.ar.**
+  - type: input
+    id: empresa
+    attributes:
+      label: Empresa o equipo
+    validations:
+      required: true
+  - type: input
+    id: puesto
+    attributes:
+      label: Puesto
+      description: Por ejemplo, Desarrollador/a Frontend.
+    validations:
+      required: true
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: De qué se trata
+      description: Pocas líneas sobre el trabajo y el equipo.
+    validations:
+      required: true
+  - type: dropdown
+    id: rol
+    attributes:
+      label: Rol
+      options:
+        - Frontend
+        - Backend
+        - Full-Stack
+        - Mobile
+        - Datos e IA
+        - DevOps
+        - Diseño
+        - QA
+        - Ciberseguridad
+        - Otro
+    validations:
+      required: true
+  - type: dropdown
+    id: nivel
+    attributes:
+      label: Nivel
+      options:
+        - Pasantía
+        - Junior
+        - Semi Senior
+        - Senior
+    validations:
+      required: true
+  - type: dropdown
+    id: modalidad
+    attributes:
+      label: Modalidad
+      options:
+        - Remoto
+        - Híbrido
+        - Presencial
+    validations:
+      required: true
+  - type: dropdown
+    id: contrato
+    attributes:
+      label: Tipo de contrato
+      options:
+        - Relación de dependencia
+        - Freelance
+        - Pasantía
+        - Part-time
+    validations:
+      required: true
+  - type: input
+    id: ubicacion
+    attributes:
+      label: Ubicación
+      description: Ciudad, o "Remoto" si no depende de un lugar.
+  - type: input
+    id: tech
+    attributes:
+      label: Tecnologías
+      description: Separadas por coma.
+  - type: input
+    id: postulacion
+    attributes:
+      label: Cómo postularse
+      description: Un link o un mail de la empresa.
+    validations:
+      required: true
+  - type: input
+    id: cierre
+    attributes:
+      label: Fecha de cierre
+      description: Opcional. Formato AAAA-MM-DD. Pasada esa fecha la oferta se oculta sola.
+  - type: checkboxes
+    id: reglas
+    attributes:
+      label: Reglas
+      options:
+        - label: La oferta no pide pagos para postularse, no pide datos sensibles en el primer contacto y no excluye por edad, género u otras condiciones personales.
+          required: true
+        - label: Acepto que esta información se publique en jujuy.dev.ar.
+          required: true
