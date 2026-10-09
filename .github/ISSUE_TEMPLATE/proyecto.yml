@@ -1,0 +1,90 @@
+name: Sumar un proyecto
+description: Mostrá algo que armaste en la sección Proyectos de jujuy.dev.ar.
+title: "Proyecto: "
+labels: ["proyecto"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por sumar tu proyecto. Tiene que ser algo hecho por alguien de la comunidad y que se pueda ver (un repo, una demo o las dos). No hace falta que esté terminado.
+
+        **Todo lo que completes acá se va a publicar en jujuy.dev.ar.**
+  - type: input
+    id: nombre
+    attributes:
+      label: Nombre del proyecto
+    validations:
+      required: true
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: ¿Qué hace?
+      description: Una o dos oraciones.
+    validations:
+      required: true
+  - type: input
+    id: tech
+    attributes:
+      label: Tecnologías
+      description: Separadas por coma. Por ejemplo, React, Node.js, PostgreSQL.
+    validations:
+      required: true
+  - type: input
+    id: tema
+    attributes:
+      label: Temática
+      description: Una palabra o dos. Por ejemplo, Turismo, Salud, Educación.
+    validations:
+      required: true
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: Tipo
+      options:
+        - Sitio web
+        - Aplicación web
+        - App móvil
+        - API
+        - Bot
+        - Librería o herramienta
+        - Datos
+        - Otro
+    validations:
+      required: true
+  - type: dropdown
+    id: estado
+    attributes:
+      label: Estado
+      options:
+        - En producción
+        - En desarrollo
+        - Prototipo
+    validations:
+      required: true
+  - type: input
+    id: links
+    attributes:
+      label: Links
+      description: Repositorio y/o demo.
+    validations:
+      required: true
+  - type: input
+    id: autor
+    attributes:
+      label: Quién lo hizo
+      description: Tu nombre y tu usuario de GitHub, o "la comunidad" si fue algo colectivo.
+    validations:
+      required: true
+  - type: checkboxes
+    id: colabora
+    attributes:
+      label: Colaboración
+      options:
+        - label: Busca colaboradores
+  - type: checkboxes
+    id: consentimiento
+    attributes:
+      label: Publicación
+      options:
+        - label: Acepto que esta información se publique en jujuy.dev.ar.
+          required: true

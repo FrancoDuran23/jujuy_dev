@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recursos · JujuyDev</title>
+  <meta name="description" content="Recursos en español para aprender y crecer en tecnología, y las skills de IA más populares de GitHub, organizados por tipo, tema, nivel, idioma y costo.">
+  <meta name="theme-color" content="#f7f1ef">
+  <link rel="canonical" href="https://jujuy.dev.ar/recursos/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="JujuyDev">
+  <meta property="og:title" content="Recursos · JujuyDev">
+  <meta property="og:description" content="Recursos en español para aprender y crecer en tecnología, y las skills de IA más populares de GitHub, organizados por tipo, tema, nivel, idioma y costo.">
+  <meta property="og:url" content="https://jujuy.dev.ar/recursos/">
+  <meta property="og:image" content="https://jujuy.dev.ar/assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@JujuyDevAr">
+  <meta name="twitter:title" content="Recursos · JujuyDev">
+  <meta name="twitter:description" content="Recursos en español para aprender y crecer en tecnología, y las skills de IA más populares de GitHub, organizados por tipo, tema, nivel, idioma y costo.">
+  <meta name="twitter:image" content="https://jujuy.dev.ar/assets/og.jpg">
+
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css?v=2026-10-08b">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="/assets/filtros.js?v=2026-10-08b" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <nav class="nav" aria-label="Principal">
+    <div class="container nav-inner">
+      <a class="logo" href="/">
+        <img class="logo-mark" src="/assets/logo.svg" alt="" width="34" height="24">
+        <span>jujuy<span class="grad-text">.dev</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16"/>
+          <path d="M4 12h16"/>
+          <path d="M4 17h16"/>
+        </svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/#pilares">Qué hacemos</a></li>
+        <li><a href="/comunidad/">Comunidad</a></li>
+        <li><a href="/eventos/">Eventos</a></li>
+        <li><a href="/proyectos/">Proyectos</a></li>
+        <li><a href="/oportunidades/">Oportunidades</a></li>
+        <li><a href="/recursos/" aria-current="page">Recursos</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+      </ul>
+      <a class="btn btn-primary btn-sm nav-cta" href="https://chat.whatsapp.com/Bj1KKgjcLue2FOVuX8osmq" target="_blank" rel="noopener">Sumate</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header class="page-hero page-hero-compact container">
+      <a class="back-link" href="/">← jujuy.dev.ar</a>
+      <p class="eyebrow">// recursos</p>
+      <h1>Recursos para aprender</h1>
+      <p class="lead">Recursos en español que le sirven a la comunidad, más las skills de IA más populares de GitHub.</p>
+    </header>
+
+    <section class="section listing-section">
+      <div class="container">
+        <div data-listing
+             data-prefix="r"
+             data-facets="tipo:Tipo,tema:Tema,nivel:Nivel,idioma:Idioma,costo:Costo"
+             data-order="tipo=Skill|Curso|Documentación|Tutorial|Guía|Libro|Herramienta|Roadmap|Comunidad;nivel=Principiante|Intermedio|Avanzado|Todos los niveles;costo=Gratis|Freemium|Pago"
+             data-noun="recurso|recursos"
+             data-placeholder="Buscar recursos…">
+          <div class="grid grid-3" data-items>
+        <!-- EDIT: sumá un recurso copiando una tarjeta. Los filtros se arman solos
+             con lo que escribas en cada elemento con data-facet.
+             Ponelo arriba de todo, salvo las tarjetas de tipo Skill: esas van primero y
+             ordenadas de más a menos estrellas.
+
+             Este listado es en español: sumá recursos que estén en español (o que tengan
+             versión en español, y en ese caso poné el link a esa versión).
+
+             <article class="card item" data-item>
+               <p class="item-kicker"><span data-facet="tipo">Curso</span></p>
+               <h3>Nombre del recurso</h3>
+               <p>Qué es y por qué sirve, en una o dos oraciones.</p>
+               <ul class="tags" data-facet="tema"><li>Web</li></ul>
+               <ul class="item-meta">
+                 <li><strong>Nivel</strong> <span data-facet="nivel">Principiante</span></li>
+                 <li><strong>Idioma</strong> <span data-facet="idioma">Español</span></li>
+                 <li><strong>Costo</strong> <span data-facet="costo">Gratis</span></li>
+               </ul>
+               <div class="item-foot">
+                 <span class="item-links"><a href="URL" target="_blank" rel="noopener">Abrir recurso ↗</a></span>
+               </div>
+             </article>
+
+             Tipo: Skill, Curso, Documentación, Tutorial, Guía, Libro, Herramienta, Roadmap, Comunidad.
+             Nivel: Principiante, Intermedio, Avanzado, Todos los niveles.
+             Costo: Gratis, Freemium, Pago.
+
+             Skills de IA (tipo "Skill"): son los repositorios de skills para agentes de IA
+             (formato SKILL.md) con más estrellas en GitHub. Son en inglés, así que van con
+             idioma "Inglés" y la descripción en español. Cada una lleva la estrella en el
+             kicker (con la cantidad redondeada hacia abajo y un "+", ej. "★ +12 mil") y no lleva Nivel:
+
+             <article class="card item" data-item style="--accent: var(--purple)">
+               <p class="item-kicker"><span data-facet="tipo">Skill</span><span class="item-stars" title="Estrellas en GitHub al AAAA-MM-DD"><span aria-hidden="true">★ +12 mil</span><span class="sr-only">más de 12 mil estrellas en GitHub</span></span></p>
+               <h3>Nombre del repositorio</h3>
+               <p>Qué hace, en español, en una o dos oraciones.</p>
+               <ul class="tags" data-facet="tema"><li>IA y agentes</li></ul>
+               <ul class="item-meta">
+                 <li><strong>Idioma</strong> <span data-facet="idioma">Inglés</span></li>
+                 <li><strong>Costo</strong> <span data-facet="costo">Gratis</span></li>
+               </ul>
+               <div class="item-foot">
+                 <span class="item-links"><a href="https://github.com/usuario/repo" target="_blank" rel="noopener">Abrir recurso ↗</a></span>
+               </div>
+             </article>
+
+             Si actualizás las estrellas, cambiá también la fecha del atributo title
+             ("Estrellas en GitHub al AAAA-MM-DD") de cada tarjeta. -->
+
+        <article class="card item" data-item style="--accent: var(--purple)">
+          <p class="item-kicker"><span data-facet="tipo">Skill</span><span class="item-stars" title="Estrellas en GitHub al 2026-10-08"><span aria-hidden="true">★ +296 mil</span><span class="sr-only">más de 296 mil estrellas en GitHub</span></span></p>
+          <h3>Superpowers</h3>
+          <p>Una metodología completa de desarrollo de software para agentes de código, armada con skills combinables y unas instrucciones iniciales que hacen que el agente las use.</p>
+          <ul class="tags" data-facet="tema"><li>IA y agentes</li></ul>
+          <ul class="item-meta">
+            <li><strong>Idioma</strong> <span data-facet="idioma">Inglés</span></li>
+            <li><strong>Costo</strong> <span data-facet="costo">Gratis</span></li>
+          </ul>
+          <div class="item-foot">
+            <span class="item-links"><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">Abrir recurso ↗</a></span>
+          </div>
+        </article>
+
+        <article class="card item" data-item style="--accent: var(--purple)">
+          <p class="item-kicker"><span data-facet="tipo">Skill</span><span class="item-stars" title="Estrellas en GitHub al 2026-10-08"><span aria-hidden="true">★ +281 mil</span><span class="sr-only">más de 281 mil estrellas en GitHub</span></span></p>
+          <h3>Skills for Real Engineers</h3>
+          <p>Las skills que su autor usa todos los días para hacer ingeniería de verdad, no «vibe coding»: chicas, fáciles de adaptar, combinables y compatibles con cualquier modelo.</p>
+          <ul class="tags" data-facet="tema"><li>IA y agentes</li></ul>
+          <ul class="item-meta">
+            <li><strong>Idioma</strong> <span data-facet="idioma">Inglés</span></li>
+            <li><strong>Costo</strong> <span data-facet="costo">Gratis</span></li>
+          </ul>
+          <div class="item-foot">
+            <span class="item-links"><a href="https://github.com/mattpocock/skills" target="_blank" rel="noopener">Abrir recurso ↗</a></span>
+          </div>
+        </article>
+
+        <article class="card item" data-item style="--accent: var(--purple)">
+          <p class="item-kicker"><span data-facet="tipo">Skill</span><span class="item-stars" title="Estrellas en GitHub al 2026-10-08"><span aria-hidden="true">★ +179 mil</span><span class="sr-only">más de 179 mil estrellas en GitHub</span></span></p>
+          <h3>Agent Skills (Anthropic)</h3>
+          <p>El repositorio público de Anthropic sobre Agent Skills, con skills de ejemplo para ver cómo se escribe una en formato SKILL.md.</p>
+          <ul class="tags" data-facet="tema"><li>IA y agentes</li></ul>
+          <ul class="item-meta">
+            <li><strong>Idioma</strong> <span data-facet="idioma">Inglés</span></li>
+            <li><strong>Costo</strong> <span data-facet="costo">Gratis</span></li>
+          </ul>
+          <div class="item-foot">
+            <span class="item-links"><a href="https://github.com/anthropics/skills" target="_blank" rel="noopener">Abrir recurso ↗</a></span>
+          </div>
+        </article>
+
+        <article class="card item" data-item style="--accent: var(--purple)">
+          <p class="item-kicker"><span data-facet="tipo">Skill</span><span class="item-stars" title="Estrellas en GitHub al 2026-10-08"><span aria-hidden="true">★ +158 mil</span><span class="sr-only">más de 158 mil estrellas en GitHub</span></span></p>
+          <h3>Ponytail</h3>
+          <p>Hace que tu agente piense como el desarrollador senior más perezoso de la sala: el mejor código es el que nunca escribiste.</p>
+          <ul class="tags" data-facet="tema"><li>IA y agentes</li></ul>
+          <ul class="item-meta">
+            <li><strong>Idioma</strong> <span data-facet="idioma">Inglés</span></li>
+            <li><strong>Costo</strong> <span data-facet="costo">Gratis</span></li>
+          </ul>
+          <div class="item-foot">
+            <span class="item-links"><a href="https://github.com/DietrichGebert/ponytail" target="_blank" rel="noopener">Abrir recurso ↗</a></span>
+          </div>
+        </article>
+
+        <article class="card item" data-item style="--accent: var(--purple)">
+          <p class="item-kicker"><span data-facet="tipo">Skill</span><span class="item-stars" title="Estrellas en GitHub al 2026-10-08"><span aria-hidden="true">★ +135 mil</span><span class="sr-only">más de 135 mil estrellas en GitHub</span></span></p>
+          <h3>gstack</h3>
+          <p>La configuración de Claude Code de Garry Tan (presidente y CEO de Y Combinator): herramientas con opinión que cubren roles como CEO, diseño, ingeniería, lanzamientos, documentación y QA.</p>
+          <ul class="tags" data-facet="tema"><li>IA y agentes</li></ul>
+          <ul class="item-meta">
+            <li><strong>Idioma</strong> <span data-facet="idioma">Inglés</span></li>
+            <li><strong>Costo</strong> <span data-facet="costo">Gratis</span></li>
+          </ul>
+          <div class="item-foot">
+            <span class="item-links"><a href="https://github.com/garrytan/gstack" target="_blank" rel="noopener">Abrir recurso ↗</a></span>
+          </div>
+        </article>
+
+        <article class="card item" data-item style="--accent: var(--purple)">
+          <p class="item-kicker"><span data-facet="tipo">Skill</span><span class="item-stars" title="Estrellas en GitHub al 2026-10-08"><span aria-hidden="true">★ +133 mil</span><span class="sr-only">más de 133 mil estrellas en GitHub</span></span></p>
+          <h3>UI UX Pro Max</h3>
+          <p>Una skill que le da al agente criterio de diseño para construir interfaces UI/UX profesionales en distintas plataformas.</p>
+          <ul class="tags" data-facet="tema"><li>IA y agentes</li></ul>
+          <ul class="item-meta">
+            <li><strong>Idioma</strong> <span data-facet="idioma">Inglés</span></li>
+            <li><strong>Costo</strong> <span data-facet="costo">Gratis</span></li>
+          </ul>
+          <div class="item-foot">
+            <span class="item-links"><a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener">Abrir recurso ↗</a></span>
+          </div>
+        </article>
+
+        <article class="card item" data-item style="--accent: var(--purple)">
+          <p class="item-kicker"><span data-facet="tipo">Skill</span><span class="item-stars" title="Estrellas en GitHub al 2026-10-08"><span aria-hidden="true">★ +110 mil</span><span class="sr-only">más de 110 mil estrellas en GitHub</span></span></p>
+          <h3>Caveman</h3>
+          <p>Una skill con proxy para agentes de código que recorta tokens haciendo que el agente hable «como cavernícola», con el código intacto.</p>
+          <ul class="tags" data-facet="tema"><li>IA y agentes</li></ul>
+          <ul class="item-meta">
+            <li><strong>Idioma</strong> <span data-facet="idioma">Inglés</span></li>
+            <li><strong>Costo</strong> <span data-facet="costo">Gratis</span></li>
+          </ul>
+          <div class="item-foot">
+            <span class="item-links"><a href="https://github.com/JuliusBrussee/caveman" target="_blank" rel="noopener">Abrir recurso ↗</a></span>
+          </div>
+        </article>
+
+        <article class="card item" data-item style="--accent: var(--purple)">
+          <p class="item-kicker"><span data-facet="tipo">Skill</span><span class="item-stars" title="Estrellas en GitHub al 2026-10-08"><span aria-hidden="true">★ +103 mil</span><span class="sr-only">más de 103 mil estrellas en GitHub</span></span></p>
+          <h3>Agent Skills (Addy Osmani)</h3>
+          <p>Skills de ingeniería de nivel producción para agentes de código: los flujos de trabajo, controles de calidad y buenas prácticas de un senior, a lo largo de todo el ciclo de desarrollo.</p>
+          <ul class="tags" data-facet="tema"><li>IA y agentes</li></ul>
+          <ul class="item-meta">
+            <li><strong>Idioma</strong> <span data-facet="idioma">Inglés</span></li>
+            <li><strong>Costo</strong> <span data-facet="costo">Gratis</span></li>
+          </ul>
+          <div class="item-foot">
+            <span class="item-links"><a href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener">Abrir recurso ↗</a></span>
+          </div>
+        </article>
+
+        <article class="card item" data-item style="--accent: var(--purple)">
+          <p class="item-kicker"><span data-facet="tipo">Skill</span><span class="item-stars" title="Estrellas en GitHub al 2026-10-08"><span aria-hidden="true">★ +93 mil</span><span class="sr-only">más de 93 mil estrellas en GitHub</span></span></p>
+          <h3>Taste Skill</h3>
+          <p>Le da «buen gusto» a tu IA para frontend: evita que genere interfaces genéricas y aburridas.</p>
+          <ul class="tags" data-facet="tema"><li>IA y agentes</li></ul>
+          <ul class="item-meta">
+            <li><strong>Idioma</strong> <span data-facet="idioma">Inglés</span></li>
+            <li><strong>Costo</strong> <span data-facet="costo">Gratis</span></li>
+          </ul>
+          <div class="item-foot">
+            <span class="item-links"><a href="https://github.com/Leonxlnx/taste-skill" target="_blank" rel="noopener">Abrir recurso ↗</a></span>
+          </div>
+        </article>
+
+        <article class="card item" data-item style="--accent: var(--purple)">
+          <p class="item-kicker"><span data-facet="tipo">Skill</span><span class="item-stars" title="Estrellas en GitHub al 2026-10-08"><span aria-hidden="true">★ +80 mil</span><span class="sr-only">más de 80 mil estrellas en GitHub</span></span></p>
+          <h3>Archify</h3>
+          <p>Una skill para agentes (Claude Code, Codex y más) que convierte una idea, un plan o un código en un diagrama interactivo en HTML.</p>
+          <ul class="tags" data-facet="tema"><li>IA y agentes</li></ul>
+          <ul class="item-meta">
+            <li><strong>Idioma</strong> <span data-facet="idioma">Inglés</span></li>
+            <li><strong>Costo</strong> <span data-facet="costo">Gratis</span></li>
+          </ul>
+          <div class="item-foot">
+            <span class="item-links"><a href="https://github.com/tt-a1i/archify" target="_blank" rel="noopener">Abrir recurso ↗</a></span>
+          </div>
+        </article>
+
+        <article class="card item" data-item style="--accent: var(--blue)">
+          <p class="item-kicker"><span data-facet="tipo">Documentación</span></p>
+          <h3>MDN Web Docs</h3>
+          <p>La referencia de HTML, CSS y JavaScript. Además tiene guías para aprender desde cero.</p>
+          <ul class="tags" data-facet="tema"><li>Web</li><li>JavaScript</li><li>CSS</li></ul>
+          <ul class="item-meta">
+            <li><strong>Nivel</strong> <span data-facet="nivel">Todos los niveles</span></li>
+            <li><strong>Idioma</strong> <span data-facet="idioma">Español</span> · <span data-facet="idioma">Inglés</span></li>
+            <li><strong>Costo</strong> <span data-facet="costo">Gratis</span></li>
+          </ul>
+          <div class="item-foot">
+            <span class="item-links"><a href="https://developer.mozilla.org/es/" target="_blank" rel="noopener">Abrir recurso ↗</a></span>
+          </div>
+        </article>
+
+        <article class="card item" data-item style="--accent: var(--coral)">
+          <p class="item-kicker"><span data-facet="tipo">Tutorial</span></p>
+          <h3>El Tutorial de JavaScript Moderno</h3>
+          <p>Desde lo básico hasta temas avanzados como closures, DOM y eventos, todo en español.</p>
+          <ul class="tags" data-facet="tema"><li>JavaScript</li></ul>
+          <ul class="item-meta">
+            <li><strong>Nivel</strong> <span data-facet="nivel">Principiante</span> · <span data-facet="nivel">Intermedio</span></li>
+            <li><strong>Idioma</strong> <span data-facet="idioma">Español</span></li>
+            <li><strong>Costo</strong> <span data-facet="costo">Gratis</span></li>
+          </ul>
+          <div class="item-foot">
+            <span class="item-links"><a href="https://es.javascript.info/" target="_blank" rel="noopener">Abrir recurso ↗</a></span>
+          </div>
+        </article>
+
+        <article class="card item" data-item style="--accent: var(--purple)">
+          <p class="item-kicker"><span data-facet="tipo">Libro</span></p>
+          <h3>Pro Git</h3>
+          <p>El libro oficial de Git. Se puede leer gratis en línea, también en español.</p>
+          <ul class="tags" data-facet="tema"><li>Git y GitHub</li></ul>
+          <ul class="item-meta">
+            <li><strong>Nivel</strong> <span data-facet="nivel">Principiante</span> · <span data-facet="nivel">Intermedio</span></li>
+            <li><strong>Idioma</strong> <span data-facet="idioma">Español</span> · <span data-facet="idioma">Inglés</span></li>
+            <li><strong>Costo</strong> <span data-facet="costo">Gratis</span></li>
+          </ul>
+          <div class="item-foot">
+            <span class="item-links"><a href="https://git-scm.com/book/es/v2" target="_blank" rel="noopener">Abrir recurso ↗</a></span>
+          </div>
+        </article>
+
+        <article class="card item" data-item style="--accent: var(--blue)">
+          <p class="item-kicker"><span data-facet="tipo">Documentación</span></p>
+          <h3>Documentación de GitHub</h3>
+          <p>La guía oficial de GitHub: repositorios, pull requests, issues, Actions y más.</p>
+          <ul class="tags" data-facet="tema"><li>Git y GitHub</li></ul>
+          <ul class="item-meta">
+            <li><strong>Nivel</strong> <span data-facet="nivel">Todos los niveles</span></li>
+            <li><strong>Idioma</strong> <span data-facet="idioma">Inglés</span> · <span data-facet="idioma">Español</span></li>
+            <li><strong>Costo</strong> <span data-facet="costo">Gratis</span></li>
+          </ul>
+          <div class="item-foot">
+            <span class="item-links"><a href="https://docs.github.com/es" target="_blank" rel="noopener">Abrir recurso ↗</a></span>
+          </div>
+        </article>
+
+        <article class="card item" data-item style="--accent: var(--magenta)">
+          <p class="item-kicker"><span data-facet="tipo">Guía</span></p>
+          <h3>Open Source Guides</h3>
+          <p>Guías de GitHub sobre cómo contribuir a proyectos open source y cómo lanzar y mantener uno propio.</p>
+          <ul class="tags" data-facet="tema"><li>Open source</li></ul>
+          <ul class="item-meta">
+            <li><strong>Nivel</strong> <span data-facet="nivel">Todos los niveles</span></li>
+            <li><strong>Idioma</strong> <span data-facet="idioma">Inglés</span> · <span data-facet="idioma">Español</span></li>
+            <li><strong>Costo</strong> <span data-facet="costo">Gratis</span></li>
+          </ul>
+          <div class="item-foot">
+            <span class="item-links"><a href="https://opensource.guide/es/" target="_blank" rel="noopener">Abrir recurso ↗</a></span>
+          </div>
+        </article>
+
+        <article class="card item" data-item style="--accent: var(--indigo)">
+          <p class="item-kicker"><span data-facet="tipo">Herramienta</span></p>
+          <h3>Learn Git Branching</h3>
+          <p>Práctica interactiva y visual de ramas, merge y rebase.</p>
+          <ul class="tags" data-facet="tema"><li>Git y GitHub</li></ul>
+          <ul class="item-meta">
+            <li><strong>Nivel</strong> <span data-facet="nivel">Principiante</span></li>
+            <li><strong>Idioma</strong> <span data-facet="idioma">Inglés</span> · <span data-facet="idioma">Español</span></li>
+            <li><strong>Costo</strong> <span data-facet="costo">Gratis</span></li>
+          </ul>
+          <div class="item-foot">
+            <span class="item-links"><a href="https://learngitbranching.js.org/?locale=es_AR" target="_blank" rel="noopener">Abrir recurso ↗</a></span>
+          </div>
+        </article>
+
+        <article class="card item" data-item style="--accent: var(--indigo)">
+          <p class="item-kicker"><span data-facet="tipo">Herramienta</span></p>
+          <h3>Flexbox Froggy</h3>
+          <p>Un juego para aprender CSS Flexbox nivel por nivel.</p>
+          <ul class="tags" data-facet="tema"><li>CSS</li></ul>
+          <ul class="item-meta">
+            <li><strong>Nivel</strong> <span data-facet="nivel">Principiante</span></li>
+            <li><strong>Idioma</strong> <span data-facet="idioma">Español</span> · <span data-facet="idioma">Inglés</span></li>
+            <li><strong>Costo</strong> <span data-facet="costo">Gratis</span></li>
+          </ul>
+          <div class="item-foot">
+            <span class="item-links"><a href="https://flexboxfroggy.com/#es" target="_blank" rel="noopener">Abrir recurso ↗</a></span>
+          </div>
+        </article>
+
+        <article class="card item" data-item style="--accent: var(--rose)">
+          <p class="item-kicker"><span data-facet="tipo">Comunidad</span></p>
+          <h3>SaltaDev</h3>
+          <p>La comunidad tech de Salta, hermana de JujuyDev.</p>
+          <ul class="tags" data-facet="tema"><li>Comunidad</li></ul>
+          <ul class="item-meta">
+            <li><strong>Nivel</strong> <span data-facet="nivel">Todos los niveles</span></li>
+            <li><strong>Idioma</strong> <span data-facet="idioma">Español</span></li>
+            <li><strong>Costo</strong> <span data-facet="costo">Gratis</span></li>
+          </ul>
+          <div class="item-foot">
+            <span class="item-links"><a href="https://salta.dev" target="_blank" rel="noopener">Abrir recurso ↗</a></span>
+          </div>
+        </article>
+
+        <article class="card item" data-item style="--accent: var(--rose)">
+          <p class="item-kicker"><span data-facet="tipo">Comunidad</span></p>
+          <h3>Calendario de JujuyDev</h3>
+          <p>Todos los próximos meetups, talleres y charlas de la comunidad, con inscripción.</p>
+          <ul class="tags" data-facet="tema"><li>Comunidad</li></ul>
+          <ul class="item-meta">
+            <li><strong>Nivel</strong> <span data-facet="nivel">Todos los niveles</span></li>
+            <li><strong>Idioma</strong> <span data-facet="idioma">Español</span></li>
+            <li><strong>Costo</strong> <span data-facet="costo">Gratis</span></li>
+          </ul>
+          <div class="item-foot">
+            <span class="item-links"><a href="https://luma.com/jujuydev" target="_blank" rel="noopener">Abrir recurso ↗</a></span>
+          </div>
+        </article>
+
+        <article class="card item" data-item style="--accent: var(--magenta)">
+          <p class="item-kicker"><span data-facet="tipo">Guía</span></p>
+          <h3>Cómo contribuir a este sitio</h3>
+          <p>Tu primer pull request puede ser acá mismo: qué aceptamos y cómo hacerlo.</p>
+          <ul class="tags" data-facet="tema"><li>Open source</li><li>Comunidad</li></ul>
+          <ul class="item-meta">
+            <li><strong>Nivel</strong> <span data-facet="nivel">Principiante</span></li>
+            <li><strong>Idioma</strong> <span data-facet="idioma">Español</span></li>
+            <li><strong>Costo</strong> <span data-facet="costo">Gratis</span></li>
+          </ul>
+          <div class="item-foot">
+            <span class="item-links"><a href="https://github.com/FrancoDuran23/jujuy_dev/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Abrir recurso ↗</a></span>
+          </div>
+        </article>
+
+        <article class="card ghost">
+          <h3>¿Conocés uno bueno?</h3>
+          <p>Un curso que te sirvió, una herramienta que usás todos los días, un canal o un libro. Sumalo y se lo mostramos a toda la comunidad.</p>
+          <a class="btn btn-ghost btn-sm" href="https://github.com/FrancoDuran23/jujuy_dev/issues/new?template=recurso.yml" target="_blank" rel="noopener">Sumar el mío</a>
+        </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt dots" id="como-sumar">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">// sumate</p>
+          <h2>Cómo sumar un recurso</h2>
+          <p>Cualquier cosa que le haya servido a alguien de la comunidad: un curso, una herramienta, un libro, una guía. Este listado es en español, así que buscamos recursos que estén en español, mejor si son gratis o tienen una parte gratis.</p>
+        </div>
+        <div class="how-to">
+          <ol class="steps">
+            <li><strong>Elegí cómo.</strong> Con un formulario o con un pull request, copiando una tarjeta de esta página.</li>
+            <li><strong>Etiquetalo bien.</strong> Tipo, tema, nivel, idioma y costo: de eso salen los filtros para que otros lo encuentren.</li>
+            <li><strong>Revisamos el link.</strong> Que funcione, que sea lo que dice ser y que no sea publicidad disfrazada. Después aparece acá.</li>
+          </ol>
+          <div>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://github.com/FrancoDuran23/jujuy_dev/issues/new?template=recurso.yml" target="_blank" rel="noopener">Completar el formulario</a>
+              <a class="btn btn-ghost" href="https://github.com/FrancoDuran23/jujuy_dev/blob/main/CONTRIBUTING.md#sumar-un-recurso" target="_blank" rel="noopener">Hacerlo con un PR</a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+  </main>
+
+  <div class="grad-bar" aria-hidden="true"></div>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="/">
+            <img class="logo-mark" src="/assets/logo-white.svg" alt="" width="34" height="24">
+            <span>jujuy<span class="grad-text">.dev</span></span>
+          </a>
+          <p class="footer-tag">Comunidad de tecnología y desarrollo en Jujuy. Impulsando el futuro digital del norte.</p>
+        </div>
+        <div>
+          <h4>comunidad</h4>
+          <ul>
+            <li><a href="https://chat.whatsapp.com/Bj1KKgjcLue2FOVuX8osmq" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="https://github.com/FrancoDuran23/jujuy_dev" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://x.com/JujuyDevAr" target="_blank" rel="noopener">X</a></li>
+            <li><a href="https://www.instagram.com/jujuy.dev/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="mailto:jujuydev@gmail.com">jujuydev@gmail.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>recursos</h4>
+          <ul>
+            <li><a href="/eventos/">Eventos</a></li>
+            <li><a href="/proyectos/">Proyectos</a></li>
+            <li><a href="/oportunidades/">Oportunidades</a></li>
+            <li><a href="/recursos/">Recursos</a></li>
+            <li><a href="/comunidad/">Comunidad</a></li>
+            <li><a href="/#colaboradores">Colaboradores</a></li>
+            <li><a href="/#staff">Staff</a></li>
+            <li><a href="/faq/">FAQ</a></li>
+            <li><a href="https://github.com/FrancoDuran23/jujuy_dev/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Cómo contribuir</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>legal</h4>
+          <ul>
+            <li><a href="/codigo-de-conducta/">Código de conducta</a></li>
+            <li><a href="https://github.com/FrancoDuran23/jujuy_dev/blob/main/LICENSE" target="_blank" rel="noopener">Licencia MIT</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> JujuyDev. Hecho con cariño desde Jujuy.</span>
+        <span class="mono">innovar();</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var nav = document.querySelector('.nav');
+      var toggle = document.querySelector('.nav-toggle');
+
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+      });
+
+      nav.querySelectorAll('.nav-links a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.setAttribute('aria-label', 'Abrir menú');
+        });
+      });
+
+      var revealed = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        revealed.forEach(function (el) { io.observe(el); });
+      } else {
+        revealed.forEach(function (el) { el.classList.add('in'); });
+      }
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
