@@ -1532,7 +1532,7 @@ p {
   flex-wrap: nowrap;
   width: max-content;
   gap: 0;
-  animation: logos-marquee 36s linear infinite;
+  animation: logos-marquee 48s linear infinite;
 }
 
 .logos-marquee:hover .logos-track,
@@ -1641,6 +1641,12 @@ a.logo-slot:hover {
   max-width: 100%;
   max-height: 64px;
   object-fit: contain;
+}
+
+/* Heavy, solid wordmarks (Celo, Ripio) read bigger than the rest: shrink them a bit. */
+.logo-slot.lockup.compact .brand img {
+  max-width: 150px;
+  max-height: 44px;
 }
 
 .sr-only {
@@ -1825,13 +1831,16 @@ img.avatar {
   opacity: 0.85;
 }
 
-/* Fixed fan positions for 6 cards: rotation and lift grow away from the middle. */
-.member-card:nth-child(1) { left: 0%;   transform: rotate(-18deg) translateY(28px); z-index: 1; }
-.member-card:nth-child(2) { left: 17%;  transform: rotate(-9deg)  translateY(4px);  z-index: 2; }
-.member-card:nth-child(3) { left: 34%;  transform: rotate(-2deg)  translateY(-8px); z-index: 4; }
-.member-card:nth-child(4) { left: 51%;  transform: rotate(4deg)   translateY(-8px); z-index: 4; }
-.member-card:nth-child(5) { left: 68%;  transform: rotate(11deg)  translateY(4px);  z-index: 2; }
-.member-card:nth-child(6) { left: 85%;  transform: rotate(19deg)  translateY(28px); z-index: 1; }
+/* Fixed fan positions for 8 cards: rotation and lift grow away from the middle.
+   left is computed so the last card ends flush with the container edge. */
+.member-card:nth-child(1) { left: calc((100% - 148px) * 0 / 7); transform: rotate(-18deg) translateY(28px); z-index: 1; }
+.member-card:nth-child(2) { left: calc((100% - 148px) * 1 / 7); transform: rotate(-12deg) translateY(12px); z-index: 2; }
+.member-card:nth-child(3) { left: calc((100% - 148px) * 2 / 7); transform: rotate(-6deg) translateY(0px); z-index: 3; }
+.member-card:nth-child(4) { left: calc((100% - 148px) * 3 / 7); transform: rotate(-2deg) translateY(-8px); z-index: 4; }
+.member-card:nth-child(5) { left: calc((100% - 148px) * 4 / 7); transform: rotate(2deg) translateY(-8px); z-index: 4; }
+.member-card:nth-child(6) { left: calc((100% - 148px) * 5 / 7); transform: rotate(6deg) translateY(0px); z-index: 3; }
+.member-card:nth-child(7) { left: calc((100% - 148px) * 6 / 7); transform: rotate(12deg) translateY(12px); z-index: 2; }
+.member-card:nth-child(8) { left: calc((100% - 148px) * 7 / 7); transform: rotate(18deg) translateY(28px); z-index: 1; }
 
 @media (max-width: 760px) {
   .member-wall {
