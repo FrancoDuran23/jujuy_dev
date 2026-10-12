@@ -27,9 +27,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css?v=2026-10-08c">
+  <link rel="stylesheet" href="/styles.css?v=2026-10-12b">
   <script>document.documentElement.classList.add('js');</script>
   <script src="/assets/filtros.js?v=2026-10-08b" defer></script>
+  <script src="/assets/proyectos.js?v=2026-10-12a" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Saltar al contenido</a>
@@ -95,6 +96,51 @@
 
              estado: En producción, En desarrollo o Prototipo.
              Si no busca colaboradores, borrá la lista tags-soft. -->
+
+        <article class="card item" data-item style="--accent: var(--orange)">
+          <p class="item-kicker"><span data-facet="tipo">Aplicación web</span><span data-facet="estado">En producción</span></p>
+          <h3>CondorJUY</h3>
+          <p>Mapa interactivo de servicios esenciales de Jujuy: farmacias de turno, centros de salud, bomberos y comisarías. Permite buscar por ubicación o localidad y consultar rutas.</p>
+          <ul class="tags" data-facet="tech"><li>Next.js</li><li>React</li><li>TypeScript</li><li>NestJS</li><li>MongoDB</li><li>Leaflet</li></ul>
+          <ul class="item-meta"><li><strong>Temática</strong> <span data-facet="tema">Salud</span></li></ul>
+          <div class="project-carousel" data-project-carousel aria-label="Capturas de CondorJUY">
+            <div class="project-carousel-track" data-carousel-track>
+              <figure class="project-carousel-slide">
+                <a class="project-preview" href="#condorjuy-preview" aria-label="Ampliar captura del mapa de servicios de CondorJUY">
+                  <img src="/assets/proyectos/condorjuy/preview.webp" alt="CondorJUY muestra en un mapa de Jujuy farmacias, centros de salud, bomberos y comisarías." width="1440" height="748" loading="lazy" decoding="async">
+                </a>
+              </figure>
+              <figure class="project-carousel-slide">
+                <a class="project-preview" href="#condorjuy-preview-details" aria-label="Ampliar captura de rutas de CondorJUY">
+                  <img src="/assets/proyectos/condorjuy/preview-details.webp" alt="CondorJUY muestra una farmacia seleccionada y su ruta en el mapa." width="1440" height="748" loading="lazy" decoding="async">
+                </a>
+              </figure>
+            </div>
+            <div class="project-carousel-controls">
+              <button class="btn btn-ghost btn-sm" type="button" data-carousel-prev aria-label="Captura anterior">← Anterior</button>
+              <span data-carousel-status aria-live="polite">1 de 2</span>
+              <button class="btn btn-ghost btn-sm" type="button" data-carousel-next aria-label="Captura siguiente">Siguiente →</button>
+            </div>
+          </div>
+          <div class="item-foot">
+            <span>por <a href="https://github.com/duiliomamani" target="_blank" rel="noopener">@duiliomamani</a></span>
+            <span class="item-links"><a href="https://condorjuy.vercel.app/" target="_blank" rel="noopener">Ver demo</a><a href="https://github.com/duiliomamani/condorjuy" target="_blank" rel="noopener">Frontend</a><a href="https://github.com/duiliomamani/condorjuy-api" target="_blank" rel="noopener">API</a></span>
+          </div>
+        </article>
+        <div class="project-lightbox" id="condorjuy-preview">
+          <a class="project-lightbox-backdrop" href="#main" aria-label="Cerrar imagen ampliada"></a>
+          <div class="project-lightbox-content">
+            <a class="project-lightbox-close" href="#main">Cerrar <span aria-hidden="true">×</span></a>
+            <img src="/assets/proyectos/condorjuy/zoom.webp" alt="Captura ampliada del mapa de CondorJUY con servicios esenciales de Jujuy." width="2880" height="1496">
+          </div>
+        </div>
+        <div class="project-lightbox" id="condorjuy-preview-details">
+          <a class="project-lightbox-backdrop" href="#main" aria-label="Cerrar imagen ampliada"></a>
+          <div class="project-lightbox-content">
+            <a class="project-lightbox-close" href="#main">Cerrar <span aria-hidden="true">×</span></a>
+            <img src="/assets/proyectos/condorjuy/zoom-details.webp" alt="Captura ampliada de una farmacia y su ruta en CondorJUY." width="2880" height="1496">
+          </div>
+        </div>
 
         <article class="card item" data-item style="--accent: var(--purple)">
           <p class="item-kicker"><span data-facet="tipo">Sitio web</span><span data-facet="estado">En producción</span></p>
