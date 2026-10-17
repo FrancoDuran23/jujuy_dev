@@ -87,7 +87,7 @@
 .jd-hero__copy { position: relative; z-index: 3; display: grid; grid-template-columns: 1fr 520px 1fr; align-items: end; min-height: 820px; padding: 0 var(--space-12); }
 .jd-hero__left { grid-column: 1; padding-bottom: var(--space-2); }
 .jd-hero__right { grid-column: 3; display: flex; flex-direction: column; gap: var(--space-6); padding-bottom: var(--space-2); }
-.jd-hero__left .jd-tags { margin-bottom: var(--space-4); }
+.jd-hero__left .jd-tags { margin-bottom: var(--space-8); }
 .jd-hero .jd-display { font-size: clamp(64px, 7.5vw, 96px); }
 .jd-hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
 
@@ -129,7 +129,6 @@
 .jd-train__wheel { animation: jd-spin .9s linear infinite; }
 @keyframes jd-spin { to { transform: rotate(360deg); } }
 @keyframes jd-train-bob { to { transform: translateY(1px); } }
-.jd-train:hover .jd-train__wheel, .jd-train:hover .jd-train__svg { animation-play-state: paused; }
 @media (prefers-reduced-motion: reduce) { .jd-train__wheel, .jd-train__svg { animation: none; } }
 @media (max-width: 900px) {
   .jd-train-head { grid-template-columns: 1fr; }
@@ -141,24 +140,25 @@
 .jd-team__intro { max-width: 440px; margin: 0; font-size: 17px; line-height: 1.55; color: var(--ink-muted); }
 .jd-team__intro a { color: var(--ink); font-weight: 700; text-decoration: none; border-bottom: 1.5px solid var(--violet); }
 .jd-team__intro a:hover { color: var(--violet); }
-.jd-team { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-12) var(--space-6); border-top: 1.5px solid var(--ink); padding-top: var(--space-8); }
+.jd-team { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--space-8) var(--space-4); border-top: 1.5px solid var(--ink); padding-top: var(--space-8); }
 .jd-person { display: flex; flex-direction: column; gap: var(--space-2); }
 .jd-person__photo { position: relative; aspect-ratio: 1; overflow: hidden; background: var(--plum); margin-bottom: var(--space-3); }
 .jd-person__photo .jd-orb { width: 70%; height: auto; aspect-ratio: 1; right: -16%; top: 8%; transition: transform .5s cubic-bezier(.2,.8,.2,1); }
 .jd-person:nth-child(3n+2) .jd-person__photo .jd-orb { right: auto; left: 34%; top: -22%; width: 78%; }
 .jd-person:nth-child(3n) .jd-person__photo .jd-orb { right: -28%; top: 40%; width: 82%; }
 .jd-person__photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.05); transition: filter .35s ease; }
-.jd-person__mono { position: absolute; left: var(--space-4); bottom: var(--space-2); font-family: var(--font-condensed); font-size: clamp(72px, 8vw, 112px); line-height: .85; color: var(--on-plum); letter-spacing: -1px; }
-.jd-person__num { position: absolute; top: var(--space-4); left: var(--space-4); padding: var(--space-1) var(--space-3); border: 1.5px solid var(--on-plum); color: var(--on-plum); font: 700 13px/1.2 var(--font-mono); letter-spacing: 2px; }
+.jd-person__mono { position: absolute; left: var(--space-3); bottom: var(--space-2); font-family: var(--font-condensed); font-size: clamp(48px, 4.4vw, 64px); line-height: .85; color: var(--on-plum); letter-spacing: -1px; }
+.jd-person__num { position: absolute; top: var(--space-3); left: var(--space-3); padding: var(--space-1) var(--space-3); border: 1.5px solid var(--on-plum); color: var(--on-plum); font: 700 13px/1.2 var(--font-mono); letter-spacing: 2px; }
 .jd-person:hover .jd-orb { transform: scale(1.18) translateX(-8%); }
 .jd-person:hover .jd-person__photo img { filter: none; }
-.jd-person__name { font-family: var(--font-condensed); font-weight: 400; font-size: 34px; line-height: .95; text-transform: uppercase; margin: 0; }
-.jd-person__role { margin: 0; font: 500 15px/1.4 var(--font-sans); color: var(--ink-muted); }
+.jd-person__name { font-family: var(--font-condensed); font-weight: 400; font-size: 24px; line-height: .95; text-transform: uppercase; margin: 0; }
+.jd-person__role { margin: 0; font: 500 14px/1.4 var(--font-sans); color: var(--ink-muted); }
 .jd-person__links { display: flex; gap: var(--space-4); margin-top: var(--space-1); }
 .jd-person__links a { font: 700 12px/1 var(--font-mono); letter-spacing: 2px; text-transform: uppercase; text-decoration: none; color: var(--ink); }
 .jd-person__links a:hover { color: var(--violet); }
-@media (max-width: 900px) { .jd-team { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-8) var(--space-4); } .jd-person__name { font-size: 26px; } }
-@media (max-width: 520px) { .jd-team { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-6) var(--space-3); } .jd-person__name { font-size: 20px; } .jd-person__role { font-size: 13px; } .jd-person__mono { font-size: 56px; left: var(--space-3); } .jd-person__num { top: var(--space-2); left: var(--space-2); font-size: 11px; } .jd-person__links { flex-direction: column; gap: var(--space-2); } }
+@media (max-width: 1100px) { .jd-team { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .jd-team { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-6) var(--space-3); } .jd-person__name { font-size: 20px; } }
+@media (max-width: 520px) { .jd-team { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-6) var(--space-3); } .jd-person__name { font-size: 20px; } .jd-person__role { font-size: 13px; } .jd-person__mono { font-size: 44px; left: var(--space-3); } .jd-person__num { top: var(--space-2); left: var(--space-2); font-size: 11px; } .jd-person__links { flex-direction: column; gap: var(--space-2); } }
 
 /* ---------- Event card ---------- */
 .jd-event { display: grid; grid-template-columns: 200px 1fr; gap: var(--space-6); align-items: stretch; padding: var(--space-6); background: var(--paper-raised); border: 1px solid var(--line-soft); border-radius: var(--radius-none); }
@@ -372,4 +372,18 @@ a.jd-logo:hover { background: #f1f0ea; }
 @media (max-width: 900px) {
   .jd-detail, .jd-photos { grid-template-columns: 1fr; }
   .jd-facts div { grid-template-columns: 1fr; gap: var(--space-1); }
+}
+
+/* Información del evento con el flyer al lado */
+.jd-detail--flyer { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); align-items: start; }
+.jd-detail__info { display: flex; flex-direction: column; gap: var(--space-12); }
+.jd-detail--flyer .jd-flyer { position: sticky; top: var(--space-6); width: 100%; margin: 0; }
+.jd-flyer--square { aspect-ratio: 1; }
+.jd-flyer--wide { aspect-ratio: 4 / 3; }
+.jd-photos--one { grid-template-columns: minmax(0, 1fr); }
+.jd-photos--one .jd-tile { aspect-ratio: 16 / 9; }
+.jd-person__links { flex-wrap: wrap; gap: var(--space-2) var(--space-4); }
+@media (max-width: 900px) {
+  .jd-detail--flyer { grid-template-columns: 1fr; }
+  .jd-detail--flyer .jd-flyer { position: static; order: -1; max-width: 480px; }
 }

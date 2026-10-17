@@ -189,8 +189,6 @@
       anim.currentTime = ((S * 0.9) / (W + S)) * anim.effect.getTiming().duration; // empieza con la trompa ya en escena
     }
     var rt; addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(run, 200); });
-    root.addEventListener('mouseenter', function () { anim && anim.pause(); });
-    root.addEventListener('mouseleave', function () { anim && anim.play(); });
     seedMembers(root.getAttribute('data-src')).then(function (members) { build(root, members); run(); });
   }
 

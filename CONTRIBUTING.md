@@ -75,17 +75,20 @@ Si tenés dudas antes de empezar, abrí un issue o preguntá en el grupo de What
 
 ## Sumarte como contribuidor a la página
 
-Todo PR mergeado suma a su autor a la sección **"Personas que hacen crecer este sitio"**. Para aparecer, en tu mismo PR o en uno aparte agregá dos cosas:
+Todo PR mergeado suma a su autor al **Tren Solar** de la home (sección `#comunidad`): tu foto viaja en una ventanita de los vagones. Para subirte, en tu mismo PR o en uno aparte agregá dos cosas:
 
 1. **Tu foto** en `assets/people/nombre-apellido.webp`. Cuadrada, 168x168, menos de 10 KB. Si no sabés convertirla, subí un JPG o PNG y la convertimos nosotros.
 
-   **No pongas la URL de tu avatar de GitHub.** Es tentador, porque `https://github.com/tu-usuario.png` funciona de una. Pero GitHub te devuelve la imagen sin optimizar: medimos las que teníamos y pesaban entre 100 y 165 KB cada una, para mostrarse a 84 píxeles. Agregarle `?s=160` tampoco alcanza: redimensiona, pero sigue mandando PNG pesado.
+   **No pongas la URL de tu avatar de GitHub.** Es tentador, porque `https://github.com/tu-usuario.png` funciona de una. Pero GitHub te devuelve la imagen sin optimizar: medimos las que teníamos y pesaban entre 100 y 165 KB cada una. Agregarle `?s=160` tampoco alcanza: redimensiona, pero sigue mandando PNG pesado.
 
    Las cinco fotos que había sumaban 504 KB. Convertidas a WebP local quedaron en 30 KB. Además, un archivo propio no se rompe si algún día borrás tu cuenta ni hace que cada visitante le pegue a los servidores de GitHub.
-2. **Tu card**, copiando la última de la lista `#contribuyen` en `index.html`, con:
-   - nombre y apellido
-   - un título corto, por ejemplo "Frontend Developer" o "Estudiante de Sistemas"
-   - un solo link: tu GitHub o tu LinkedIn
+2. **Tu lugar en el tren**: en `index.html`, buscá el bloque `<script type="application/json" id="jd-tren-miembros">` y agregá una línea al final de la lista con tu usuario de GitHub y la ruta de tu foto:
+
+   ```json
+   { "login": "tu-usuario", "avatar": "assets/people/nombre-apellido.webp" }
+   ```
+
+   Ojo con la coma: todas las líneas menos la última terminan en `,`. Las personas más nuevas viajan más cerca de la trompa.
 
 Si preferís no aparecer, decilo en el PR y listo. Nadie está obligado.
 
