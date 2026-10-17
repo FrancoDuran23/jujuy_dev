@@ -232,10 +232,18 @@
 /* ---------- Nav: menú en pantallas chicas ---------- */
 .jd-nav__toggle { display: none; min-height: 40px; padding: 0 var(--space-4); border: 1.5px solid var(--ink); background: transparent; color: var(--ink); font: 700 13px/1 var(--font-mono); letter-spacing: 3px; text-transform: uppercase; cursor: pointer; }
 .jd-nav__links a[aria-current="page"] { color: var(--violet); }
+.jd-nav__actions { display: flex; align-items: center; gap: var(--space-3); }
+.jd-theme { min-height: 40px; padding: 0 var(--space-4); border: 1.5px solid var(--ink); background: transparent; color: var(--ink); font: 700 13px/1 var(--font-mono); letter-spacing: 3px; text-transform: uppercase; cursor: pointer; transition: background-color .15s ease, color .15s ease; }
+.jd-theme:hover { background: var(--ink); color: var(--on-ink); }
 @media (max-width: 1100px) {
   .jd-nav { flex-wrap: wrap; }
-  .jd-nav__toggle { display: inline-flex; align-items: center; margin-left: auto; }
-  .jd-nav > .jd-btn--primary { display: none; }
+  .jd-nav__actions { order: 1; margin-left: auto; }
+  .jd-nav__toggle { display: inline-flex; align-items: center; order: 2; }
+  .jd-nav > nav { order: 3; }
+  .jd-nav__actions .jd-btn--primary { display: none; }
+  .jd-nav { gap: var(--space-2); }
+  .jd-nav__actions { gap: var(--space-2); }
+  .jd-theme, .jd-nav__toggle { padding: 0 var(--space-3); letter-spacing: 2px; }
   .jd-nav.is-open > nav { order: 3; width: 100%; }
   .jd-nav.is-open .jd-nav__links { display: flex; flex-direction: column; gap: 0; width: 100%; border-top: 1.5px solid var(--ink); }
   .jd-nav.is-open .jd-nav__links a { display: block; padding: var(--space-4) 0; border-bottom: 1px solid var(--line-soft); font-size: 17px; }
@@ -312,11 +320,17 @@ a.jd-event:hover .jd-event__title { color: var(--violet); }
   .jd-logos__track { width: auto; animation: none; }
   .jd-logos__set { flex-wrap: wrap; }
 }
-.jd-logo { display: flex; align-items: center; justify-content: center; gap: var(--space-3); min-height: 112px; padding: var(--space-4) var(--space-6); background: #ffffff; color: #0a0a0a; font: 700 15px/1.2 var(--font-sans); text-decoration: none; transition: background-color .15s ease; }
+/* Light tints of the three orb colours, in turn, so the logos keep a light ground in both themes.
+   On hover the bar at the bottom fills with that colour at full strength. */
+.jd-logo { --tint: #fde8fb; --accent: var(--orb-magenta); position: relative; display: flex; align-items: center; justify-content: center; gap: var(--space-3); min-height: 112px; padding: var(--space-4) var(--space-6); background: var(--tint); color: #0a0a0a; font: 700 15px/1.2 var(--font-sans); text-decoration: none; transition: background-color .15s ease; }
+.jd-logo:nth-child(3n+2) { --tint: #f3e6fd; --accent: var(--orb-violet); }
+.jd-logo:nth-child(3n) { --tint: #e6edfe; --accent: var(--orb-blue); }
+.jd-logo::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: var(--accent); transform: scaleY(.5); transform-origin: bottom; opacity: .55; transition: transform .2s ease, opacity .2s ease; }
+a.jd-logo:hover::after { transform: none; opacity: 1; }
 .jd-logo img { display: block; max-width: 100%; max-height: 52px; width: auto; height: auto; object-fit: contain; }
 .jd-logo--mark img { width: 40px; height: 40px; }
 .jd-logo--wide img { max-height: 30px; }
-a.jd-logo:hover { background: #f1f0ea; }
+a.jd-logo:hover { background: #ffffff; }
 .jd-collab { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); flex-wrap: wrap; margin-top: var(--space-6); padding: var(--space-6); background: var(--paper-raised); border: 1px solid var(--line-soft); }
 .jd-collab h3 { font-family: var(--font-condensed); font-weight: 400; font-size: clamp(28px, 3vw, 36px); line-height: .95; text-transform: uppercase; margin: 0 0 var(--space-2); }
 .jd-collab p { margin: 0; font-size: 17px; line-height: 1.55; color: var(--ink-muted); }
@@ -387,3 +401,5 @@ a.jd-logo:hover { background: #f1f0ea; }
   .jd-detail--flyer { grid-template-columns: 1fr; }
   .jd-detail--flyer .jd-flyer { position: static; order: -1; max-width: 480px; }
 }
+
+@media (max-width: 420px) { .jd-nav__logo { height: 24px; } }

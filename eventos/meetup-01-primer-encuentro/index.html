@@ -31,7 +31,7 @@
   <script>(function(){var t;try{t=localStorage.getItem('jd-theme');}catch(e){}var d=t||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',d);})();</script>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/tokens.css?v=2026-10-17">
-  <link rel="stylesheet" href="../../css/jd.css?v=2026-10-17d">
+  <link rel="stylesheet" href="../../css/jd.css?v=2026-10-17g">
 
   <!-- Structured data for Google. organizer references the Organization defined on the home page. -->
   <script type="application/ld+json">
@@ -90,7 +90,11 @@
         <li><a href="../../faq/">Preguntas</a></li>
       </ul>
     </nav>
-    <a class="jd-btn jd-btn--primary" href="https://chat.whatsapp.com/Bj1KKgjcLue2FOVuX8osmq" target="_blank" rel="noopener">Unite</a>
+    <div class="jd-nav__actions">
+      <!-- Theme switch: the label names the theme you switch to. Saved in localStorage («jd-theme»). -->
+      <button class="jd-theme" type="button" data-jd-theme-toggle>Día</button>
+      <a class="jd-btn jd-btn--primary" href="https://chat.whatsapp.com/Bj1KKgjcLue2FOVuX8osmq" target="_blank" rel="noopener">Unite</a>
+    </div>
   </header>
 
   <main id="main">
@@ -172,6 +176,6 @@
   </footer>
 </div>
 
-  <script src="../../assets/jd-nav.js?v=2026-10-17b" defer></script>
+  <script src="../../assets/jd-nav.js?v=2026-10-17c" defer></script>
 </body>
 </html>
