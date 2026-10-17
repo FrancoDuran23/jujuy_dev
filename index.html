@@ -86,7 +86,7 @@
   <link rel="preload" as="image" href="assets/brand/jujuydev-llama-hd.webp" type="image/webp">
   <!-- Bump the version whenever the CSS changes, so browsers do not keep a stale copy. -->
   <link rel="stylesheet" href="css/tokens.css?v=2026-10-17">
-  <link rel="stylesheet" href="css/jd.css?v=2026-10-17d">
+  <link rel="stylesheet" href="css/jd.css?v=2026-10-17g">
 </head>
 <body>
 <div class="jd">
@@ -109,7 +109,11 @@
         <li><a href="#faq">Preguntas</a></li>
       </ul>
     </nav>
-    <a class="jd-btn jd-btn--primary" href="https://chat.whatsapp.com/Bj1KKgjcLue2FOVuX8osmq" target="_blank" rel="noopener">Unite</a>
+    <div class="jd-nav__actions">
+      <!-- Theme switch: the label names the theme you switch to. Saved in localStorage («jd-theme»). -->
+      <button class="jd-theme" type="button" data-jd-theme-toggle>Día</button>
+      <a class="jd-btn jd-btn--primary" href="https://chat.whatsapp.com/Bj1KKgjcLue2FOVuX8osmq" target="_blank" rel="noopener">Unite</a>
+    </div>
   </header>
 
   <main>
@@ -367,7 +371,7 @@
     <div class="jd-team">
       <article class="jd-person">
         <div class="jd-person__photo">
-          <img src="assets/people/franco-duran.webp" alt="" loading="lazy">
+          <img src="assets/people/franco-duran-lg.webp" alt="" loading="lazy">
           <span class="jd-person__mono" aria-hidden="true">FD</span>
           <span class="jd-person__num">01</span>
         </div>
@@ -387,7 +391,7 @@
       </article>
       <article class="jd-person">
         <div class="jd-person__photo">
-          <img src="assets/people/maximiliano-farfan.webp" alt="" loading="lazy">
+          <img src="assets/people/maximiliano-farfan-lg.webp" alt="" loading="lazy">
           <span class="jd-person__mono" aria-hidden="true">MF</span>
           <span class="jd-person__num">03</span>
         </div>
@@ -450,7 +454,7 @@
   </footer>
 </div>
 
-  <script src="assets/jd-nav.js?v=2026-10-17b" defer></script>
+  <script src="assets/jd-nav.js?v=2026-10-17c" defer></script>
   <script src="assets/jd-home.js?v=2026-10-17e" defer></script>
   <script src="assets/calendario.js?v=2026-10-17b" defer></script>
 </body>

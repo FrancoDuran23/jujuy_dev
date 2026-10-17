@@ -1,4 +1,4 @@
-/* Menú del sistema de diseño (.jd-nav) en pantallas chicas, y el año del footer.
+/* Menú del sistema de diseño (.jd-nav) en pantallas chicas, botón de tema y el año del footer.
    Lo cargan todas las páginas. */
 (function () {
   document.querySelectorAll('.jd-nav').forEach(function (nav) {
@@ -30,5 +30,26 @@
     e.preventDefault();
     url.pathname += 'index.html';
     location.href = url.href;
+  });
+})();
+
+/* Tema: arranca con el del sistema (o el guardado, ver el <script> del <head>) y el botón lo
+   cambia a mano. El rótulo dice a qué tema pasás. */
+(function () {
+  var root = document.documentElement;
+  document.querySelectorAll('[data-jd-theme-toggle]').forEach(function (btn) {
+    function label() {
+      var dark = root.getAttribute('data-theme') === 'dark';
+      btn.textContent = dark ? 'Día' : 'Noche';
+      btn.setAttribute('aria-label', dark ? 'Pasar al tema claro' : 'Pasar al tema oscuro');
+    }
+    btn.addEventListener('click', function () {
+      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('jd-theme', next); } catch (e) {}
+      document.querySelectorAll('[data-jd-theme-toggle]').forEach(function (b) { b.dispatchEvent(new Event('jd-theme')); });
+    });
+    btn.addEventListener('jd-theme', label);
+    label();
   });
 })();
