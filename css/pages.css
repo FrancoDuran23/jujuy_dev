@@ -1,0 +1,154 @@
+/* ==========================================================================
+   Páginas internas (eventos, comunidad, proyectos, oportunidades, recursos,
+   FAQ, código de conducta, 404). Se carga después de styles.css, tokens.css
+   y jd.css, y lleva los componentes de styles.css al sistema de diseño de la
+   home: papel cálido, tinta, un solo acento violeta, títulos condensados en
+   mayúsculas y formas cuadradas. Ver assets/brand/DISENO.md.
+   ========================================================================== */
+
+:root {
+  /* styles.css palette, remapped to the design tokens */
+  --cream: #fbfbf7;
+  --cream-2: #f1f0ea;
+  --cream-3: #dddbd3;
+  --paper: #ffffff;
+  --ink: #0a0a0a;
+  --ink-2: #55534e;
+  --ink-3: #8a877f;
+  --purple: #7b37e5;
+  --rose: #7b37e5;
+  --orange: #f624e5;
+  --coral: #f624e5;
+  --magenta: #aa31ef;
+  --indigo: #3f6df4;
+  --blue: #3f6df4;
+  --grad: linear-gradient(90deg, #f624e5, #aa31ef 55%, #3f6df4);
+  --radius: 0;
+  --shadow: none;
+  /* The design-system nav is not fixed, so pages no longer clear it. */
+  --nav-h: 0px;
+}
+
+body {
+  background: var(--cream);
+  font-family: var(--font-sans);
+  font-weight: 400;
+}
+
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+/* ---------- Títulos: Anton en mayúsculas ---------- */
+main h1,
+main h2 {
+  font-family: var(--font-condensed);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: -.5px;
+  line-height: .9;
+}
+.page-hero h1 { font-size: clamp(56px, 8vw, 104px); margin: var(--space-2) 0 var(--space-6); }
+.page-hero-compact h1 { font-size: clamp(44px, 6vw, 72px); }
+.section-head h2,
+main h2 { font-size: clamp(40px, 5.5vw, 72px); }
+main h3 { letter-spacing: 0; }
+.card h3 {
+  font-family: var(--font-condensed);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: .95;
+  text-transform: uppercase;
+}
+.page-hero .lead,
+.section-head p:not(.eyebrow) { font-size: 19px; line-height: 1.5; color: var(--ink-muted); }
+
+/* «// eventos» becomes the mono cue, with the 48×4 rule above section titles */
+.eyebrow,
+.page-hero .eyebrow {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.section-head .eyebrow::before,
+.page-hero .eyebrow::before {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 4px;
+  margin-bottom: var(--space-4);
+  background: var(--ink);
+}
+.page-hero-compact .eyebrow::before { display: none; }
+.back-link { font-weight: 700; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--ink); }
+.back-link:hover { color: var(--violet); }
+
+/* «Dev» and other gradient words: static orb gradient, no shimmer */
+.grad-text { background: var(--grad); background-size: 100% 100%; -webkit-background-clip: text; background-clip: text; animation: none; }
+.grad-bar { display: none; }
+.section-chakana { display: none; }
+.dots { background-image: none; }
+.hl { background: none; color: var(--violet); padding: 0; }
+
+/* ---------- Botones cuadrados ---------- */
+.btn {
+  min-height: 48px;
+  border-radius: 0;
+  border: 1.5px solid var(--ink);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  box-shadow: none;
+  transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+}
+.btn:hover { transform: none; }
+.btn:active { transform: translateY(1px); }
+.btn-primary { background: var(--ink); color: var(--on-ink); box-shadow: none; }
+.btn-primary:hover { background: var(--violet); border-color: var(--violet); color: var(--on-violet); box-shadow: none; }
+.btn-ghost { background: transparent; color: var(--ink); }
+.btn-ghost:hover { background: var(--ink); color: var(--on-ink); }
+.btn-sm { min-height: 40px; font-size: 14px; }
+
+/* ---------- Tarjetas: papel, borde suave, sin sombra ni barra de color ---------- */
+.card { border-radius: 0; border-color: var(--line-soft); box-shadow: none; }
+.card::before { display: none; }
+.card:hover { transform: none; box-shadow: none; border-color: var(--ink); }
+.card.ghost { background: transparent; border: 1.5px dashed var(--line); }
+.section.alt { background-color: var(--paper-sunk); }
+
+/* Everything else that was rounded goes square, except avatars and dots. */
+.skip-link, .nu-date, .pillar .tile, .platform .icon, .platform.soon .link,
+.upcoming-card, .upcoming-card .shot, .upcoming-card .date, .upcoming-card .badge,
+.event-card, .event-card .shot, .event-card .date, .event-card .badge, .event .when,
+.logo-slot, .collab-cta, .member-card, .socials a, .field input, .field textarea,
+.flyer img, .filters-panel, .search input, .filter-badge, .chip, .project-preview,
+.project-lightbox-content img, .tags li, .pill, .tabs a {
+  border-radius: 0;
+}
+.gallery img { border-radius: var(--radius-tile); }
+
+/* Labels and chips: outlined tag, solid when active */
+.chip, .pill, .tags li, .filter-badge, .event .when, .upcoming-card .badge, .event-card .badge {
+  border: 1.5px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.chip[aria-pressed="true"], .chip.active, .chip.is-active, .tabs a[aria-selected="true"], .tabs a.active, .tabs a[aria-current] {
+  background: var(--ink);
+  color: var(--on-ink);
+  border-color: var(--ink);
+}
+.search input, .field input, .field textarea { border: 1.5px solid var(--line); background: var(--paper-raised); }
+.search input:focus, .field input:focus, .field textarea:focus { border-color: var(--violet); }
+
+/* ---------- Bloque oscuro (eventos): plum, la superficie oscura de marca ---------- */
+.section-dark { background: var(--plum); }
+
+/* ---------- Nav y footer del sistema sobre estas páginas ---------- */
+.jd-nav { font-family: var(--font-sans); border-bottom: 1px solid var(--line-soft); background: var(--paper); }
+.jd-nav__links a { color: var(--ink); }
+.jd-nav__links a:hover, .jd-nav__links a[aria-current="page"] { color: var(--violet); }
+.jd-footer { margin-top: 0; }

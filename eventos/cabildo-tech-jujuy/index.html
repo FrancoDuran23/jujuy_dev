@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cabildo Tech Jujuy · 17 de septiembre de 2026 — JujuyDev</title>
   <meta name="description" content="Cabildo Tech Jujuy se realizó el 17 de septiembre de 2026 en el Cabildo de Jujuy. Charla de Jorge Gronda (Umana) y workshop de IA. Mirá cómo fue.">
-  <meta name="theme-color" content="#f7f1ef">
+  <meta name="theme-color" content="#fbfbf7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e0d14" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://jujuy.dev.ar/eventos/cabildo-tech-jujuy/">
 
   <meta property="og:type" content="article">
@@ -23,11 +24,14 @@
   <meta name="twitter:description" content="Una noche para construir, emprender y conectar. Charla de Jorge Gronda (Umana) y workshop de IA, en el Cabildo de Jujuy. Entrada gratuita.">
   <meta name="twitter:image" content="https://jujuy.dev.ar/assets/eventos/cabildo-tech-og.jpg">
 
-  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="icon" href="../../assets/brand/jujuydev-isotipo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css?v=2026-10-12b">
+  <!-- Theme follows the system, like the home; force it with localStorage.setItem('jd-theme', 'dark' | 'light'). -->
+  <script>(function(){var t;try{t=localStorage.getItem('jd-theme');}catch(e){}var d=t||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',d);})();</script>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/tokens.css?v=2026-10-17">
+  <link rel="stylesheet" href="../../css/jd.css?v=2026-10-17b">
 
   <!-- Structured data for Google. organizer references the Organization defined on the home page. -->
   <script type="application/ld+json">
@@ -68,157 +72,108 @@
     }
   }
   </script>
-  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Saltar al contenido</a>
+<div class="jd">
+  <a class="jd-skip" href="#main">Saltar al contenido</a>
 
-  <nav class="nav" aria-label="Principal">
-    <div class="container nav-inner">
-      <a class="logo" href="/">
-        <img class="logo-mark" src="/assets/logo.svg" alt="" width="34" height="24">
-        <span>jujuy<span class="grad-text">.dev</span></span>
-      </a>
-      <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-          <path d="M4 7h16"/>
-          <path d="M4 12h16"/>
-          <path d="M4 17h16"/>
-        </svg>
-      </button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="/#pilares">Qué hacemos</a></li>
-        <li><a href="/comunidad/">Comunidad</a></li>
-        <li><a href="/eventos/">Eventos</a></li>
-        <li><a href="/proyectos/">Proyectos</a></li>
-        <li><a href="/oportunidades/">Oportunidades</a></li>
-        <li><a href="/recursos/">Recursos</a></li>
-        <li><a href="/faq/">FAQ</a></li>
+  <header class="jd-nav jd-nav--page">
+    <a href="../../" aria-label="jujuy.dev — inicio">
+      <img class="jd-nav__logo jd-logo-light" src="../../assets/brand/jujuydev-logo.webp" alt="jujuy.dev" width="137" height="28">
+      <img class="jd-nav__logo jd-logo-dark" src="../../assets/brand/jujuydev-logo-white.webp" alt="jujuy.dev" width="103" height="28">
+    </a>
+    <button class="jd-nav__toggle" type="button" aria-expanded="false" aria-controls="jd-nav-links">Menú</button>
+    <nav aria-label="Principal">
+      <ul class="jd-nav__links" id="jd-nav-links">
+        <li><a href="../../eventos/" aria-current="page">Eventos</a></li>
+        <li><a href="../../comunidad/">Comunidad</a></li>
+        <li><a href="../../proyectos/">Proyectos</a></li>
+        <li><a href="../../oportunidades/">Oportunidades</a></li>
+        <li><a href="../../recursos/">Recursos</a></li>
+        <li><a href="../../#equipo">Equipo</a></li>
+        <li><a href="../../faq/">Preguntas</a></li>
       </ul>
-      <a class="btn btn-primary btn-sm nav-cta" href="https://chat.whatsapp.com/Bj1KKgjcLue2FOVuX8osmq" target="_blank" rel="noopener">Sumate</a>
-    </div>
-  </nav>
+    </nav>
+    <a class="jd-btn jd-btn--primary" href="https://chat.whatsapp.com/Bj1KKgjcLue2FOVuX8osmq" target="_blank" rel="noopener">Unite</a>
+  </header>
 
   <main id="main">
-    <header class="page-hero container">
-      <a class="back-link" href="/eventos/">← Eventos</a>
-      <p class="eyebrow">// ya pasó · jueves 17 de septiembre de 2026</p>
-      <h1>Cabildo Tech Jujuy</h1>
-      <p class="lead">Una noche para construir, emprender y conectar. Jorge Gronda, Adrián Silisque y Leo Cagliari (LeoDefi) compartieron su experiencia en Inteligencia Artificial, productos digitales y Web3, en un panel moderado por Franco Durán. Sumate a la comunidad para no perderte el próximo.</p>
-    </header>
-
-    <section class="section">
-      <div class="container">
-        <div class="grid grid-2">
-          <article class="card event reveal">
-            <h3>Qué fue</h3>
-            <p>Un panel con <strong>Jorge Gronda</strong>, emprendedor social jujeño fundador de Umana, <strong>Adrián Silisque</strong> y <strong>Leo Cagliari (LeoDefi)</strong>, moderado por <strong>Franco Durán</strong>, sobre Inteligencia Artificial, productos digitales y Web3. Si programás, estudiás, diseñás o querés armar producto en Jujuy, en la comunidad hay un lugar para vos.</p>
-            <span class="meta">📅 Jueves 17 de septiembre de 2026 · 17:30 a 20:00</span>
-            <span class="meta">📍 Cabildo de Jujuy — Salón Belgrano · Gral. Belgrano 493 · San Salvador de Jujuy</span>
-            <span class="meta">🎟 Entrada gratuita</span>
-          </article>
-          <article class="card reveal">
-            <h3>Cómo fue</h3>
-            <p>Jorge Gronda abrió la noche con su historia al frente de Umana, y después Adrián Silisque y Leo Cagliari (LeoDefi) sumaron su mirada sobre IA, productos digitales y Web3, con Franco Durán moderando la conversación.
-            Se llenó el salón, hubo gente de pie y se sintió que algo se está prendiendo en Jujuy.
-            </p>
-          </article>
-        </div>
-        <div class="gallery reveal">
-          <img src="/assets/eventos/cabildo-tech-conferencia-01.webp" alt="Charla de Jorge Gronda durante el Cabildo Tech Jujuy en el Cabildo de Jujuy" width="1600" height="1200" loading="lazy">
-          <img src="/assets/eventos/cabildo-tech-grupo.webp" alt="Foto grupal del Cabildo Tech Jujuy en el Salón Belgrano del Cabildo de Jujuy" width="1600" height="1200" loading="lazy">
-        </div>
-        <p class="section-foot reveal"><a href="/eventos/">← Ver todos los eventos</a></p>
+    <section class="jd-section jd-page-head">
+      <a class="jd-btn jd-btn--link" href="../../eventos/">← Eventos</a>
+      <div class="jd-tags">
+        <span class="jd-tag"><b>Jujuy<span class="jd-dev">Dev</span></b>&nbsp;presenta</span>
+        <span class="jd-tag jd-tag--solid">Presencial</span>
       </div>
+      <span class="jd-cue jd-muted">Ya pasó · Jueves 17 de septiembre</span>
+      <h1 class="jd-display jd-display--xl">Cabildo<br>Tech <span class="jd-hl">Jujuy</span></h1>
+      <p class="jd-lead">Una noche para construir, emprender y conectar. Jorge Gronda, Adrián Silisque y Leo Cagliari (LeoDefi) compartieron su experiencia en Inteligencia Artificial, productos digitales y Web3, en un panel moderado por Franco Durán.</p>
+    </section>
+
+    <section class="jd-section jd-section--sunk">
+      <div class="jd-detail">
+        <article class="jd-detail__col">
+          <hr class="jd-rule"><h2 class="jd-display jd-display--m">Qué fue</h2>
+          <p>Un panel con <strong>Jorge Gronda</strong>, emprendedor social jujeño fundador de Umana, <strong>Adrián Silisque</strong> y <strong>Leo Cagliari (LeoDefi)</strong>, moderado por <strong>Franco Durán</strong>, sobre Inteligencia Artificial, productos digitales y Web3. Si programás, estudiás, diseñás o querés armar producto en Jujuy, en la comunidad hay un lugar para vos.</p>
+          <dl class="jd-facts">
+            <div><dt>Cuándo</dt><dd>Jueves 17 de septiembre de 2026 · 17:30 a 20:00 hs</dd></div>
+            <div><dt>Dónde</dt><dd>Cabildo de Jujuy · Salón Belgrano · Gral. Belgrano 493 · San Salvador de Jujuy</dd></div>
+            <div><dt>Entrada</dt><dd>Gratuita</dd></div>
+          </dl>
+        </article>
+        <article class="jd-detail__col">
+          <hr class="jd-rule"><h2 class="jd-display jd-display--m">Cómo fue</h2>
+          <p>Jorge Gronda abrió la noche con su historia al frente de Umana, y después Adrián Silisque y Leo Cagliari (LeoDefi) sumaron su mirada sobre IA, productos digitales y Web3, con Franco Durán moderando la conversación.</p><p>Se llenó el salón, hubo gente de pie y se sintió que algo se está prendiendo en Jujuy.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="jd-section">
+      <div class="jd-section__head">
+        <div><hr class="jd-rule"><h2 class="jd-display jd-display--l">Así se <span class="jd-hl">vivió</span></h2></div>
+        <a class="jd-btn jd-btn--link" href="https://www.instagram.com/jujuy.dev/" target="_blank" rel="noopener">Más fotos en Instagram →</a>
+      </div>
+      <div class="jd-photos">
+        <figure class="jd-tile"><img src="../../assets/eventos/cabildo-tech-conferencia-01.webp" alt="Charla de Jorge Gronda durante el Cabildo Tech Jujuy en el Cabildo de Jujuy" width="1600" height="1200" loading="lazy"></figure>
+        <figure class="jd-tile"><img src="../../assets/eventos/cabildo-tech-grupo.webp" alt="Foto grupal del Cabildo Tech Jujuy en el Salón Belgrano del Cabildo de Jujuy" width="1600" height="1200" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <section class="jd-cta">
+      <div class="jd-cta__copy">
+        <span class="jd-cue">Comunidad abierta</span>
+        <h2 class="jd-display jd-display--xl">No te pierdas<br>el próximo</h2>
+        <p>Anunciamos cada encuentro primero en el grupo de WhatsApp y en <a href="https://www.instagram.com/jujuy.dev/" target="_blank" rel="noopener">@jujuy.dev</a>.</p>
+        <div class="jd-cta__actions">
+          <a class="jd-btn jd-btn--primary" href="https://chat.whatsapp.com/Bj1KKgjcLue2FOVuX8osmq" target="_blank" rel="noopener">Unite a la comunidad</a>
+          <a class="jd-btn jd-btn--secondary" href="../../eventos/">Ver todos los eventos</a>
+        </div>
+      </div>
+      <div class="jd-cta__art" aria-hidden="true"><div class="jd-orb"></div><img src="../../assets/brand/jujuydev-llama-hd.webp" alt="" loading="lazy"></div>
     </section>
   </main>
 
-  <div class="grad-bar" aria-hidden="true"></div>
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <a class="logo" href="/">
-            <img class="logo-mark" src="/assets/logo-white.svg" alt="" width="34" height="24">
-            <span>jujuy<span class="grad-text">.dev</span></span>
-          </a>
-          <p class="footer-tag">Comunidad de tecnología y desarrollo en Jujuy. Impulsando el futuro digital del norte.</p>
-        </div>
-        <div>
-          <h4>comunidad</h4>
-          <ul>
-            <li><a href="https://chat.whatsapp.com/Bj1KKgjcLue2FOVuX8osmq" target="_blank" rel="noopener">WhatsApp</a></li>
-            <li><a href="https://github.com/FrancoDuran23/jujuy_dev" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="https://x.com/JujuyDevAr" target="_blank" rel="noopener">X</a></li>
-            <li><a href="https://www.instagram.com/jujuy.dev/" target="_blank" rel="noopener">Instagram</a></li>
-            <li><a href="mailto:jujuydev@gmail.com">jujuydev@gmail.com</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>recursos</h4>
-          <ul>
-            <li><a href="/eventos/">Eventos</a></li>
-            <li><a href="/proyectos/">Proyectos</a></li>
-            <li><a href="/oportunidades/">Oportunidades</a></li>
-            <li><a href="/recursos/">Recursos</a></li>
-            <li><a href="/comunidad/">Comunidad</a></li>
-            <li><a href="/#colaboradores">Colaboradores</a></li>
-            <li><a href="/#staff">Staff</a></li>
-            <li><a href="/faq/">FAQ</a></li>
-            <li><a href="https://github.com/FrancoDuran23/jujuy_dev/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Cómo contribuir</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>legal</h4>
-          <ul>
-            <li><a href="/codigo-de-conducta/">Código de conducta</a></li>
-            <li><a href="https://github.com/FrancoDuran23/jujuy_dev/blob/main/LICENSE" target="_blank" rel="noopener">Licencia MIT</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© <span id="year">2026</span> JujuyDev. Hecho con cariño desde Jujuy.</span>
-        <span class="mono">innovar();</span>
-      </div>
+  <footer class="jd-footer">
+    <div class="jd-footer__brand">
+      <img class="jd-logo-light" src="../../assets/brand/jujuydev-logo.webp" alt="jujuy.dev" width="127" height="26">
+      <img class="jd-logo-dark" src="../../assets/brand/jujuydev-logo-white.webp" alt="jujuy.dev" width="96" height="26">
+      <span>© <span data-year>2026</span> Jujuy<span class="jd-dev">Dev</span> · San Salvador de Jujuy</span>
     </div>
+    <nav aria-label="Pie de página">
+      <a href="../../eventos/">Eventos</a>
+      <a href="../../proyectos/">Proyectos</a>
+      <a href="../../oportunidades/">Oportunidades</a>
+      <a href="../../recursos/">Recursos</a>
+      <a href="../../comunidad/">Comunidad</a>
+      <a href="../../faq/">FAQ</a>
+      <a href="../../codigo-de-conducta/">Código de conducta</a>
+      <a href="https://github.com/FrancoDuran23/jujuy_dev" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.instagram.com/jujuy.dev/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://x.com/JujuyDevAr" target="_blank" rel="noopener">X</a>
+      <a href="mailto:jujuydev@gmail.com">Contacto</a>
+    </nav>
   </footer>
+</div>
 
-  <script>
-    (function () {
-      var nav = document.querySelector('.nav');
-      var toggle = document.querySelector('.nav-toggle');
-
-      toggle.addEventListener('click', function () {
-        var open = nav.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', String(open));
-        toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
-      });
-
-      nav.querySelectorAll('.nav-links a').forEach(function (link) {
-        link.addEventListener('click', function () {
-          nav.classList.remove('open');
-          toggle.setAttribute('aria-expanded', 'false');
-          toggle.setAttribute('aria-label', 'Abrir menú');
-        });
-      });
-
-      var revealed = document.querySelectorAll('.reveal');
-      if ('IntersectionObserver' in window) {
-        var io = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('in');
-              io.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.12 });
-        revealed.forEach(function (el) { io.observe(el); });
-      } else {
-        revealed.forEach(function (el) { el.classList.add('in'); });
-      }
-
-      document.getElementById('year').textContent = new Date().getFullYear();
-    })();
-  </script>
+  <script src="../../assets/jd-nav.js?v=2026-10-17b" defer></script>
 </body>
 </html>

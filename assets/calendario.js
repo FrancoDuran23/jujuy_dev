@@ -3,9 +3,13 @@
   if (!lists.length) return;
 
   var LIVE = "https://raw.githubusercontent.com/FrancoDuran23/jujuy_dev/luma-calendar/proximos.json";
-  var LOCAL = "/assets/eventos/proximos.json";
+  // Next to this script, so it works from any page depth (and from file://, where only LIVE answers).
+  var SELF = document.currentScript && document.currentScript.src;
+  var LOCAL = SELF ? new URL("eventos/proximos.json", SELF).href : "/assets/eventos/proximos.json";
   var WEEKDAYS = { Sun: "dom", Mon: "lun", Tue: "mar", Wed: "mié", Thu: "jue", Fri: "vie", Sat: "sáb" };
   var MONTHS = { Jan: "ene", Feb: "feb", Mar: "mar", Apr: "abr", May: "may", Jun: "jun", Jul: "jul", Aug: "ago", Sep: "sep", Oct: "oct", Nov: "nov", Dec: "dic" };
+  var WEEKDAYS_LONG = { Sun: "Domingo", Mon: "Lunes", Tue: "Martes", Wed: "Miércoles", Thu: "Jueves", Fri: "Viernes", Sat: "Sábado" };
+  var MONTHS_LONG = { Jan: "Enero", Feb: "Febrero", Mar: "Marzo", Apr: "Abril", May: "Mayo", Jun: "Junio", Jul: "Julio", Aug: "Agosto", Sep: "Septiembre", Oct: "Octubre", Nov: "Noviembre", Dec: "Diciembre" };
 
   function load(url) {
     var ctrl = typeof AbortController === "function" ? new AbortController() : null;
@@ -125,6 +129,55 @@
     return card;
   }
 
+  // The home uses the design-system event card (.jd-event); lists opt in with data-jd.
+  function renderJdCard(event) {
+    var zone = event.timezone || "America/Argentina/Jujuy";
+    var start;
+    try {
+      start = parts(new Date(event.start), zone);
+    } catch (err) {
+      return null;
+    }
+    if (!MONTHS_LONG[start.month] || !WEEKDAYS_LONG[start.weekday]) return null;
+    var card = el("a", "jd-event");
+    card.href = event.url;
+    card.target = "_blank";
+    card.rel = "noopener";
+
+    var date = el("div", "jd-event__date");
+    date.appendChild(el("div", "jd-orb"));
+    date.appendChild(el("span", "jd-event__day", ("0" + start.day).slice(-2)));
+    var month = el("span", "jd-event__month", MONTHS_LONG[start.month]);
+    month.appendChild(el("br"));
+    month.appendChild(document.createTextNode(WEEKDAYS_LONG[start.weekday]));
+    date.appendChild(month);
+
+    var body = el("div", "jd-event__body");
+    var tags = el("div", "jd-tags");
+    tags.appendChild(el("span", "jd-tag jd-tag--solid", event.where === "online" ? "Evento virtual" : "Presencial"));
+    if (event.waitlist) tags.appendChild(el("span", "jd-tag", "Lista de espera"));
+    body.appendChild(tags);
+    body.appendChild(el("h3", "jd-event__title", event.name));
+    var time = ("0" + Number(start.hour)).slice(-2) + ":" + start.minute + " hs";
+    var place = event.place || (event.where === "online" ? "Online" : "");
+    body.appendChild(el("p", "jd-event__meta", place ? time + " · " + place : time));
+    body.appendChild(el("span", "jd-cue jd-event__cue", "Inscribite en Luma →"));
+
+    card.appendChild(date);
+    card.appendChild(body);
+    if (coverUrl(event.cover)) {
+      card.className += " jd-event--shot";
+      var shot = el("figure", "jd-event__shot");
+      var img = el("img");
+      img.src = event.cover;
+      img.alt = "";
+      img.loading = "lazy";
+      shot.appendChild(img);
+      card.appendChild(shot);
+    }
+    return card;
+  }
+
   function showEmpty(list) {
     var note = list.parentNode.querySelector(".upcoming-empty");
     if (note) note.hidden = false;
@@ -132,13 +185,16 @@
 
   function render(list, events) {
     list.textContent = "";
+    // The local copy may have rendered "nothing coming up" before the live calendar answered.
+    var note = list.parentNode.querySelector(".upcoming-empty");
+    if (note) note.hidden = true;
     if (!events.length) {
       showEmpty(list);
       return;
     }
     events.forEach(function (event) {
       if (!event || !event.name || !lumaUrl(event.url) || !event.start) return;
-      var card = renderCard(event);
+      var card = list.hasAttribute("data-jd") ? renderJdCard(event) : renderCard(event);
       if (card) list.appendChild(card);
     });
     if (!list.childElementCount) showEmpty(list);

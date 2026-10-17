@@ -8,7 +8,7 @@ Sitio publicado: https://jujuy.dev.ar/
 
 Abrí `index.html` con doble click. Listo. No hay nada que instalar.
 
-> El doble click sirve solo para ver la home. Para navegar entre páginas (proyectos, oportunidades, recursos…) levantá un servidor local con `python3 -m http.server 8000` desde esta carpeta y abrí http://localhost:8000. Los links internos son absolutos a propósito (`/proyectos/`, `/recursos/`): el sitio se publica en la raíz del dominio, y con `file://` esos links no encuentran nada.
+> Con doble click se ven todas las páginas: las rutas son relativas y `assets/jd-nav.js` completa los links a carpetas con `index.html`. Lo único que no anda con `file://` son los JSON locales (el tren y la copia local del calendario); para eso levantá un servidor con `python3 -m http.server 8000` desde esta carpeta y abrí http://localhost:8000. `404.html` es la excepción: usa rutas absolutas porque GitHub Pages la sirve desde cualquier dirección.
 
 ## Contribuir
 
@@ -21,16 +21,20 @@ La home vive en `index.html` y cada listado en su propia página. Buscá los com
 | Qué                          | Dónde                                                                |
 | ---------------------------- | -------------------------------------------------------------------- |
 | Eventos                      | Sección `#eventos`. Lo que viene se arma desde el [calendario de Luma](https://luma.com/jujuydev) (`assets/calendario.js`). Las fichas son el archivo de encuentros que ya pasaron. |
-| Canales de la comunidad      | Sección `#comunidad`. Las cards con clase `soon` están sin link aún  |
-| Logos de colaboradores       | Sección `#colaboradores`, reemplazá cada `.logo-slot` por un `<img>` |
-| Staff                        | Sección `#staff`                                                     |
-| Personas que contribuyen     | Lista `#contribuyen` dentro de colaboradores, foto en `assets/people/` |
-| Números de la comunidad      | Sección `#numeros`                                                   |
-| Links del footer             | `<footer>`                                                           |
+| Canales de la comunidad      | Bloque `.jd-channels`, debajo del Tren Solar                         |
+| Logos de colaboradores       | Sección `#colaboradores`, copiá una celda `.jd-logo`                 |
+| Staff                        | Sección `#equipo`, una `.jd-person` por persona                      |
+| Tren Solar (`#comunidad`)    | Bloque `jd-tren-miembros` en `index.html`: una línea por persona, con su foto en `assets/people/` |
+| Números de la comunidad      | Sección `#somos`                                                     |
+| Links del footer             | `<footer>` de cada página                                            |
 | Proyectos de la comunidad    | `proyectos/index.html`: copiá una tarjeta (hay una plantilla en el comentario `EDIT`) |
 | Ofertas laborales            | `oportunidades/index.html`, pestaña `#ofertas`                       |
 | Perfiles abiertos a propuestas | `oportunidades/index.html`, pestaña `#talento`                     |
 | Recursos para aprender       | `recursos/index.html`                                                |
+
+## Diseño
+
+La guía de marca y del sistema de diseño (colores, tipografías, formas, voz) está en [`assets/brand/DISENO.md`](assets/brand/DISENO.md). La home usa los componentes `.jd-*` de `css/jd.css` sobre los tokens de `css/tokens.css`; las páginas internas suman `css/pages.css`, que lleva los estilos de `styles.css` al mismo sistema.
 
 ## Cómo funcionan los buscadores y filtros
 
@@ -57,10 +61,18 @@ index.html              la home
 proyectos/              proyectos hechos en Jujuy, con buscador y filtros
 oportunidades/          ofertas laborales y personas abiertas a propuestas
 recursos/               recursos en español y skills de IA, con buscador y filtros
-styles.css              estilos y paleta
+styles.css              estilos de las páginas internas (listados, eventos, FAQ)
+css/tokens.css          tokens del sistema de diseño: colores (claro y Noche), espacios, radios, fuentes
+css/jd.css              componentes .jd-* de la home y el nav/footer de todas las páginas
+css/pages.css           lleva styles.css al sistema de diseño en las páginas internas
+assets/jd-nav.js               menú móvil y año del footer, en todas las páginas
+assets/jd-home.js              mosaico de fotos del hero y Tren Solar de la home
+assets/calendario.js           próximos eventos desde el calendario de Luma
+assets/fotos/                  fotos de eventos a color (hero, galería)
+assets/brand/                  logos, isotipo, la llama y DISENO.md (guía de diseño)
 assets/filtros.js              buscador, filtros y pestañas de los listados, sin dependencias
 assets/hero-layers/hornocal-*.webp capas transparentes publicadas del parallax
-assets/hero-parallax.js        parallax por scroll, sin dependencias
+assets/hero-parallax.js        parallax por scroll del hero anterior (la home ya no lo usa)
 assets/hero-scene.md           composición, exportación y ajustes de las capas
 assets/hornocal-prompts.md     prompts finales de las tres ilustraciones
 assets/hero.webp               ilustración original, referencia de estilo
@@ -77,4 +89,4 @@ CODE_OF_CONDUCT.md      normas de la comunidad
 LICENSE                 MIT
 ```
 
-La paleta sale de la ilustración: fondo crema y el gradiente del Hornocal, de naranja a azul. Está definida como variables al inicio de `styles.css`.
+La paleta sale de los pósters de la comunidad: papel cálido, tinta negra, un acento violeta y el orbe degradado magenta → azul. Está definida en `css/tokens.css`; la guía completa está en `assets/brand/DISENO.md`.
