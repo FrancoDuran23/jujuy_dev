@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Proyectos · JujuyDev</title>
   <meta name="description" content="Proyectos hechos en Jujuy por la comunidad tech: buscá por tecnología, temática, tipo y estado, y sumate a los que buscan colaboradores.">
-  <meta name="theme-color" content="#f7f1ef">
+  <meta name="theme-color" content="#fbfbf7">
   <link rel="canonical" href="https://jujuy.dev.ar/proyectos/">
 
   <meta property="og:type" content="website">
@@ -23,48 +23,44 @@
   <meta name="twitter:description" content="Proyectos hechos en Jujuy por la comunidad tech: buscá por tecnología, temática, tipo y estado, y sumate a los que buscan colaboradores.">
   <meta name="twitter:image" content="https://jujuy.dev.ar/assets/og.jpg">
 
-  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/brand/jujuydev-isotipo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css?v=2026-10-12b">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=2026-10-12b">
+  <link rel="stylesheet" href="../css/tokens.css?v=2026-10-17">
+  <link rel="stylesheet" href="../css/jd.css?v=2026-10-17d">
+  <link rel="stylesheet" href="../css/pages.css?v=2026-10-17">
   <script>document.documentElement.classList.add('js');</script>
-  <script src="/assets/filtros.js?v=2026-10-08b" defer></script>
-  <script src="/assets/proyectos.js?v=2026-10-12a" defer></script>
+  <script src="../assets/filtros.js?v=2026-10-08b" defer></script>
+  <script src="../assets/proyectos.js?v=2026-10-12a" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Saltar al contenido</a>
 
-  <nav class="nav" aria-label="Principal">
-    <div class="container nav-inner">
-      <a class="logo" href="/">
-        <img class="logo-mark" src="/assets/logo.svg" alt="" width="34" height="24">
-        <span>jujuy<span class="grad-text">.dev</span></span>
-      </a>
-      <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-          <path d="M4 7h16"/>
-          <path d="M4 12h16"/>
-          <path d="M4 17h16"/>
-        </svg>
-      </button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="/#pilares">Qué hacemos</a></li>
-        <li><a href="/comunidad/">Comunidad</a></li>
-        <li><a href="/eventos/">Eventos</a></li>
-        <li><a href="/proyectos/" aria-current="page">Proyectos</a></li>
-        <li><a href="/oportunidades/">Oportunidades</a></li>
-        <li><a href="/recursos/">Recursos</a></li>
-        <li><a href="/faq/">FAQ</a></li>
+  <header class="jd-nav">
+    <a href="../" aria-label="jujuy.dev — inicio">
+      <img class="jd-nav__logo" src="../assets/brand/jujuydev-logo.webp" alt="jujuy.dev" width="137" height="28">
+    </a>
+    <button class="jd-nav__toggle" type="button" aria-expanded="false" aria-controls="jd-nav-links">Menú</button>
+    <nav aria-label="Principal">
+      <ul class="jd-nav__links" id="jd-nav-links">
+        <li><a href="../eventos/">Eventos</a></li>
+        <li><a href="../comunidad/">Comunidad</a></li>
+        <li><a href="../proyectos/" aria-current="page">Proyectos</a></li>
+        <li><a href="../oportunidades/">Oportunidades</a></li>
+        <li><a href="../recursos/">Recursos</a></li>
+        <li><a href="../#equipo">Equipo</a></li>
+        <li><a href="../faq/">Preguntas</a></li>
       </ul>
-      <a class="btn btn-primary btn-sm nav-cta" href="https://chat.whatsapp.com/Bj1KKgjcLue2FOVuX8osmq" target="_blank" rel="noopener">Sumate</a>
-    </div>
-  </nav>
+    </nav>
+    <a class="jd-btn jd-btn--primary" href="https://chat.whatsapp.com/Bj1KKgjcLue2FOVuX8osmq" target="_blank" rel="noopener">Unite</a>
+  </header>
 
   <main id="main">
     <header class="page-hero page-hero-compact container">
-      <a class="back-link" href="/">← jujuy.dev.ar</a>
-      <p class="eyebrow">// proyectos</p>
+      <a class="back-link" href="../">← jujuy.dev.ar</a>
+      <p class="eyebrow">proyectos</p>
       <h1>Hecho en Jujuy</h1>
       <p class="lead">Lo que está armando la gente de la comunidad. Buscá por nombre o tecnología, filtrá por temática o estado, y escribile a quienes buscan colaboradores.</p>
     </header>
@@ -107,12 +103,12 @@
             <div class="project-carousel-track" data-carousel-track>
               <figure class="project-carousel-slide">
                 <a class="project-preview" href="#condorjuy-preview" aria-label="Ampliar captura del mapa de servicios de CondorJUY">
-                  <img src="/assets/proyectos/condorjuy/preview.webp" alt="CondorJUY muestra en un mapa de Jujuy farmacias, centros de salud, bomberos y comisarías." width="1440" height="748" loading="lazy" decoding="async">
+                  <img src="../assets/proyectos/condorjuy/preview.webp" alt="CondorJUY muestra en un mapa de Jujuy farmacias, centros de salud, bomberos y comisarías." width="1440" height="748" loading="lazy" decoding="async">
                 </a>
               </figure>
               <figure class="project-carousel-slide">
                 <a class="project-preview" href="#condorjuy-preview-details" aria-label="Ampliar captura de rutas de CondorJUY">
-                  <img src="/assets/proyectos/condorjuy/preview-details.webp" alt="CondorJUY muestra una farmacia seleccionada y su ruta en el mapa." width="1440" height="748" loading="lazy" decoding="async">
+                  <img src="../assets/proyectos/condorjuy/preview-details.webp" alt="CondorJUY muestra una farmacia seleccionada y su ruta en el mapa." width="1440" height="748" loading="lazy" decoding="async">
                 </a>
               </figure>
             </div>
@@ -131,14 +127,14 @@
           <a class="project-lightbox-backdrop" href="#main" aria-label="Cerrar imagen ampliada"></a>
           <div class="project-lightbox-content">
             <a class="project-lightbox-close" href="#main">Cerrar <span aria-hidden="true">×</span></a>
-            <img src="/assets/proyectos/condorjuy/zoom.webp" alt="Captura ampliada del mapa de CondorJUY con servicios esenciales de Jujuy." width="2880" height="1496">
+            <img src="../assets/proyectos/condorjuy/zoom.webp" alt="Captura ampliada del mapa de CondorJUY con servicios esenciales de Jujuy." width="2880" height="1496">
           </div>
         </div>
         <div class="project-lightbox" id="condorjuy-preview-details">
           <a class="project-lightbox-backdrop" href="#main" aria-label="Cerrar imagen ampliada"></a>
           <div class="project-lightbox-content">
             <a class="project-lightbox-close" href="#main">Cerrar <span aria-hidden="true">×</span></a>
-            <img src="/assets/proyectos/condorjuy/zoom-details.webp" alt="Captura ampliada de una farmacia y su ruta en CondorJUY." width="2880" height="1496">
+            <img src="../assets/proyectos/condorjuy/zoom-details.webp" alt="Captura ampliada de una farmacia y su ruta en CondorJUY." width="2880" height="1496">
           </div>
         </div>
 
@@ -198,7 +194,7 @@
     <section class="section alt dots" id="como-sumar">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow">// sumate</p>
+          <p class="eyebrow">sumate</p>
           <h2>Cómo sumar tu proyecto</h2>
           <p>Tiene que ser algo hecho por alguien de la comunidad y que se pueda ver: un repositorio, una demo o las dos. No hace falta que esté terminado ni que sea grande.</p>
         </div>
@@ -220,75 +216,29 @@
     </section>
   </main>
 
-  <div class="grad-bar" aria-hidden="true"></div>
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <a class="logo" href="/">
-            <img class="logo-mark" src="/assets/logo-white.svg" alt="" width="34" height="24">
-            <span>jujuy<span class="grad-text">.dev</span></span>
-          </a>
-          <p class="footer-tag">Comunidad de tecnología y desarrollo en Jujuy. Impulsando el futuro digital del norte.</p>
-        </div>
-        <div>
-          <h4>comunidad</h4>
-          <ul>
-            <li><a href="https://chat.whatsapp.com/Bj1KKgjcLue2FOVuX8osmq" target="_blank" rel="noopener">WhatsApp</a></li>
-            <li><a href="https://github.com/FrancoDuran23/jujuy_dev" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="https://x.com/JujuyDevAr" target="_blank" rel="noopener">X</a></li>
-            <li><a href="https://www.instagram.com/jujuy.dev/" target="_blank" rel="noopener">Instagram</a></li>
-            <li><a href="mailto:jujuydev@gmail.com">jujuydev@gmail.com</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>recursos</h4>
-          <ul>
-            <li><a href="/eventos/">Eventos</a></li>
-            <li><a href="/proyectos/">Proyectos</a></li>
-            <li><a href="/oportunidades/">Oportunidades</a></li>
-            <li><a href="/recursos/">Recursos</a></li>
-            <li><a href="/comunidad/">Comunidad</a></li>
-            <li><a href="/#colaboradores">Colaboradores</a></li>
-            <li><a href="/#staff">Staff</a></li>
-            <li><a href="/faq/">FAQ</a></li>
-            <li><a href="https://github.com/FrancoDuran23/jujuy_dev/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Cómo contribuir</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>legal</h4>
-          <ul>
-            <li><a href="/codigo-de-conducta/">Código de conducta</a></li>
-            <li><a href="https://github.com/FrancoDuran23/jujuy_dev/blob/main/LICENSE" target="_blank" rel="noopener">Licencia MIT</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© <span id="year">2026</span> JujuyDev. Hecho con cariño desde Jujuy.</span>
-        <span class="mono">innovar();</span>
-      </div>
+  <footer class="jd-footer">
+    <div class="jd-footer__brand">
+      <img src="../assets/brand/jujuydev-logo.webp" alt="jujuy.dev" width="127" height="26">
+      <span>© <span data-year>2026</span> Jujuy<span class="jd-dev">Dev</span> · San Salvador de Jujuy</span>
     </div>
+    <nav aria-label="Pie de página">
+      <a href="../eventos/">Eventos</a>
+      <a href="../proyectos/">Proyectos</a>
+      <a href="../oportunidades/">Oportunidades</a>
+      <a href="../recursos/">Recursos</a>
+      <a href="../comunidad/">Comunidad</a>
+      <a href="../faq/">FAQ</a>
+      <a href="../codigo-de-conducta/">Código de conducta</a>
+      <a href="https://github.com/FrancoDuran23/jujuy_dev" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.instagram.com/jujuy.dev/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://x.com/JujuyDevAr" target="_blank" rel="noopener">X</a>
+      <a href="mailto:jujuydev@gmail.com">Contacto</a>
+    </nav>
   </footer>
 
+  <script src="../assets/jd-nav.js?v=2026-10-17b" defer></script>
   <script>
     (function () {
-      var nav = document.querySelector('.nav');
-      var toggle = document.querySelector('.nav-toggle');
-
-      toggle.addEventListener('click', function () {
-        var open = nav.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', String(open));
-        toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
-      });
-
-      nav.querySelectorAll('.nav-links a').forEach(function (link) {
-        link.addEventListener('click', function () {
-          nav.classList.remove('open');
-          toggle.setAttribute('aria-expanded', 'false');
-          toggle.setAttribute('aria-label', 'Abrir menú');
-        });
-      });
-
       var revealed = document.querySelectorAll('.reveal');
       if ('IntersectionObserver' in window) {
         var io = new IntersectionObserver(function (entries) {
@@ -303,8 +253,6 @@
       } else {
         revealed.forEach(function (el) { el.classList.add('in'); });
       }
-
-      document.getElementById('year').textContent = new Date().getFullYear();
     })();
   </script>
 </body>

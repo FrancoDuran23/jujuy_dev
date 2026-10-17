@@ -1,0 +1,61 @@
+/* JujuyDev — tokens */
+:root, [data-theme="light"] {
+  --paper: #fbfbf7;
+  --paper-raised: #ffffff;
+  --paper-sunk: #f1f0ea;
+  --ink: #0a0a0a;
+  --ink-muted: #55534e;
+  --on-ink: #fbfbf7;
+  --line: #0a0a0a;
+  --line-soft: #dddbd3;
+  --navy: #14134d;
+  --violet: #7b37e5;
+  --on-violet: #ffffff;
+  --orb-magenta: #f624e5;
+  --orb-violet: #aa31ef;
+  --orb-blue: #3f6df4;
+  --sunset: #eb8046;
+  --cardon: #c3408f;
+  --sky: #586fcc;
+  --plum: #2b1e3f;
+  --on-plum: #fbfbf7;
+  --focus: #7b37e5;
+  --shadow-tile: 0 10px 30px rgba(20,19,77,0.12);
+}
+[data-theme="dark"] {
+  --paper: #0e0d14;
+  --paper-raised: #191723;
+  --paper-sunk: #07060b;
+  --ink: #f5f4ef;
+  --ink-muted: #a9a6b3;
+  --on-ink: #0a0a0a;
+  --line: #f5f4ef;
+  --line-soft: #2c2938;
+  --navy: #e7e5ff;
+  --violet: #b18cff;
+  --on-violet: #0e0d14;
+  --plum: #2b1e3f;
+  --focus: #b18cff;
+  --shadow-tile: 0 10px 30px rgba(0,0,0,0.5);
+}
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-tile: 18px;
+  --radius-round: 9999px;
+  --font-condensed: Anton, "Bebas Neue", Impact, "Arial Narrow", sans-serif;
+  --font-wide: "Archivo Black", "Arial Black", system-ui, sans-serif;
+  --font-sans: Montserrat, system-ui, "Segoe UI", sans-serif;
+  --font-mono: "Space Mono", ui-monospace, Menlo, monospace;
+}
+html, body { margin: 0; background: var(--paper); }
+html { scroll-behavior: smooth; }
