@@ -152,3 +152,4 @@ main h3 { letter-spacing: 0; }
 .jd-nav__links a { color: var(--ink); }
 .jd-nav__links a:hover, .jd-nav__links a[aria-current="page"] { color: var(--violet); }
 .jd-footer { margin-top: 0; }
+.jd-footer h2 { font-family: var(--font-mono); font-size: 13px; line-height: 1.2; letter-spacing: 3px; }

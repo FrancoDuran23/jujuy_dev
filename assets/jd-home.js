@@ -181,14 +181,27 @@
 
   function mount(root) {
     var mover = root.querySelector('[data-jd-train]'), anim = null;
+    var lastWidth = 0;
     function run() {
       var W = mover.getBoundingClientRect().width, S = root.clientWidth, speed = 120;
-      if (anim) anim.cancel();
+      lastWidth = S;
+      // Keep going from where the train is now instead of starting over (resizes rebuild the animation).
+      var x = null;
+      if (anim) {
+        try { x = new DOMMatrixReadOnly(getComputedStyle(mover).transform).m41; } catch (e) {}
+        anim.cancel();
+      }
       if (matchMedia('(prefers-reduced-motion: reduce)').matches || !mover.animate) { mover.style.transform = 'translateX(' + (S * 0.95 - W) + 'px)'; return; }
       anim = mover.animate([{ transform: 'translateX(' + (-W) + 'px)' }, { transform: 'translateX(' + S + 'px)' }], { duration: (W + S) / speed * 1000, iterations: Infinity });
-      anim.currentTime = ((S * 0.9) / (W + S)) * anim.effect.getTiming().duration; // empieza con la trompa ya en escena
+      var at = x === null ? S * 0.9 : Math.min(Math.max(x + W, 0), W + S); // first time: nose already on screen
+      anim.currentTime = (at / (W + S)) * anim.effect.getTiming().duration;
     }
-    var rt; addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(run, 200); });
+    // Phones fire «resize» whenever the address bar shows or hides (touching, scrolling): only a new
+    // width matters to the train, so a height change leaves it alone.
+    var rt; addEventListener('resize', function () {
+      clearTimeout(rt);
+      rt = setTimeout(function () { if (root.clientWidth !== lastWidth) run(); }, 200);
+    });
     seedMembers(root.getAttribute('data-src')).then(function (members) { build(root, members); run(); });
   }
 
