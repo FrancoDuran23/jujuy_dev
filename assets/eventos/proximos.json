@@ -1,14 +1,14 @@
 {
-  "events": [
+  "events": [],
+  "past": [
     {
-      "cover": "https://images.lumacdn.com/uploads/38/50cdfb89-0303-4651-80a4-407e77bf9b80.jpg",
-      "end": "2026-10-03T21:00:00.000Z",
-      "name": "Monad Metropolis | Jujuy",
-      "place": "Centro de Innovación Educativa Jujuy · San Salvador de Jujuy",
-      "start": "2026-10-03T12:00:00.000Z",
+      "cover": "https://images.lumacdn.com/uploads/s8/23c3d657-e01b-4c1b-bfaf-12782ad49c0d.png",
+      "end": "2026-10-17T23:00:00.000Z",
+      "name": "Builder Session: Agents on Open Rails | Celo × Ripio | JUJUY",
+      "place": "MINTA Café & Coworking · San Salvador de Jujuy",
+      "start": "2026-10-17T21:00:00.000Z",
       "timezone": "America/Argentina/Jujuy",
-      "url": "https://luma.com/metropolis-jujuy",
-      "waitlist": true,
+      "url": "https://luma.com/u3o10dec",
       "where": "offline"
     },
     {
@@ -19,7 +19,46 @@
       "start": "2026-10-03T13:00:00.000Z",
       "timezone": "America/Argentina/Jujuy",
       "url": "https://luma.com/01xxhfj3",
-      "waitlist": true,
+      "where": "offline"
+    },
+    {
+      "cover": "https://images.lumacdn.com/uploads/38/50cdfb89-0303-4651-80a4-407e77bf9b80.jpg",
+      "end": "2026-10-03T21:00:00.000Z",
+      "name": "Monad Metropolis | Jujuy",
+      "place": "Santiago “Pila\" Solá · San Salvador de Jujuy",
+      "start": "2026-10-03T12:00:00.000Z",
+      "timezone": "America/Argentina/Jujuy",
+      "url": "https://luma.com/metropolis-jujuy",
+      "where": "offline"
+    },
+    {
+      "cover": "https://images.lumacdn.com/uploads/9v/9fc473c0-82c1-49d3-b263-ed34461a65fc.jpg",
+      "end": "2026-09-30T02:00:00.000Z",
+      "name": "JUJUY TECH",
+      "place": "",
+      "start": "2026-09-29T23:00:00.000Z",
+      "timezone": "America/Argentina/Jujuy",
+      "url": "https://luma.com/sgpsottg",
+      "where": "online"
+    },
+    {
+      "cover": "https://images.lumacdn.com/uploads/e9/ae797719-522f-4c06-898c-124e0916c0fe.jpg",
+      "end": "2026-09-17T23:00:00.000Z",
+      "name": "Cabildo Tech Jujuy",
+      "place": "Museo del Cabildo de San Salvador de Jujuy",
+      "start": "2026-09-17T20:30:00.000Z",
+      "timezone": "America/Argentina/Jujuy",
+      "url": "https://luma.com/nb6w6cv6",
+      "where": "offline"
+    },
+    {
+      "cover": "https://images.lumacdn.com/uploads/fd/1aab902a-3ba3-4046-b2ad-b37ccc6af811.jpg",
+      "end": "2026-09-03T22:30:00.000Z",
+      "name": "Meet Up #1 · Primer Meet Up dev Jujuy",
+      "place": "FUNDACIÓN CIDEJ · San Salvador de Jujuy",
+      "start": "2026-09-03T21:00:00.000Z",
+      "timezone": "America/Argentina/Jujuy",
+      "url": "https://luma.com/g134i1ef",
       "where": "offline"
     }
   ]

@@ -1,6 +1,7 @@
 (function () {
   var lists = document.querySelectorAll("[data-upcoming-list]");
-  if (!lists.length) return;
+  var pastLists = document.querySelectorAll("[data-past-list]");
+  if (!lists.length && !pastLists.length) return;
 
   var LIVE = "https://raw.githubusercontent.com/FrancoDuran23/jujuy_dev/luma-calendar/proximos.json";
   // Next to this script, so it works from any page depth (and from file://, where only LIVE answers).
@@ -10,6 +11,8 @@
   var MONTHS = { Jan: "ene", Feb: "feb", Mar: "mar", Apr: "abr", May: "may", Jun: "jun", Jul: "jul", Aug: "ago", Sep: "sep", Oct: "oct", Nov: "nov", Dec: "dic" };
   var WEEKDAYS_LONG = { Sun: "Domingo", Mon: "Lunes", Tue: "Martes", Wed: "Miércoles", Thu: "Jueves", Fri: "Viernes", Sat: "Sábado" };
   var MONTHS_LONG = { Jan: "Enero", Feb: "Febrero", Mar: "Marzo", Apr: "Abril", May: "Mayo", Jun: "Junio", Jul: "Julio", Aug: "Agosto", Sep: "Septiembre", Oct: "Octubre", Nov: "Noviembre", Dec: "Diciembre" };
+  var JUJUY = "America/Argentina/Jujuy";
+  var PAST_LIMIT = 6;
 
   function load(url) {
     var ctrl = typeof AbortController === "function" ? new AbortController() : null;
@@ -130,8 +133,9 @@
   }
 
   // The home uses the design-system event card (.jd-event); lists opt in with data-jd.
-  function renderJdCard(event) {
-    var zone = event.timezone || "America/Argentina/Jujuy";
+  // Past events (from "Últimos encuentros") show the date in Jujuy time and link to the Luma page.
+  function renderJdCard(event, past) {
+    var zone = past ? JUJUY : (event.timezone || JUJUY);
     var start;
     try {
       start = parts(new Date(event.start), zone);
@@ -155,13 +159,13 @@
     var body = el("div", "jd-event__body");
     var tags = el("div", "jd-tags");
     tags.appendChild(el("span", "jd-tag jd-tag--solid", event.where === "online" ? "Evento virtual" : "Presencial"));
-    if (event.waitlist) tags.appendChild(el("span", "jd-tag", "Lista de espera"));
+    if (event.waitlist && !past) tags.appendChild(el("span", "jd-tag", "Lista de espera"));
     body.appendChild(tags);
     body.appendChild(el("h3", "jd-event__title", event.name));
     var time = ("0" + Number(start.hour)).slice(-2) + ":" + start.minute + " hs";
     var place = event.place || (event.where === "online" ? "Online" : "");
     body.appendChild(el("p", "jd-event__meta", place ? time + " · " + place : time));
-    body.appendChild(el("span", "jd-cue jd-event__cue", "Inscribite en Luma →"));
+    body.appendChild(el("span", "jd-cue jd-event__cue", past ? "Ver en Luma →" : "Inscribite en Luma →"));
 
     card.appendChild(date);
     card.appendChild(body);
@@ -210,7 +214,46 @@
     lists.forEach(function (list) { render(list, events); });
   }
 
+  // "Últimos encuentros": past events from every copy that answered (the live file may be older
+  // than the script that writes "past"), plus upcoming ones that already ended.
+  var pastPool = {};
+
+  function validEvent(event) {
+    return event && event.name && lumaUrl(event.url) && event.start && !isNaN(new Date(event.start).getTime());
+  }
+
+  function collectPast(data) {
+    var rows = [].concat((data && data.past) || [], ((data && data.events) || []).filter(function (event) {
+      return event && !stillOn(event);
+    }));
+    rows.forEach(function (event) {
+      if (validEvent(event) && !stillOn(event)) pastPool[event.url] = event;
+    });
+  }
+
+  function renderPast() {
+    var events = Object.keys(pastPool).map(function (key) { return pastPool[key]; }).sort(function (a, b) {
+      return String(b.start).localeCompare(String(a.start));
+    }).slice(0, PAST_LIMIT);
+    pastLists.forEach(function (list) {
+      list.textContent = "";
+      events.forEach(function (event) {
+        var card = list.hasAttribute("data-jd") ? renderJdCard(event, true) : renderCard(event);
+        if (card) list.appendChild(card);
+      });
+      var block = list.closest("[data-past-block]");
+      if (block) block.hidden = !list.childElementCount;
+    });
+  }
+
+  function addPast(data) {
+    if (!pastLists.length) return;
+    collectPast(data);
+    renderPast();
+  }
+
   load(LOCAL).then(function (data) {
+    addPast(data);
     if (!liveSettled) renderAll(data);
   }).catch(function () {
     localFailed = true;
@@ -219,6 +262,7 @@
 
   load(LIVE).then(function (data) {
     liveSettled = true;
+    addPast(data);
     renderAll(data);
   }).catch(function () {
     liveSettled = true;

@@ -179,6 +179,11 @@
     <div class="jd-upcoming">
       <div class="jd-stack" data-upcoming-list data-jd></div>
       <p class="upcoming-empty jd-upcoming__empty" hidden>Cuando publiquemos un encuentro, aparece acá. Mientras tanto, mirá el <a href="https://luma.com/jujuydev" target="_blank" rel="noopener">calendario en Luma →</a></p>
+      <!-- Latest past events from the same Luma calendar ("past" in the JSON); shown only when there are some. -->
+      <div data-past-block hidden style="margin-top: var(--space-6)">
+        <span class="jd-cue jd-subhead">Últimos encuentros</span>
+        <div class="jd-stack" data-past-list data-jd></div>
+      </div>
     </div>
 
     <!-- EDIT: past events. Copy a card only to archive one that already happened; keep the ghost card last. -->
