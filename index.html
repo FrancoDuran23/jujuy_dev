@@ -86,7 +86,7 @@
   <link rel="preload" as="image" href="assets/brand/jujuydev-llama-hd.webp" type="image/webp">
   <!-- Bump the version whenever the CSS changes, so browsers do not keep a stale copy. -->
   <link rel="stylesheet" href="css/tokens.css?v=2026-10-17">
-  <link rel="stylesheet" href="css/jd.css?v=2026-10-17g">
+  <link rel="stylesheet" href="css/jd.css?v=2026-10-18f">
 </head>
 <body>
 <div class="jd">
@@ -433,29 +433,64 @@
   </main>
 
   <footer class="jd-footer">
-    <div class="jd-footer__brand">
-      <img class="jd-logo-light" src="assets/brand/jujuydev-logo.webp" alt="jujuy.dev" width="127" height="26">
-      <img class="jd-logo-dark" src="assets/brand/jujuydev-logo-white.webp" alt="jujuy.dev" width="96" height="26">
-      <span>© <span data-year>2026</span> Jujuy<span class="jd-dev">Dev</span> · San Salvador de Jujuy</span>
+    <div class="jd-footer__top">
+      <div class="jd-footer__brand">
+        <a href="./" aria-label="jujuy.dev — inicio"><img src="assets/brand/jujuydev-logo.webp" alt="jujuy.dev" width="167" height="34"></a>
+        <p class="jd-footer__tagline">Código con altura,<br>desde el norte argentino.</p>
+        <ul class="jd-footer__social">
+          <li><a href="https://www.instagram.com/jujuy.dev/" target="_blank" rel="noopener">Instagram ↗</a></li>
+          <li><a href="https://x.com/JujuyDevAr" target="_blank" rel="noopener">X ↗</a></li>
+          <li><a href="https://github.com/FrancoDuran23/jujuy_dev" target="_blank" rel="noopener">GitHub ↗</a></li>
+          <li><a href="https://chat.whatsapp.com/Bj1KKgjcLue2FOVuX8osmq" target="_blank" rel="noopener">WhatsApp ↗</a></li>
+        </ul>
+      </div>
+      <nav class="jd-footer__cols" aria-label="Pie de página">
+        <div>
+          <h2>Comunidad</h2>
+          <ul>
+            <li><a href="eventos/">Eventos</a></li>
+            <li><a href="comunidad/">Comunidad</a></li>
+            <li><a href="#equipo">Equipo</a></li>
+            <li><a href="faq/">Preguntas</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Recursos</h2>
+          <ul>
+            <li><a href="proyectos/">Proyectos</a></li>
+            <li><a href="oportunidades/">Oportunidades</a></li>
+            <li><a href="recursos/">Recursos</a></li>
+            <li><a href="https://github.com/FrancoDuran23/jujuy_dev/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Cómo contribuir</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Contacto</h2>
+          <ul>
+            <li><a href="mailto:jujuydev@gmail.com">jujuydev@gmail.com</a></li>
+            <li><a href="https://chat.whatsapp.com/Bj1KKgjcLue2FOVuX8osmq" target="_blank" rel="noopener">Grupo de WhatsApp</a></li>
+            <li><a href="mailto:jujuydev@gmail.com?subject=Quiero%20ser%20colaborador%20de%20JujuyDev">Ser colaborador</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Legal</h2>
+          <ul>
+            <li><a href="codigo-de-conducta/">Código de conducta</a></li>
+            <li><a href="https://github.com/FrancoDuran23/jujuy_dev/blob/main/LICENSE" target="_blank" rel="noopener">Licencia MIT</a></li>
+          </ul>
+        </div>
+      </nav>
     </div>
-    <nav aria-label="Pie de página">
-      <a href="eventos/">Eventos</a>
-      <a href="proyectos/">Proyectos</a>
-      <a href="oportunidades/">Oportunidades</a>
-      <a href="recursos/">Recursos</a>
-      <a href="comunidad/">Comunidad</a>
-      <a href="faq/">FAQ</a>
-      <a href="codigo-de-conducta/">Código de conducta</a>
-      <a href="https://github.com/FrancoDuran23/jujuy_dev" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.instagram.com/jujuy.dev/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://x.com/JujuyDevAr" target="_blank" rel="noopener">X</a>
-      <a href="mailto:jujuydev@gmail.com">Contacto</a>
-    </nav>
+    <div class="jd-footer__bar">
+      <span>© <span data-year>2026</span> Jujuy<span class="jd-dev">Dev</span> · Jujuy, Argentina</span>
+      <span>Hecho con cariño desde Jujuy</span>
+    </div>
+    <!-- Engraving of Jujuy: churches, the Cabildo arcade, the Tren Solar, the river and the bridge in blue ink; the coloured hills of the Quebrada behind. -->
+    <img class="jd-footer__art" src="assets/brand/footer-jujuy.webp?v=2026-10-18f" alt="" width="1024" height="353" loading="lazy" decoding="async">
   </footer>
 </div>
 
   <script src="assets/jd-nav.js?v=2026-10-17c" defer></script>
-  <script src="assets/jd-home.js?v=2026-10-17e" defer></script>
+  <script src="assets/jd-home.js?v=2026-10-18" defer></script>
   <script src="assets/calendario.js?v=2026-10-17b" defer></script>
 </body>
 </html>

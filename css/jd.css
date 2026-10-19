@@ -209,16 +209,12 @@
 .jd-cta__art .jd-orb { width: 340px; height: 340px; left: 40px; top: 40px; }
 .jd-cta__art img { position: absolute; bottom: 0; left: 50%; height: 440px; transform: translateX(-46%); -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent 98%); mask-image: linear-gradient(180deg, #000 70%, transparent 98%); }
 .jd-cta .jd-btn--primary { background: var(--on-plum); color: var(--plum); border-color: var(--on-plum); }
-.jd-footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-6); padding: var(--space-8) var(--space-12); background: var(--paper-sunk); font: 500 13px/1.4 var(--font-sans); color: var(--ink-muted); }
-.jd-footer nav { display: flex; gap: var(--space-6); flex-wrap: wrap; }
-.jd-footer a { text-decoration: none; font-weight: 600; color: var(--ink); }
 @media (max-width: 900px) {
   .jd-pillars, .jd-posters, .jd-about, .jd-cta { grid-template-columns: 1fr; }
   .jd-gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; }
   .jd-pillar + .jd-pillar { padding-left: 0; border-left: 0; }
   .jd-cta { padding: var(--space-16) var(--space-4) 0; }
   .jd-cta__copy { padding-bottom: 0; }
-  .jd-footer { padding: var(--space-8) var(--space-4); }
 }
 
 /* ==========================================================================
@@ -356,14 +352,37 @@ a.jd-logo:hover { background: #ffffff; }
 .jd-cta p { margin: 0; max-width: 520px; font-size: 17px; line-height: 1.55; }
 .jd-cta p a { color: var(--on-plum); font-family: var(--font-mono); font-weight: 700; text-decoration: none; border-bottom: 1.5px solid var(--orb-violet); }
 
-/* ---------- Footer ---------- */
-.jd-footer { align-items: flex-start; }
-.jd-footer__brand { display: flex; flex-direction: column; gap: var(--space-3); }
-.jd-footer__brand img { height: 26px; width: auto; display: block; align-self: flex-start; }
-.jd-footer__brand img.jd-logo-dark { display: none; }
-[data-theme="dark"] .jd-footer__brand img.jd-logo-light { display: none; }
-[data-theme="dark"] .jd-footer__brand img.jd-logo-dark { display: block; }
-.jd-footer nav a:hover { color: var(--violet); }
+/* ---------- Footer: la ciudad en grabado ----------
+   The engraving across the bottom (assets/brand/footer-jujuy.webp) is printed in the brand
+   palette: the town in navy ink on the sunk paper of the site, the hills of the Quebrada in full
+   colour. Its paper is baked into the image, so the footer keeps the light palette in both themes. */
+.jd-footer { --f-paper: #f1f0ea; --f-ink: #14134d; --f-muted: #4b4f86; position: relative; overflow: hidden; background: var(--f-paper); color: var(--f-ink); font: 500 15px/1.5 var(--font-sans); }
+.jd-footer a { color: var(--f-ink); text-decoration: none; }
+.jd-footer a:hover { color: var(--violet); }
+.jd-footer__top { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 2fr); gap: var(--space-12); padding: var(--space-16) var(--space-12) var(--space-8); }
+.jd-footer__brand { display: flex; flex-direction: column; gap: var(--space-4); align-items: flex-start; }
+.jd-footer__brand img { height: 34px; width: auto; display: block; }
+.jd-footer__tagline { margin: 0; font-family: var(--font-condensed); font-size: clamp(28px, 2.6vw, 36px); line-height: 1; text-transform: uppercase; }
+.jd-footer__social { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); margin: 0; padding: 0; list-style: none; }
+.jd-footer__social a { font: 700 12px/1.4 var(--font-mono); letter-spacing: 2px; text-transform: uppercase; }
+.jd-footer__cols { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-6); }
+.jd-footer__cols h2 { margin: 0 0 var(--space-4); font: 700 13px/1.2 var(--font-mono); letter-spacing: 3px; text-transform: uppercase; }
+.jd-footer__cols ul { display: flex; flex-direction: column; gap: var(--space-2); margin: 0; padding: 0; list-style: none; }
+.jd-footer__cols a { color: var(--f-muted); overflow-wrap: anywhere; }
+.jd-footer__cols a:hover { color: var(--violet); }
+.jd-footer__bar { position: relative; z-index: 1; display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3); margin: 0 var(--space-12); padding: var(--space-4) 0; border-top: 1.5px solid var(--f-ink); font: 700 12px/1.4 var(--font-mono); letter-spacing: 1px; }
+.jd-footer__art { display: block; width: 100%; height: auto; aspect-ratio: 1024 / 353; margin-top: var(--space-2); object-fit: cover; object-position: 50% 100%; pointer-events: none; user-select: none;
+  /* the top edge of the engraving melts into the paper */
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 24%); mask-image: linear-gradient(180deg, transparent 0, #000 24%); }
+@media (max-width: 1000px) {
+  .jd-footer__top { grid-template-columns: 1fr; gap: var(--space-8); }
+}
+@media (max-width: 640px) {
+  .jd-footer__top { padding: var(--space-12) var(--space-4) var(--space-6); }
+  .jd-footer__cols { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-8) var(--space-4); }
+  .jd-footer__bar { margin: 0 var(--space-4); }
+  .jd-footer__art { aspect-ratio: auto; height: 220px; object-position: 46% 100%; }
+}
 
 /* ---------- Encabezado de página interna con el sistema (ej. /eventos/) ---------- */
 .jd-page-head { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-6); padding-top: var(--space-16); }
