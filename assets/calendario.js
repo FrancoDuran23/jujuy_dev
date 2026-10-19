@@ -12,7 +12,7 @@
   var WEEKDAYS_LONG = { Sun: "Domingo", Mon: "Lunes", Tue: "Martes", Wed: "Miércoles", Thu: "Jueves", Fri: "Viernes", Sat: "Sábado" };
   var MONTHS_LONG = { Jan: "Enero", Feb: "Febrero", Mar: "Marzo", Apr: "Abril", May: "Mayo", Jun: "Junio", Jul: "Julio", Aug: "Agosto", Sep: "Septiembre", Oct: "Octubre", Nov: "Noviembre", Dec: "Diciembre" };
   var JUJUY = "America/Argentina/Jujuy";
-  var PAST_LIMIT = 6;
+  var PAST_LIMIT = 3;
 
   function load(url) {
     var ctrl = typeof AbortController === "function" ? new AbortController() : null;

@@ -27,7 +27,7 @@ CALENDAR_ID = "cal-6uikyEp5iGq89tc"
 API = "https://api.lu.ma/calendar/get-items"
 TZ_FALLBACK = "America/Argentina/Jujuy"
 PUBLISHED = "https://raw.githubusercontent.com/FrancoDuran23/jujuy_dev/luma-calendar/proximos.json"
-PAST_LIMIT = 6
+PAST_LIMIT = 3
 ONLINE_TYPES = ("online", "meet", "zoom")
 
 
