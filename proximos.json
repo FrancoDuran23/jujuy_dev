@@ -1,5 +1,16 @@
 {
-  "events": [],
+  "events": [
+    {
+      "cover": "https://images.lumacdn.com/uploads/2x/bbde4c1b-a4b8-4327-9c88-d696bcd70ada.png",
+      "end": "2026-11-12T23:00:00.000Z",
+      "name": "Argentina Space Jujuy · rumbo a Argentina Space Salta 2026",
+      "place": "Centro de Convenciones Salta",
+      "start": "2026-11-11T10:00:00.000Z",
+      "timezone": "America/Argentina/Salta",
+      "url": "https://luma.com/ypwk9hms",
+      "where": "offline"
+    }
+  ],
   "past": [
     {
       "cover": "https://images.lumacdn.com/uploads/s8/23c3d657-e01b-4c1b-bfaf-12782ad49c0d.png",
