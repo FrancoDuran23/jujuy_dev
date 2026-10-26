@@ -86,7 +86,7 @@
   <link rel="preload" as="image" href="assets/brand/jujuydev-llama-hd.webp" type="image/webp">
   <!-- Bump the version whenever the CSS changes, so browsers do not keep a stale copy. -->
   <link rel="stylesheet" href="css/tokens.css?v=2026-10-17">
-  <link rel="stylesheet" href="css/jd.css?v=2026-10-18f">
+  <link rel="stylesheet" href="css/jd.css?v=2026-10-26">
 </head>
 <body>
 <div class="jd">
@@ -211,6 +211,9 @@
       <figure class="jd-tile jd-gallery__wide"><img src="assets/fotos/evento-selfie-auditorio.webp" alt="Selfie con todo el auditorio lleno" style="object-position:50% 40%" loading="lazy"></figure>
       <figure class="jd-tile"><img src="assets/fotos/evento-hackaton-mural.webp" alt="Equipos trabajando frente al mural del espacio" loading="lazy"></figure>
       <figure class="jd-tile"><img src="assets/fotos/evento-pitch-llama.webp" alt="Equipo presentando su proyecto en Solana, con la llama de peluche" style="object-position:55% 70%" loading="lazy"></figure>
+      <figure class="jd-tile jd-gallery__wide"><img src="assets/fotos/evento-meetup-codigo-altura.webp" alt="Sala de un meetup con la pantalla Código con altura y gente trabajando en notebooks" style="object-position:50% 42%" width="1600" height="900" loading="lazy"></figure>
+      <figure class="jd-tile"><img src="assets/fotos/evento-meetup-llama-mascota.webp" alt="Meetup en MINTA, con la mascota llama de jujuy.dev y gente con notebooks" style="object-position:50% 44%" width="1536" height="1024" loading="lazy"></figure>
+      <figure class="jd-tile"><img src="assets/fotos/evento-meetup-presentacion.webp" alt="Presentación con micrófono en un meetup de la comunidad, con el público sentado" style="object-position:62% 40%" width="1600" height="1200" loading="lazy"></figure>
     </div>
   </section>
 
@@ -280,22 +283,41 @@
       <div><hr class="jd-rule"><h2 class="jd-display jd-display--l">Los que<br><span class="jd-hl">empujan</span></h2></div>
       <p class="jd-team__intro">Empresas, universidades y comunidades que apoyan el ecosistema tech de Jujuy.</p>
     </div>
-    <!-- EDIT: to add a collaborator, copy a cell. Logos go in assets/logos/, ideally SVG or WebP under 50 KB. -->
-    <div class="jd-logos">
-      <div class="jd-logos__track">
-        <div class="jd-logos__set">
-          <div class="jd-logo jd-logo--mark"><img src="assets/logos/cidej.webp" alt="" width="40" height="40" loading="lazy"><span>Fundación CIDEJ</span></div>
-          <a class="jd-logo jd-logo--mark" href="https://salta.dev" target="_blank" rel="noopener"><img src="assets/logos/saltadev.webp" alt="" width="40" height="40" loading="lazy"><span>SaltaDev</span></a>
-          <a class="jd-logo jd-logo--mark" href="https://cuyoconnect.com/" target="_blank" rel="noopener"><img src="assets/logos/cuyoconnect.webp" alt="" width="40" height="40" loading="lazy"><span>CuyoConnect</span></a>
-          <a class="jd-logo jd-logo--mark" href="https://crecimiento.build/" target="_blank" rel="noopener"><img src="assets/logos/crecimientoar.webp" alt="" width="40" height="40" loading="lazy"><span>CrecimientoAR</span></a>
-          <a class="jd-logo jd-logo--wide" href="https://superteam.ar/" target="_blank" rel="noopener"><img src="assets/logos/superteam-argentina.svg" alt="Superteam Argentina" width="1000" height="170" loading="lazy"></a>
-          <a class="jd-logo" href="https://www.sansalvadordejujuy.gob.ar/" target="_blank" rel="noopener"><img src="assets/logos/municipalidad-ssj.webp" alt="Municipalidad de San Salvador de Jujuy" width="300" height="76" loading="lazy"></a>
-          <a class="jd-logo" href="https://jujuy.gob.ar/" target="_blank" rel="noopener"><img src="assets/logos/gobierno-jujuy.webp" alt="Gobierno de Jujuy" width="720" height="391" loading="lazy"></a>
-          <a class="jd-logo" href="https://formosa.dev.ar/" target="_blank" rel="noopener"><img src="assets/logos/formosa-dev.webp" alt="Formosa.dev" width="480" height="480" loading="lazy"></a>
-          <a class="jd-logo" href="https://mardelplata.dev.ar/" target="_blank" rel="noopener"><img src="assets/logos/mardelplata-dev.webp" alt="Mar del Plata Dev" width="480" height="480" loading="lazy"></a>
-          <a class="jd-logo jd-logo--wide" href="https://celo.org/" target="_blank" rel="noopener"><img src="assets/logos/celo.svg" alt="Celo" width="221" height="50" loading="lazy"></a>
-          <a class="jd-logo" href="https://www.ripio.com/" target="_blank" rel="noopener"><img src="assets/logos/ripio.svg" alt="Ripio" width="268" height="128" loading="lazy"></a>
-          <a class="jd-logo jd-logo--wide" href="https://nerdearla.com/" target="_blank" rel="noopener"><img src="assets/logos/nerdearla.webp" alt="Nerdearla" width="720" height="121" loading="lazy"></a>
+    <!-- EDIT: two rows. Sponsors on top, comunidades below. Copy a cell into the right set.
+         Logos go in assets/logos/, ideally SVG or WebP under 50 KB. -->
+    <div class="jd-logo-rows">
+      <div>
+        <span class="jd-cue jd-subhead">Sponsors</span>
+        <div class="jd-logos">
+          <div class="jd-logos__track">
+            <div class="jd-logos__set">
+              <a class="jd-logo jd-logo--mark" href="https://www.labitconf.com/" target="_blank" rel="noopener"><img src="assets/logos/labitconf.webp" alt="" width="256" height="199" loading="lazy"><span>LABITconf</span></a>
+              <a class="jd-logo jd-logo--wide" href="https://celo.org/" target="_blank" rel="noopener"><img src="assets/logos/celo.svg" alt="Celo" width="221" height="50" loading="lazy"></a>
+              <a class="jd-logo" href="https://www.ripio.com/" target="_blank" rel="noopener"><img src="assets/logos/ripio.svg" alt="Ripio" width="268" height="128" loading="lazy"></a>
+              <a class="jd-logo jd-logo--wide" href="https://nerdearla.com/" target="_blank" rel="noopener"><img src="assets/logos/nerdearla.webp" alt="Nerdearla" width="720" height="121" loading="lazy"></a>
+              <div class="jd-logo jd-logo--mark"><img src="assets/logos/cidej.webp" alt="" width="40" height="40" loading="lazy"><span>Fundación CIDEJ</span></div>
+              <a class="jd-logo" href="https://www.sansalvadordejujuy.gob.ar/" target="_blank" rel="noopener"><img src="assets/logos/municipalidad-ssj.webp" alt="Municipalidad de San Salvador de Jujuy" width="300" height="76" loading="lazy"></a>
+              <a class="jd-logo" href="https://jujuy.gob.ar/" target="_blank" rel="noopener"><img src="assets/logos/gobierno-jujuy.webp" alt="Gobierno de Jujuy" width="720" height="391" loading="lazy"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <span class="jd-cue jd-subhead">Comunidades</span>
+        <div class="jd-logos jd-logos--back">
+          <div class="jd-logos__track">
+            <div class="jd-logos__set">
+              <a class="jd-logo jd-logo--mark" href="https://salta.dev" target="_blank" rel="noopener"><img src="assets/logos/saltadev.webp" alt="" width="40" height="40" loading="lazy"><span>SaltaDev</span></a>
+              <a class="jd-logo jd-logo--mark" href="https://cuyoconnect.com/" target="_blank" rel="noopener"><img src="assets/logos/cuyoconnect.webp" alt="" width="40" height="40" loading="lazy"><span>CuyoConnect</span></a>
+              <a class="jd-logo jd-logo--mark" href="https://crecimiento.build/" target="_blank" rel="noopener"><img src="assets/logos/crecimientoar.webp" alt="" width="40" height="40" loading="lazy"><span>CrecimientoAR</span></a>
+              <a class="jd-logo jd-logo--wide" href="https://superteam.ar/" target="_blank" rel="noopener"><img src="assets/logos/superteam-argentina.svg" alt="Superteam Argentina" width="1000" height="170" loading="lazy"></a>
+              <a class="jd-logo" href="https://formosa.dev.ar/" target="_blank" rel="noopener"><img src="assets/logos/formosa-dev.webp" alt="Formosa.dev" width="480" height="480" loading="lazy"></a>
+              <a class="jd-logo" href="https://mardelplata.dev.ar/" target="_blank" rel="noopener"><img src="assets/logos/mardelplata-dev.webp" alt="Mar del Plata Dev" width="480" height="480" loading="lazy"></a>
+              <a class="jd-logo jd-logo--mark" href="https://novasurecosistema.com/" target="_blank" rel="noopener"><img src="assets/logos/novasur.webp" alt="" width="256" height="256" loading="lazy"><span>NovaSür</span></a>
+              <a class="jd-logo jd-logo--lockup" href="https://corrientes.dev.ar/" target="_blank" rel="noopener"><img src="assets/logos/corrientes-dev.webp" alt="Corrientes Dev" width="415" height="520" loading="lazy"></a>
+              <a class="jd-logo" href="https://www.argentinaspace.com/" target="_blank" rel="noopener"><img src="assets/logos/argentina-space.webp" alt="Argentina Space" width="720" height="195" loading="lazy"></a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -460,7 +482,7 @@
 </div>
 
   <script src="assets/jd-nav.js?v=2026-10-17c" defer></script>
-  <script src="assets/jd-home.js?v=2026-10-18" defer></script>
+  <script src="assets/jd-home.js?v=2026-10-26" defer></script>
   <script src="assets/calendario.js?v=2026-10-17b" defer></script>
 </body>
 </html>
