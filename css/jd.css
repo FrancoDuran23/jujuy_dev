@@ -307,8 +307,10 @@ a.jd-event:hover .jd-event__title { color: var(--violet); }
 
 /* ---------- Colaboradores ---------- */
 /* Logos ship in their own colours, so the cells stay light in both themes. */
+.jd-logo-rows { display: flex; flex-direction: column; gap: var(--space-8); }
 .jd-logos { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 12%, #000 88%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 12%, #000 88%, transparent 100%); }
 .jd-logos__track { display: flex; gap: 1px; width: max-content; animation: jd-marquee 45s linear infinite; }
+.jd-logos--back .jd-logos__track { animation-direction: reverse; animation-duration: 58s; }
 .jd-logos__set { display: flex; gap: 1px; padding-right: 1px; }
 .jd-logos .jd-logo { flex: none; width: 220px; }
 @media (prefers-reduced-motion: reduce) {
@@ -326,6 +328,7 @@ a.jd-logo:hover::after { transform: none; opacity: 1; }
 .jd-logo img { display: block; max-width: 100%; max-height: 52px; width: auto; height: auto; object-fit: contain; }
 .jd-logo--mark img { width: 40px; height: 40px; }
 .jd-logo--wide img { max-height: 30px; }
+.jd-logo--lockup img { max-height: 88px; }
 a.jd-logo:hover { background: #ffffff; }
 .jd-collab { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); flex-wrap: wrap; margin-top: var(--space-6); padding: var(--space-6); background: var(--paper-raised); border: 1px solid var(--line-soft); }
 .jd-collab h3 { font-family: var(--font-condensed); font-weight: 400; font-size: clamp(28px, 3vw, 36px); line-height: .95; text-transform: uppercase; margin: 0 0 var(--space-2); }
@@ -415,6 +418,7 @@ a.jd-logo:hover { background: #ffffff; }
 .jd-flyer--wide { aspect-ratio: 4 / 3; }
 .jd-photos--one { grid-template-columns: minmax(0, 1fr); }
 .jd-photos--one .jd-tile { aspect-ratio: 16 / 9; }
+.jd-photos + .jd-photos { margin-top: var(--space-3); }
 .jd-person__links { flex-wrap: wrap; gap: var(--space-2) var(--space-4); }
 @media (max-width: 900px) {
   .jd-detail--flyer { grid-template-columns: 1fr; }

@@ -19,13 +19,18 @@
     pizza: B + 'evento-pizza.webp',
     grupal: B + 'evento-grupal-superteam.webp',
     auditorio: B + 'evento-charla-auditorio.webp',
-    selfie: B + 'evento-selfie-auditorio.webp'
+    selfie: B + 'evento-selfie-auditorio.webp',
+    llama: B + 'evento-meetup-llama-mascota.webp',
+    presentacion: B + 'evento-meetup-presentacion.webp',
+    codigo: B + 'evento-meetup-codigo-altura.webp'
   };
+  // Para sumar otra foto de meetup: guardala en assets/fotos/ y reemplazá
+  // una repetición en rows. Con una aparición en la fila alcanza: el carrusel la duplica.
   // Each tile: [size, url, object-position, label?]. Only photos, so the rows never show gaps; repeat photos freely.
   var rows = [
-    [['l', IMG.grupal, '50% 45%', 'Superteam ARG'], ['m', IMG.mate, '60% 55%'], ['m', IMG.charla, '55% 35%'], ['l', IMG.cerros, '50% 75%', '+600 devs'], ['m', IMG.pizza, '45% 55%'], ['m', IMG.mentor, '55% 30%'], ['l', IMG.selfie, '50% 40%'], ['m', IMG.celu, '50% 45%'], ['m', IMG.salua, '50% 70%']],
-    [['l', IMG.auditorio, '40% 50%', 'Charlas'], ['m', IMG.mentoria, '45% 40%'], ['l', IMG.salua, '50% 75%', 'Demo day'], ['m', IMG.celu, '50% 45%'], ['m', IMG.noche, '50% 55%'], ['l', IMG.grupal, '60% 60%'], ['m', IMG.mural, '45% 55%'], ['m', IMG.pitch, '55% 70%'], ['m', IMG.mate, '40% 50%']],
-    [['l', IMG.selfie, '50% 40%', 'Meetups'], ['m', IMG.mural, '45% 55%'], ['m', IMG.pitch, '55% 70%', 'Pitch'], ['m', IMG.mentor, '55% 30%'], ['l', IMG.cerros, '50% 40%'], ['m', IMG.charla, '50% 40%'], ['l', IMG.noche, '50% 55%'], ['m', IMG.pizza, '50% 55%'], ['m', IMG.auditorio, '60% 50%']]
+    [['l', IMG.grupal, '50% 45%', 'Superteam ARG'], ['m', IMG.mate, '60% 55%'], ['m', IMG.charla, '55% 35%'], ['l', IMG.cerros, '50% 75%', '+600 devs'], ['m', IMG.pizza, '45% 55%'], ['m', IMG.mentor, '55% 30%'], ['l', IMG.llama, '50% 46%'], ['m', IMG.celu, '50% 45%'], ['m', IMG.salua, '50% 70%']],
+    [['l', IMG.auditorio, '40% 50%', 'Charlas'], ['m', IMG.mentoria, '45% 40%'], ['l', IMG.salua, '50% 75%', 'Demo day'], ['m', IMG.celu, '50% 45%'], ['m', IMG.noche, '50% 55%'], ['l', IMG.presentacion, '62% 42%'], ['m', IMG.mural, '45% 55%'], ['m', IMG.pitch, '55% 70%'], ['m', IMG.mate, '40% 50%']],
+    [['l', IMG.selfie, '50% 40%', 'Meetups'], ['m', IMG.mural, '45% 55%'], ['m', IMG.pitch, '55% 70%', 'Pitch'], ['m', IMG.llama, '48% 44%'], ['l', IMG.codigo, '50% 42%'], ['m', IMG.presentacion, '58% 40%'], ['l', IMG.noche, '50% 55%'], ['m', IMG.pizza, '50% 55%'], ['m', IMG.auditorio, '60% 50%']]
   ];
   function tile(t) {
     var el = document.createElement('figure');
