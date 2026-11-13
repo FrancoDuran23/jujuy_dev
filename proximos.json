@@ -2,6 +2,16 @@
   "events": [],
   "past": [
     {
+      "cover": "https://images.lumacdn.com/uploads/2x/bbde4c1b-a4b8-4327-9c88-d696bcd70ada.png",
+      "end": "2026-11-12T23:00:00.000Z",
+      "name": "Argentina Space Jujuy · rumbo a Argentina Space Salta 2026",
+      "place": "Centro de Convenciones Salta",
+      "start": "2026-11-11T10:00:00.000Z",
+      "timezone": "America/Argentina/Salta",
+      "url": "https://luma.com/ypwk9hms",
+      "where": "offline"
+    },
+    {
       "cover": "https://images.lumacdn.com/uploads/s8/23c3d657-e01b-4c1b-bfaf-12782ad49c0d.png",
       "end": "2026-10-17T23:00:00.000Z",
       "name": "Builder Session: Agents on Open Rails | Celo × Ripio | JUJUY",
@@ -19,16 +29,6 @@
       "start": "2026-10-03T13:00:00.000Z",
       "timezone": "America/Argentina/Jujuy",
       "url": "https://luma.com/01xxhfj3",
-      "where": "offline"
-    },
-    {
-      "cover": "https://images.lumacdn.com/uploads/38/50cdfb89-0303-4651-80a4-407e77bf9b80.jpg",
-      "end": "2026-10-03T21:00:00.000Z",
-      "name": "Monad Metropolis | Jujuy",
-      "place": "Santiago “Pila\" Solá · San Salvador de Jujuy",
-      "start": "2026-10-03T12:00:00.000Z",
-      "timezone": "America/Argentina/Jujuy",
-      "url": "https://luma.com/metropolis-jujuy",
       "where": "offline"
     }
   ]
