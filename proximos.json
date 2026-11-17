@@ -1,5 +1,16 @@
 {
-  "events": [],
+  "events": [
+    {
+      "cover": "https://images.lumacdn.com/uploads/ki/6c412341-62d3-433d-b3ac-9ed0bdded39a.png",
+      "end": "2026-11-28T21:00:00.000Z",
+      "name": "Dev3pack Global Hackathon · Build Station San Salvador de Jujuy ⚡",
+      "place": "Ing. Mario Italo Palanca 10 · San Salvador de Jujuy",
+      "start": "2026-11-28T12:00:00.000Z",
+      "timezone": "America/Argentina/Jujuy",
+      "url": "https://luma.com/77sgrkkh",
+      "where": "offline"
+    }
+  ],
   "past": [
     {
       "cover": "https://images.lumacdn.com/uploads/2x/bbde4c1b-a4b8-4327-9c88-d696bcd70ada.png",
